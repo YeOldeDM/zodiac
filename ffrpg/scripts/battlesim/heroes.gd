@@ -3,7 +3,6 @@ extends HBoxContainer
 
 onready var status_window = get_node('/root/Battle/status_window')
 
-
 onready var hero_battler = preload('res://battler_scenes/hero_battler.res')
 
 

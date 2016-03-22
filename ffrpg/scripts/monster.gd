@@ -14,6 +14,7 @@ class Monster:
 	
 	var current_HP
 	var current_MP
+	var current_speed=0
 	
 	var power_die
 	var magic_die
@@ -37,6 +38,18 @@ class Monster:
 		var data = {}
 		data['monster'] = inst2dict(self)
 		return data
+
+	func restore_full():
+		self.restore_HP()
+		self.restore_MP()
+		
+	func restore_HP():
+		self.current_HP = self.get_HP()
+	func restore_MP():
+		self.current_MP = self.get_MP()
+	
+	func restore_speed():
+		self.current_speed += self.get_speed()
 
 	func get_name():
 		return self.name

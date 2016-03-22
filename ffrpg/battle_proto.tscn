@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://font/default.fnt" type="Font" id=1]
 [ext_resource path="res://scripts/battlesim/heroes.gd" type="Script" id=2]
-[ext_resource path="res://scripts/battlesim/status_window.gd" type="Script" id=3]
+[ext_resource path="res://scripts/battlesim/monsters.gd" type="Script" id=3]
+[ext_resource path="res://scripts/battlesim/status_window.gd" type="Script" id=4]
 
 [sub_resource type="Theme" id=1]
 
@@ -17,7 +18,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 theme/theme = SubResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="box" type="VBoxContainer" parent="."]
 
@@ -88,26 +89,30 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 
-[node name="box" type="GridContainer" parent="box/battle/monsters"]
+[node name="box" type="ScrollContainer" parent="box/battle/monsters"]
 
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 251.0
 margin/bottom = 426.0
 focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+scroll/horizontal = false
+scroll/vertical = true
+
+[node name="list" type="GridContainer" parent="box/battle/monsters/box"]
+
+margin/left = 4.0
+margin/right = 247.0
+rect/min_size = Vector2( 230, 0 )
+focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 columns = 1
-
-[node name="Mob" type="PanelContainer" parent="box/battle/monsters/box"]
-
-margin/right = 247.0
-margin/bottom = 81.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
+script/script = ExtResource( 3 )
 
 [node name="options" type="HBoxContainer" parent="box"]
 
@@ -132,6 +137,7 @@ size_flags/vertical = 3
 
 [node name="status_window" type="Popup" parent="."]
 
+visibility/visible = false
 margin/left = 60.0
 margin/top = 150.0
 margin/right = 680.0
@@ -141,7 +147,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 popup/exclusive = false
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
 __meta__ = { "_editor_collapsed":true }
 
 [node name="panel" type="PanelContainer" parent="status_window"]
