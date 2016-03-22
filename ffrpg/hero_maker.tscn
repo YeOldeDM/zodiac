@@ -1,0 +1,972 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://hero_maker.gd" type="Script" id=1]
+
+[node name="Hero" type="Container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="info" type="PanelContainer" parent="."]
+
+margin/left = 10.0
+margin/top = 10.0
+margin/right = 170.0
+margin/bottom = 62.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="VBoxContainer" parent="info"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 156.0
+margin/bottom = 48.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="name_label" type="Label" parent="info/box"]
+
+margin/right = 152.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = "Hero Name:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name_edit" type="LineEdit" parent="info/box"]
+
+margin/top = 17.0
+margin/right = 152.0
+margin/bottom = 40.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="stats" type="PanelContainer" parent="."]
+
+anchor/top = 3
+anchor/bottom = 3
+margin/left = 10.0
+margin/top = -70.0
+margin/right = 294.0
+margin/bottom = -230.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="HBoxContainer" parent="stats"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 342.0
+margin/bottom = 156.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="stats" type="VBoxContainer" parent="stats/box"]
+
+margin/right = 212.0
+margin/bottom = 148.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats"]
+
+margin/right = 212.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "STATS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="strength" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 17.0
+margin/right = 212.0
+margin/bottom = 40.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats/strength"]
+
+margin/top = 5.0
+margin/right = 86.0
+margin/bottom = 18.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Strength"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/strength"]
+
+margin/left = 90.0
+margin/right = 212.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="magic" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 44.0
+margin/right = 212.0
+margin/bottom = 67.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="stats/box/stats/magic"]
+
+margin/top = 5.0
+margin/right = 86.0
+margin/bottom = 18.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Magic"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/magic"]
+
+margin/left = 90.0
+margin/right = 212.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="vitality" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 71.0
+margin/right = 212.0
+margin/bottom = 94.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="stats/box/stats/vitality"]
+
+margin/top = 5.0
+margin/right = 86.0
+margin/bottom = 18.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Vitality"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/vitality"]
+
+margin/left = 90.0
+margin/right = 212.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="spirit" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 98.0
+margin/right = 212.0
+margin/bottom = 121.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="stats/box/stats/spirit"]
+
+margin/top = 5.0
+margin/right = 86.0
+margin/bottom = 18.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Spirit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/spirit"]
+
+margin/left = 90.0
+margin/right = 212.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="agility" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 125.0
+margin/right = 212.0
+margin/bottom = 148.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="stats/box/stats/agility"]
+
+margin/top = 5.0
+margin/right = 86.0
+margin/bottom = 18.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Agility"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/agility"]
+
+margin/left = 90.0
+margin/right = 212.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="weight" type="VBoxContainer" parent="stats/box"]
+
+margin/left = 216.0
+margin/right = 338.0
+margin/bottom = 148.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="stats/box/weight"]
+
+margin/right = 122.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "prog. weight"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="strength" type="SpinBox" parent="stats/box/weight"]
+
+margin/top = 17.0
+margin/right = 122.0
+margin/bottom = 40.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="magic" type="SpinBox" parent="stats/box/weight"]
+
+margin/top = 44.0
+margin/right = 122.0
+margin/bottom = 67.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="vitality" type="SpinBox" parent="stats/box/weight"]
+
+margin/top = 71.0
+margin/right = 122.0
+margin/bottom = 94.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="spirit" type="SpinBox" parent="stats/box/weight"]
+
+margin/top = 98.0
+margin/right = 122.0
+margin/bottom = 121.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="agility" type="SpinBox" parent="stats/box/weight"]
+
+margin/top = 125.0
+margin/right = 122.0
+margin/bottom = 148.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="level" type="PanelContainer" parent="."]
+
+margin/left = 180.0
+margin/top = 10.0
+margin/right = 340.0
+margin/bottom = 62.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="VBoxContainer" parent="level"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 156.0
+margin/bottom = 48.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Label" type="Label" parent="level/box"]
+
+margin/right = 152.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Level"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="level/box"]
+
+margin/top = 17.0
+margin/right = 152.0
+margin/bottom = 40.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="hpmp" type="PanelContainer" parent="."]
+
+margin/left = 10.0
+margin/top = 240.0
+margin/right = 130.0
+margin/bottom = 310.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="VBoxContainer" parent="hpmp"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 116.0
+margin/bottom = 66.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="hp" type="HBoxContainer" parent="hpmp/box"]
+
+margin/right = 112.0
+margin/bottom = 27.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="hpmp/box/hp"]
+
+margin/top = 7.0
+margin/right = 54.0
+margin/bottom = 20.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "HP"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="hpmp/box/hp"]
+
+margin/left = 58.0
+margin/top = 7.0
+margin/right = 112.0
+margin/bottom = 20.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="mp" type="HBoxContainer" parent="hpmp/box"]
+
+margin/top = 31.0
+margin/right = 112.0
+margin/bottom = 58.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="hpmp/box/mp"]
+
+margin/top = 7.0
+margin/right = 54.0
+margin/bottom = 20.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "MP"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="hpmp/box/mp"]
+
+margin/left = 58.0
+margin/top = 7.0
+margin/right = 112.0
+margin/bottom = 20.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="derived" type="PanelContainer" parent="."]
+
+margin/left = 10.0
+margin/top = 320.0
+margin/right = 250.0
+margin/bottom = 400.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="box" type="GridContainer" parent="derived"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 236.0
+margin/bottom = 76.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+custom_constants/hseparation = 16
+columns = 2
+
+[node name="attack_power" type="HBoxContainer" parent="derived/box"]
+
+margin/right = 104.0
+margin/bottom = 14.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/attack_power"]
+
+margin/right = 50.0
+margin/bottom = 13.0
+hint/tooltip = "Attack Power"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "AP"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/attack_power"]
+
+margin/left = 54.0
+margin/right = 104.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="magic_attack_power" type="HBoxContainer" parent="derived/box"]
+
+margin/left = 120.0
+margin/right = 231.0
+margin/bottom = 14.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/magic_attack_power"]
+
+margin/right = 53.0
+margin/bottom = 13.0
+hint/tooltip = "Magic Attack Power"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "MAP"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/magic_attack_power"]
+
+margin/left = 57.0
+margin/right = 111.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="accuracy" type="HBoxContainer" parent="derived/box"]
+
+margin/top = 18.0
+margin/right = 104.0
+margin/bottom = 32.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/accuracy"]
+
+margin/right = 50.0
+margin/bottom = 13.0
+hint/tooltip = "Accuracy"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "ACC"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/accuracy"]
+
+margin/left = 54.0
+margin/right = 104.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="magic_accuracy" type="HBoxContainer" parent="derived/box"]
+
+margin/left = 120.0
+margin/top = 18.0
+margin/right = 231.0
+margin/bottom = 32.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/magic_accuracy"]
+
+margin/right = 53.0
+margin/bottom = 13.0
+hint/tooltip = "Magic Accuracy"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "MAC"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/magic_accuracy"]
+
+margin/left = 57.0
+margin/right = 111.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="evade" type="HBoxContainer" parent="derived/box"]
+
+margin/top = 36.0
+margin/right = 104.0
+margin/bottom = 50.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/evade"]
+
+margin/right = 50.0
+margin/bottom = 13.0
+hint/tooltip = "Evasion"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "EVA"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/evade"]
+
+margin/left = 54.0
+margin/right = 104.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="resist" type="HBoxContainer" parent="derived/box"]
+
+margin/left = 120.0
+margin/top = 36.0
+margin/right = 231.0
+margin/bottom = 50.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/resist"]
+
+margin/right = 53.0
+margin/bottom = 13.0
+hint/tooltip = "Resistance"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "RES"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/resist"]
+
+margin/left = 57.0
+margin/right = 111.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="speed" type="HBoxContainer" parent="derived/box"]
+
+margin/top = 54.0
+margin/right = 104.0
+margin/bottom = 68.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/speed"]
+
+margin/right = 50.0
+margin/bottom = 13.0
+hint/tooltip = "Speed"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "SPD"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/speed"]
+
+margin/left = 54.0
+margin/right = 104.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="critical" type="HBoxContainer" parent="derived/box"]
+
+margin/left = 120.0
+margin/top = 54.0
+margin/right = 231.0
+margin/bottom = 68.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="derived/box/critical"]
+
+margin/right = 53.0
+margin/bottom = 13.0
+hint/tooltip = "Critical Chance"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "CRIT"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="derived/box/critical"]
+
+margin/left = 57.0
+margin/right = 111.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="save" type="Button" parent="."]
+
+margin/left = 140.0
+margin/top = 240.0
+margin/right = 199.0
+margin/bottom = 259.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "SAVE"
+flat = false
+
+[connection signal="pressed" from="save" to="." method="_on_save_hero_pressed"]
+
+
