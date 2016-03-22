@@ -1,6 +1,20 @@
 
 extends Container
 
+var done_command_skills = [
+#placeholder for command skills which
+#have been implemented.
+]
+
+var done_support_skills = [
+#placeholder for support skills which
+#have been implemented.
+	"Attack Up",
+	"Magic Up",
+	"Toughness",
+	"Mental Strength",
+]
+
 onready var info = get_node('info/box')
 onready var stats = get_node('stats/box/stats')
 onready var weights = get_node('stats/box/weight')
@@ -42,6 +56,15 @@ func _set_skills():
 		command.add_item(skill)
 	for skill in Chart.support_skills:
 		support.add_item(skill)
+	
+	#disable TBA skills
+	for i in range(1,command.get_item_count()):
+		if not command.get_item_text(i) in done_command_skills:
+			command.set_item_disabled(i,true)
+	for i in range(1,support.get_item_count()):
+		if not support.get_item_text(i) in done_support_skills:
+			support.set_item_disabled(i,true)
+
 
 func _connect():
 	get_node('save').connect("pressed",self,'save')
@@ -179,11 +202,13 @@ func _on_command_skill_selected(id):
 	var skill = skills.get_node('command').get_item_text(id)
 	hero.command_skill = skill
 	printt("Set Hero Command Skill",skill)
+	_draw_sheet()
 
 func _on_support_skill_selected(id):
 	var skill = skills.get_node('support').get_item_text(id)
 	hero.support_skill = skill
 	printt("Set Hero Support Skill",skill)
+	_draw_sheet()
 	
 func _on_save_hero_pressed():
 	save()

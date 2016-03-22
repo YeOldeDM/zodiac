@@ -187,16 +187,23 @@ class Hero:
 		self.current_speed += self.get_speed()
 
 	func get_HP():
-		var vit_bonus = self.get_vitality()*5
+		var base = 75
+		var vitmult = 5
+		if self.support_skill == "Toughness":
+			base += 35; vitmult += 1
+		var vit_bonus = self.get_vitality()*vitmult
 		var lvl_bonus = self.get_level()*4
 		var armor_bonus = self.get_armor_HP()
-		return 75 + vit_bonus + lvl_bonus + armor_bonus
+		return base + vit_bonus + lvl_bonus + armor_bonus
 	
 	func get_MP():
+		var mental_strength = 0
+		if self.support_skill == "Mental Strength":
+			mental_strength = 5 + floor(self.get_spirit()/5)
 		var spr_bonus = self.get_spirit()
 		var lvl_bonus = self.get_level()*2
 		var armor_bonus = self.get_armor_MP()
-		return spr_bonus + lvl_bonus + armor_bonus
+		return mental_strength + spr_bonus + lvl_bonus + armor_bonus
 
 	func get_weapon_attack_power():
 		var weapon = self.get_weapon()
@@ -243,6 +250,8 @@ class Hero:
 		if self.equipped_weapon:
 			weapon_bonus = self.get_weapon_attack_power()
 		var total = str_bonus + weapon_bonus
+		if self.support_skill == "Attack Up":
+			total += 5+floor(self.get_strength()/5)
 		return total
 	
 	func get_magic_attack_power():
@@ -250,7 +259,10 @@ class Hero:
 		var weapon_bonus = 0
 		if self.equipped_weapon:
 			weapon_bonus = self.get_weapon_magic_power()
-		return mag_bonus + weapon_bonus
+		var total = mag_bonus + weapon_bonus
+		if self.support_skill == "Magic Up":
+			total += 5+floor(self.get_magic()/5)
+		return total
 	
 	func get_strength_dice():
 		var dice = floor(self.get_strength() / 100)
