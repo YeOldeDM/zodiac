@@ -41,11 +41,25 @@ onready var misc = gear.get_node('misc')
 
 var hero = null
 
+func _on_status_toggled(pressed,ent):
+	if pressed:
+		get_parent().get_node('box/heroes').untoggle(ent)
+		get_parent().get_node('box/battle/monsters/box/list').untoggle(ent)
+		hero = ent.me
+		popup()
+	else:
+		hide()
+
 func _on_status_window_about_to_show():
 	name.set_text(hero.get_name())
 	level.set_text("Level "+str(hero.get_level()))
-	XP.set_text("XP "+str(hero.xp))
-	to_next.set_text("to next "+str(hero.get_xp_to_level(hero.get_level()+1)))
+	XP.set_text("XP "+str(hero.get_XP()))
+	var tonext_txt = ""
+	if hero.has_method('get_xp_to_level'):
+		tonext_txt = "to next "+str(hero.get_xp_to_level(hero.get_level()+1))
+	elif hero.has_method('get_GP'):
+		tonext_txt = "GP dropped "+str(hero.get_GP())
+	to_next.set_text(tonext_txt)
 	
 	for stat in ['strength','magic','vitality','spirit','agility']:
 		get(stat).set_text(str(hero.call('get_'+stat)))
@@ -56,7 +70,11 @@ func _on_status_window_about_to_show():
 	HP.set_text(str(hero.current_HP)+"/"+str(hero.get_HP()))
 	MP.set_text(str(hero.current_MP)+"/"+str(hero.get_MP()))
 	
-	weapon.set_text(hero.get_weapon().name)
-	armor.set_text(hero.get_armor().name)
-	guard.set_text(hero.get_guard().name)
-	misc.set_text("N/A")
+	if hero.has_method('get_weapon'):
+		box3.show()
+		weapon.set_text(hero.get_weapon().name)
+		armor.set_text(hero.get_armor().name)
+		guard.set_text(hero.get_guard().name)
+		misc.set_text("N/A")
+	else:
+		box3.hide()

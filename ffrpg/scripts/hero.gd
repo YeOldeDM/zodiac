@@ -127,6 +127,9 @@ class Hero:
 	
 	func level_up():
 		self.set_level(self.level+1)
+	
+	func get_XP():
+		return self.xp
 
 	func get_xp_to_level(L):
 		if L <= 1:

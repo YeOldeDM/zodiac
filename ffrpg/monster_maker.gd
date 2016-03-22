@@ -87,10 +87,10 @@ func _draw_MP():
 	hpmp.get_node('mp/value').set_text(str(monster.get_MP()))
 
 func _draw_XP():
-	hpmp.get_node('xp/value').set_text(str(monster.get_XP()))
+	hpmp.get_node('xp/value').set_value(monster.get_XP())
 
 func _draw_GP():
-	hpmp.get_node('gp/value').set_text(str(monster.get_GP()))
+	hpmp.get_node('gp/value').set_value(monster.get_GP())
 
 func _draw_derived(stat):
 	var label = derived.get_node(str(stat,'/value'))
@@ -123,3 +123,21 @@ func _on_level_value_changed( value ):
 func _on_boss_toggled( pressed ):
 	monster.set_boss(pressed)
 	_draw_vitals()
+
+
+func _on_XP_value_changed( value ):
+	monster.XP = int(value)
+
+
+func _on_GP_value_changed( value ):
+	monster.GP = int(value)
+
+
+func _on_XP_calc_pressed():
+	monster.XP = monster.calculate_XP()
+	_draw_XP()
+
+
+func _on_GP_calc_pressed():
+	monster.GP = monster.calculate_GP()
+	_draw_GP()

@@ -19,6 +19,9 @@ class Monster:
 	var power_die
 	var magic_die
 	
+	var XP = 0
+	var GP = 0
+	
 	func _init(name="New Monster",level=1,boss=false,\
 	strength=6,magic=6,vitality=6,spirit=6,agility=6,\
 	power_die=8,magic_die=8):
@@ -33,7 +36,10 @@ class Monster:
 		
 		self.power_die = power_die
 		self.magic_die = magic_die
-	
+		
+		self.XP = self.calculate_XP()
+		self.GP = self.calculate_GP()
+
 	func get_package():
 		var data = {}
 		data['monster'] = inst2dict(self)
@@ -99,14 +105,19 @@ class Monster:
 	func set_agility(value):
 		self.base_agility = value
 	
-	
 	func get_XP():
+		return self.XP
+
+	func calculate_XP():
 		if self.is_boss():
 			return self.get_level()*150
 		else:
 			return self.get_level()*35
 	
 	func get_GP():
+		return self.GP
+
+	func calculate_GP():
 		if self.is_boss():
 			return self.get_level()*75
 		else:

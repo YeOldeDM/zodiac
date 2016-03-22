@@ -14,6 +14,7 @@ func add_hero(name):
 	var battler = hero_battler.instance()
 	add_child(battler)
 	
+	battler.name.connect("toggled",status_window,"_on_status_toggled",[battler])
 	battler.me = Data.load_hero(name)
 	battler.setup()
 
@@ -25,6 +26,7 @@ func untoggle(exception=null):
 func _on_hero_status_toggled(pressed,hero):
 	if pressed:
 		untoggle(hero)
+		get_node('/root/Battle/box/battle/monsters/box/list').untoggle(hero)
 		status_window.hero = hero.me
 		status_window.popup()
 	else:

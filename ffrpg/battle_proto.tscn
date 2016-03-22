@@ -18,7 +18,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 theme/theme = SubResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="box" type="VBoxContainer" parent="."]
 
@@ -104,12 +104,11 @@ scroll/vertical = true
 
 [node name="list" type="GridContainer" parent="box/battle/monsters/box"]
 
-margin/left = 4.0
-margin/right = 247.0
+margin/right = 230.0
 rect/min_size = Vector2( 230, 0 )
 focus/ignore_mouse = false
 focus/stop_mouse = false
-size_flags/horizontal = 3
+size_flags/horizontal = 2
 size_flags/vertical = 3
 columns = 1
 script/script = ExtResource( 3 )

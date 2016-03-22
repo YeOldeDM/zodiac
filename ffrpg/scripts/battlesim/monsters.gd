@@ -12,7 +12,7 @@ func _ready():
 func add_monster(name):
 	var battler = monster_battler.instance()
 	add_child(battler)
-	
+	battler.name.connect("toggled",status_window,"_on_status_toggled",[battler])
 	battler.me = Data.load_monster(name)
 	battler.setup()
 

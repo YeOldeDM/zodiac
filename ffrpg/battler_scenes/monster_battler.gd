@@ -47,4 +47,5 @@ func draw_battler():
 	draw_MP()
 	draw_speed()
 
-
+func _on_status_toggled( pressed ):
+	get_parent()._on_hero_status_toggled(pressed,self)
