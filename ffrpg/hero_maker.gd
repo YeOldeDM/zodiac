@@ -53,7 +53,9 @@ func _connect():
 	for stat in ['strength','magic','vitality','spirit','agility']:
 		stats.get_node(stat+'/SpinBox').connect("value_changed",self,"_on_stat_SpinBox_value_changed",[stat])
 		weights.get_node(stat).connect("value_changed",self,"_on_weight_value_changed",[stat])
-
+	skills.get_node('command').connect("item_selected",self,"_on_command_skill_selected")
+	skills.get_node('support').connect("item_selected",self,"_on_support_skill_selected")
+	
 func save():
 	Data.save_hero(hero)
 
@@ -173,7 +175,15 @@ func _on_level_SpinBox_value_changed( value ):
 func _on_weight_value_changed( value,stat ):
 	hero.set_weight(stat,value)
 
+func _on_command_skill_selected(id):
+	var skill = skills.get_node('command').get_item_text(id)
+	hero.command_skill = skill
+	printt("Set Hero Command Skill",skill)
 
-
+func _on_support_skill_selected(id):
+	var skill = skills.get_node('support').get_item_text(id)
+	hero.support_skill = skill
+	printt("Set Hero Support Skill",skill)
+	
 func _on_save_hero_pressed():
 	save()
