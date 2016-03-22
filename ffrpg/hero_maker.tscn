@@ -80,7 +80,7 @@ __meta__ = { "_editor_collapsed":true }
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 342.0
+margin/right = 280.0
 margin/bottom = 156.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -90,7 +90,7 @@ alignment = 0
 
 [node name="stats" type="VBoxContainer" parent="stats/box"]
 
-margin/right = 212.0
+margin/right = 116.0
 margin/bottom = 148.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -100,7 +100,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="stats/box/stats"]
 
-margin/right = 212.0
+margin/right = 116.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -113,7 +113,7 @@ max_lines_visible = -1
 [node name="strength" type="HBoxContainer" parent="stats/box/stats"]
 
 margin/top = 17.0
-margin/right = 212.0
+margin/right = 116.0
 margin/bottom = 40.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -124,7 +124,7 @@ alignment = 0
 [node name="Label" type="Label" parent="stats/box/stats/strength"]
 
 margin/top = 5.0
-margin/right = 86.0
+margin/right = 50.0
 margin/bottom = 18.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -136,8 +136,8 @@ max_lines_visible = -1
 
 [node name="SpinBox" type="SpinBox" parent="stats/box/stats/strength"]
 
-margin/left = 90.0
-margin/right = 212.0
+margin/left = 54.0
+margin/right = 116.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -157,7 +157,7 @@ suffix = ""
 [node name="magic" type="HBoxContainer" parent="stats/box/stats"]
 
 margin/top = 44.0
-margin/right = 212.0
+margin/right = 116.0
 margin/bottom = 67.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -169,7 +169,7 @@ __meta__ = { "_editor_collapsed":true }
 [node name="Label" type="Label" parent="stats/box/stats/magic"]
 
 margin/top = 5.0
-margin/right = 86.0
+margin/right = 50.0
 margin/bottom = 18.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -181,8 +181,8 @@ max_lines_visible = -1
 
 [node name="SpinBox" type="SpinBox" parent="stats/box/stats/magic"]
 
-margin/left = 90.0
-margin/right = 212.0
+margin/left = 54.0
+margin/right = 116.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -202,7 +202,7 @@ suffix = ""
 [node name="vitality" type="HBoxContainer" parent="stats/box/stats"]
 
 margin/top = 71.0
-margin/right = 212.0
+margin/right = 116.0
 margin/bottom = 94.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -214,7 +214,7 @@ __meta__ = { "_editor_collapsed":true }
 [node name="Label" type="Label" parent="stats/box/stats/vitality"]
 
 margin/top = 5.0
-margin/right = 86.0
+margin/right = 50.0
 margin/bottom = 18.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -226,8 +226,8 @@ max_lines_visible = -1
 
 [node name="SpinBox" type="SpinBox" parent="stats/box/stats/vitality"]
 
-margin/left = 90.0
-margin/right = 212.0
+margin/left = 54.0
+margin/right = 116.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -247,7 +247,7 @@ suffix = ""
 [node name="spirit" type="HBoxContainer" parent="stats/box/stats"]
 
 margin/top = 98.0
-margin/right = 212.0
+margin/right = 116.0
 margin/bottom = 121.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -259,7 +259,7 @@ __meta__ = { "_editor_collapsed":true }
 [node name="Label" type="Label" parent="stats/box/stats/spirit"]
 
 margin/top = 5.0
-margin/right = 86.0
+margin/right = 50.0
 margin/bottom = 18.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -271,8 +271,8 @@ max_lines_visible = -1
 
 [node name="SpinBox" type="SpinBox" parent="stats/box/stats/spirit"]
 
-margin/left = 90.0
-margin/right = 212.0
+margin/left = 54.0
+margin/right = 116.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -292,7 +292,7 @@ suffix = ""
 [node name="agility" type="HBoxContainer" parent="stats/box/stats"]
 
 margin/top = 125.0
-margin/right = 212.0
+margin/right = 116.0
 margin/bottom = 148.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -304,7 +304,7 @@ __meta__ = { "_editor_collapsed":true }
 [node name="Label" type="Label" parent="stats/box/stats/agility"]
 
 margin/top = 5.0
-margin/right = 86.0
+margin/right = 50.0
 margin/bottom = 18.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -316,8 +316,8 @@ max_lines_visible = -1
 
 [node name="SpinBox" type="SpinBox" parent="stats/box/stats/agility"]
 
-margin/left = 90.0
-margin/right = 212.0
+margin/left = 54.0
+margin/right = 116.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -336,8 +336,8 @@ suffix = ""
 
 [node name="weight" type="VBoxContainer" parent="stats/box"]
 
-margin/left = 216.0
-margin/right = 338.0
+margin/left = 120.0
+margin/right = 276.0
 margin/bottom = 148.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -348,7 +348,7 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="stats/box/weight"]
 
-margin/right = 122.0
+margin/right = 156.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -361,7 +361,7 @@ max_lines_visible = -1
 [node name="strength" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 17.0
-margin/right = 122.0
+margin/right = 156.0
 margin/bottom = 40.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -381,7 +381,7 @@ suffix = ""
 [node name="magic" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 44.0
-margin/right = 122.0
+margin/right = 156.0
 margin/bottom = 67.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -401,7 +401,7 @@ suffix = ""
 [node name="vitality" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 71.0
-margin/right = 122.0
+margin/right = 156.0
 margin/bottom = 94.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -421,7 +421,7 @@ suffix = ""
 [node name="spirit" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 98.0
-margin/right = 122.0
+margin/right = 156.0
 margin/bottom = 121.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -441,7 +441,7 @@ suffix = ""
 [node name="agility" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 125.0
-margin/right = 122.0
+margin/right = 156.0
 margin/bottom = 148.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -625,6 +625,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="GridContainer" parent="derived"]
 
@@ -638,10 +639,11 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 custom_constants/hseparation = 16
 columns = 2
+__meta__ = { "_editor_collapsed":true }
 
 [node name="attack_power" type="HBoxContainer" parent="derived/box"]
 
-margin/right = 104.0
+margin/right = 106.0
 margin/bottom = 14.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -651,7 +653,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="derived/box/attack_power"]
 
-margin/right = 50.0
+margin/right = 51.0
 margin/bottom = 13.0
 hint/tooltip = "Attack Power"
 focus/ignore_mouse = false
@@ -665,8 +667,8 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="derived/box/attack_power"]
 
-margin/left = 54.0
-margin/right = 104.0
+margin/left = 55.0
+margin/right = 106.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -679,8 +681,8 @@ max_lines_visible = -1
 
 [node name="magic_attack_power" type="HBoxContainer" parent="derived/box"]
 
-margin/left = 120.0
-margin/right = 231.0
+margin/left = 122.0
+margin/right = 232.0
 margin/bottom = 14.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -705,7 +707,7 @@ max_lines_visible = -1
 [node name="value" type="Label" parent="derived/box/magic_attack_power"]
 
 margin/left = 57.0
-margin/right = 111.0
+margin/right = 110.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -719,7 +721,7 @@ max_lines_visible = -1
 [node name="accuracy" type="HBoxContainer" parent="derived/box"]
 
 margin/top = 18.0
-margin/right = 104.0
+margin/right = 106.0
 margin/bottom = 32.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -729,7 +731,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="derived/box/accuracy"]
 
-margin/right = 50.0
+margin/right = 51.0
 margin/bottom = 13.0
 hint/tooltip = "Accuracy"
 focus/ignore_mouse = false
@@ -743,8 +745,8 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="derived/box/accuracy"]
 
-margin/left = 54.0
-margin/right = 104.0
+margin/left = 55.0
+margin/right = 106.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -757,9 +759,9 @@ max_lines_visible = -1
 
 [node name="magic_accuracy" type="HBoxContainer" parent="derived/box"]
 
-margin/left = 120.0
+margin/left = 122.0
 margin/top = 18.0
-margin/right = 231.0
+margin/right = 232.0
 margin/bottom = 32.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -784,7 +786,7 @@ max_lines_visible = -1
 [node name="value" type="Label" parent="derived/box/magic_accuracy"]
 
 margin/left = 57.0
-margin/right = 111.0
+margin/right = 110.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -798,7 +800,7 @@ max_lines_visible = -1
 [node name="evade" type="HBoxContainer" parent="derived/box"]
 
 margin/top = 36.0
-margin/right = 104.0
+margin/right = 106.0
 margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -808,7 +810,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="derived/box/evade"]
 
-margin/right = 50.0
+margin/right = 51.0
 margin/bottom = 13.0
 hint/tooltip = "Evasion"
 focus/ignore_mouse = false
@@ -822,8 +824,8 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="derived/box/evade"]
 
-margin/left = 54.0
-margin/right = 104.0
+margin/left = 55.0
+margin/right = 106.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -836,9 +838,9 @@ max_lines_visible = -1
 
 [node name="resist" type="HBoxContainer" parent="derived/box"]
 
-margin/left = 120.0
+margin/left = 122.0
 margin/top = 36.0
-margin/right = 231.0
+margin/right = 232.0
 margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -863,7 +865,7 @@ max_lines_visible = -1
 [node name="value" type="Label" parent="derived/box/resist"]
 
 margin/left = 57.0
-margin/right = 111.0
+margin/right = 110.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -877,7 +879,7 @@ max_lines_visible = -1
 [node name="speed" type="HBoxContainer" parent="derived/box"]
 
 margin/top = 54.0
-margin/right = 104.0
+margin/right = 106.0
 margin/bottom = 68.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -887,7 +889,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="derived/box/speed"]
 
-margin/right = 50.0
+margin/right = 51.0
 margin/bottom = 13.0
 hint/tooltip = "Speed"
 focus/ignore_mouse = false
@@ -901,8 +903,8 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="derived/box/speed"]
 
-margin/left = 54.0
-margin/right = 104.0
+margin/left = 55.0
+margin/right = 106.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -915,9 +917,9 @@ max_lines_visible = -1
 
 [node name="critical" type="HBoxContainer" parent="derived/box"]
 
-margin/left = 120.0
+margin/left = 122.0
 margin/top = 54.0
-margin/right = 231.0
+margin/right = 232.0
 margin/bottom = 68.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -942,7 +944,7 @@ max_lines_visible = -1
 [node name="value" type="Label" parent="derived/box/critical"]
 
 margin/left = 57.0
-margin/right = 111.0
+margin/right = 110.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -966,6 +968,60 @@ size_flags/vertical = 2
 toggle_mode = false
 text = "SAVE"
 flat = false
+
+[node name="skills" type="PanelContainer" parent="."]
+
+margin/left = 300.0
+margin/top = 70.0
+margin/right = 480.0
+margin/bottom = 133.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="box" type="VBoxContainer" parent="skills"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 176.0
+margin/bottom = 59.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="command" type="OptionButton" parent="skills/box"]
+
+margin/right = 172.0
+margin/bottom = 19.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Command Skill"
+flat = false
+align = 0
+selected = -1
+items = [  ]
+
+[node name="support" type="OptionButton" parent="skills/box"]
+
+margin/top = 23.0
+margin/right = 172.0
+margin/bottom = 42.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Support Skill"
+flat = false
+align = 0
+selected = -1
+items = [  ]
 
 [connection signal="pressed" from="save" to="." method="_on_save_hero_pressed"]
 

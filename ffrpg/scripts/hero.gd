@@ -1,6 +1,21 @@
 
 extends Node
 
+class CommandSkill:
+	var ID
+	var name
+	
+	func _init(ID,name):
+		self.ID = ID
+		self.name = name
+	
+	func get_ID():
+		return self.ID
+	func get_name():
+		return self.name
+	func set_name(text):
+		self.name = text
+
 class Hero:
 	var name
 
@@ -20,6 +35,9 @@ class Hero:
 		'spirit':	1,
 		'agility':	5
 		}
+	
+	var command_skill=null
+	var support_skill=null
 	
 	var current_HP=0
 	var current_MP=0
@@ -111,14 +129,15 @@ class Hero:
 		self.set_level(self.level+1)
 
 	func get_xp_to_level(L):
-		if L <= 0:
+		if L <= 1:
 			return 0
-		var xp = 50
-		var inc = 100
-		for i in range(L-1):
-			xp += inc*L
-		return xp
-	
+		else:
+			L -= 2
+			var xp = 50	#get to lvl 2
+			for i in range(L):
+				xp += 100*i
+			return xp
+
 	func set_strength(value):
 		self.base_strength = value
 	func set_magic(value):

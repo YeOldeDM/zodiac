@@ -77,7 +77,47 @@ var healing = [
 	[200,220,250,2.0]
 	]
 
+var command_skills = [
+	"Capture",
+	"Coin Toss",
+	"Chakra",
+	"Clone",
+	"Deathblow",
+	"Dice",
+	"Draw Out",
+	"Health",
+	"Jump",
+	"Kick",
+	"Manipulate",
+	"Mimic",
+	"Mix",
+	"Morph",
+	"Peep",
+	"Peril",
+	"Rage",
+	"Runic",
+	"Slots",
+	"Steal",
+	"Throw",
+	"Wish",
+	"X-Magic"
+	]
 
-
+var support_skills = [
+	"Attack Up",
+	"Chemist",
+	"Concentrate",
+	"Counter",
+	"Cover",
+	"Flight",
+	"Lucky",
+	"Magic Up",
+	"Mental Strength",
+	"Natural Resistance",
+	"Quickness",
+	"Secret Hunt",
+	"Toughness",
+	"Weapon Guard"
+	]
 
 

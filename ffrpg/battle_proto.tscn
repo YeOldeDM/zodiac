@@ -125,8 +125,9 @@ script/script = ExtResource( 3 )
 [node name="panel" type="PanelContainer" parent="status_window"]
 
 visibility/blend_mode = 3
-margin/right = 620.0
-margin/bottom = 197.0
+margin/left = -50.0
+margin/right = 700.0
+margin/bottom = 206.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -136,8 +137,8 @@ size_flags/vertical = 3
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 616.0
-margin/bottom = 193.0
+margin/right = 746.0
+margin/bottom = 202.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -146,21 +147,20 @@ alignment = 0
 
 [node name="1" type="PanelContainer" parent="status_window/panel/box"]
 
-margin/right = 172.0
-margin/bottom = 185.0
+margin/right = 183.0
+margin/bottom = 194.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 2.0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="status_window/panel/box/1"]
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 168.0
-margin/bottom = 181.0
+margin/right = 179.0
+margin/bottom = 190.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -169,20 +169,19 @@ alignment = 0
 
 [node name="info" type="PanelContainer" parent="status_window/panel/box/1/box"]
 
-margin/right = 164.0
-margin/bottom = 76.0
+margin/right = 175.0
+margin/bottom = 80.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="status_window/panel/box/1/box/info"]
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 160.0
-margin/bottom = 72.0
+margin/right = 171.0
+margin/bottom = 76.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -191,8 +190,8 @@ alignment = 0
 
 [node name="name" type="Label" parent="status_window/panel/box/1/box/info/box"]
 
-margin/right = 156.0
-margin/bottom = 13.0
+margin/right = 167.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -206,9 +205,9 @@ max_lines_visible = -1
 
 [node name="level" type="Label" parent="status_window/panel/box/1/box/info/box"]
 
-margin/top = 17.0
-margin/right = 156.0
-margin/bottom = 30.0
+margin/top = 18.0
+margin/right = 167.0
+margin/bottom = 32.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -221,9 +220,9 @@ max_lines_visible = -1
 
 [node name="XP" type="Label" parent="status_window/panel/box/1/box/info/box"]
 
-margin/top = 34.0
-margin/right = 156.0
-margin/bottom = 47.0
+margin/top = 36.0
+margin/right = 167.0
+margin/bottom = 50.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -237,9 +236,9 @@ max_lines_visible = -1
 
 [node name="to_next" type="Label" parent="status_window/panel/box/1/box/info/box"]
 
-margin/top = 51.0
-margin/right = 156.0
-margin/bottom = 64.0
+margin/top = 54.0
+margin/right = 167.0
+margin/bottom = 68.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -253,9 +252,9 @@ max_lines_visible = -1
 
 [node name="stats" type="PanelContainer" parent="status_window/panel/box/1/box"]
 
-margin/top = 80.0
-margin/right = 164.0
-margin/bottom = 173.0
+margin/top = 84.0
+margin/right = 175.0
+margin/bottom = 182.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -266,8 +265,8 @@ __meta__ = { "_editor_collapsed":true }
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 160.0
-margin/bottom = 89.0
+margin/right = 171.0
+margin/bottom = 94.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -276,8 +275,8 @@ alignment = 0
 
 [node name="strength" type="HBoxContainer" parent="status_window/panel/box/1/box/stats/box"]
 
-margin/right = 156.0
-margin/bottom = 13.0
+margin/right = 167.0
+margin/bottom = 14.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -287,8 +286,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/1/box/stats/box/strength"]
 
-margin/right = 76.0
-margin/bottom = 13.0
+margin/right = 81.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -300,9 +299,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/1/box/stats/box/strength"]
 
-margin/left = 80.0
-margin/right = 156.0
-margin/bottom = 13.0
+margin/left = 85.0
+margin/right = 167.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -313,9 +312,9 @@ max_lines_visible = -1
 
 [node name="magic" type="HBoxContainer" parent="status_window/panel/box/1/box/stats/box"]
 
-margin/top = 17.0
-margin/right = 156.0
-margin/bottom = 30.0
+margin/top = 18.0
+margin/right = 167.0
+margin/bottom = 32.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -325,8 +324,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/1/box/stats/box/magic"]
 
-margin/right = 76.0
-margin/bottom = 13.0
+margin/right = 81.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -338,9 +337,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/1/box/stats/box/magic"]
 
-margin/left = 80.0
-margin/right = 156.0
-margin/bottom = 13.0
+margin/left = 85.0
+margin/right = 167.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -351,9 +350,9 @@ max_lines_visible = -1
 
 [node name="vitality" type="HBoxContainer" parent="status_window/panel/box/1/box/stats/box"]
 
-margin/top = 34.0
-margin/right = 156.0
-margin/bottom = 47.0
+margin/top = 36.0
+margin/right = 167.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -363,8 +362,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/1/box/stats/box/vitality"]
 
-margin/right = 76.0
-margin/bottom = 13.0
+margin/right = 81.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -376,9 +375,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/1/box/stats/box/vitality"]
 
-margin/left = 80.0
-margin/right = 156.0
-margin/bottom = 13.0
+margin/left = 85.0
+margin/right = 167.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -389,9 +388,9 @@ max_lines_visible = -1
 
 [node name="spirit" type="HBoxContainer" parent="status_window/panel/box/1/box/stats/box"]
 
-margin/top = 51.0
-margin/right = 156.0
-margin/bottom = 64.0
+margin/top = 54.0
+margin/right = 167.0
+margin/bottom = 68.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -401,8 +400,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/1/box/stats/box/spirit"]
 
-margin/right = 76.0
-margin/bottom = 13.0
+margin/right = 81.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -414,9 +413,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/1/box/stats/box/spirit"]
 
-margin/left = 80.0
-margin/right = 156.0
-margin/bottom = 13.0
+margin/left = 85.0
+margin/right = 167.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -427,9 +426,9 @@ max_lines_visible = -1
 
 [node name="agility" type="HBoxContainer" parent="status_window/panel/box/1/box/stats/box"]
 
-margin/top = 68.0
-margin/right = 156.0
-margin/bottom = 81.0
+margin/top = 72.0
+margin/right = 167.0
+margin/bottom = 86.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -439,8 +438,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/1/box/stats/box/agility"]
 
-margin/right = 76.0
-margin/bottom = 13.0
+margin/right = 81.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -452,9 +451,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/1/box/stats/box/agility"]
 
-margin/left = 80.0
-margin/right = 156.0
-margin/bottom = 13.0
+margin/left = 85.0
+margin/right = 167.0
+margin/bottom = 14.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -465,22 +464,22 @@ max_lines_visible = -1
 
 [node name="2" type="PanelContainer" parent="status_window/panel/box"]
 
-margin/left = 176.0
-margin/right = 348.0
-margin/bottom = 185.0
+margin/left = 187.0
+margin/right = 462.0
+margin/bottom = 194.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-size_flags/stretch_ratio = 2.0
+size_flags/stretch_ratio = 3.0
 __meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="status_window/panel/box/2"]
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 168.0
-margin/bottom = 181.0
+margin/right = 271.0
+margin/bottom = 190.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -489,8 +488,8 @@ alignment = 0
 
 [node name="derived" type="PanelContainer" parent="status_window/panel/box/2/box"]
 
-margin/right = 164.0
-margin/bottom = 112.0
+margin/right = 267.0
+margin/bottom = 118.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -501,8 +500,8 @@ size_flags/stretch_ratio = 2.0
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 160.0
-margin/bottom = 108.0
+margin/right = 263.0
+margin/bottom = 114.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -512,8 +511,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="attack_power" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/right = 70.0
-margin/bottom = 22.0
+margin/right = 120.0
+margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -523,8 +522,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/attack_power"]
 
-margin/right = 33.0
-margin/bottom = 22.0
+margin/right = 58.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -538,9 +537,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/attack_power"]
 
-margin/left = 37.0
-margin/right = 70.0
-margin/bottom = 22.0
+margin/left = 62.0
+margin/right = 120.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -553,9 +552,9 @@ max_lines_visible = -1
 
 [node name="magic_attack_power" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/left = 74.0
-margin/right = 156.0
-margin/bottom = 22.0
+margin/left = 124.0
+margin/right = 258.0
+margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -565,8 +564,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/magic_attack_power"]
 
-margin/right = 39.0
-margin/bottom = 22.0
+margin/right = 65.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -580,9 +579,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/magic_attack_power"]
 
-margin/left = 43.0
-margin/right = 82.0
-margin/bottom = 22.0
+margin/left = 69.0
+margin/right = 134.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -595,9 +594,9 @@ max_lines_visible = -1
 
 [node name="accuracy" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/top = 26.0
-margin/right = 70.0
-margin/bottom = 48.0
+margin/top = 27.0
+margin/right = 120.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -607,8 +606,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/accuracy"]
 
-margin/right = 36.0
-margin/bottom = 22.0
+margin/right = 58.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -622,9 +621,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/accuracy"]
 
-margin/left = 40.0
-margin/right = 70.0
-margin/bottom = 22.0
+margin/left = 62.0
+margin/right = 120.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -637,10 +636,10 @@ max_lines_visible = -1
 
 [node name="magic_accuracy" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/left = 74.0
-margin/top = 26.0
-margin/right = 156.0
-margin/bottom = 48.0
+margin/left = 124.0
+margin/top = 27.0
+margin/right = 258.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -650,8 +649,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/magic_accuracy"]
 
-margin/right = 48.0
-margin/bottom = 22.0
+margin/right = 65.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -665,9 +664,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/magic_accuracy"]
 
-margin/left = 52.0
-margin/right = 82.0
-margin/bottom = 22.0
+margin/left = 69.0
+margin/right = 134.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -680,9 +679,9 @@ max_lines_visible = -1
 
 [node name="evade" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/top = 52.0
-margin/right = 70.0
-margin/bottom = 74.0
+margin/top = 54.0
+margin/right = 120.0
+margin/bottom = 77.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -692,8 +691,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/evade"]
 
-margin/right = 36.0
-margin/bottom = 22.0
+margin/right = 58.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -707,9 +706,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/evade"]
 
-margin/left = 40.0
-margin/right = 70.0
-margin/bottom = 22.0
+margin/left = 62.0
+margin/right = 120.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -722,10 +721,10 @@ max_lines_visible = -1
 
 [node name="resist" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/left = 74.0
-margin/top = 52.0
-margin/right = 156.0
-margin/bottom = 74.0
+margin/left = 124.0
+margin/top = 54.0
+margin/right = 258.0
+margin/bottom = 77.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -735,8 +734,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/resist"]
 
-margin/right = 39.0
-margin/bottom = 22.0
+margin/right = 65.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -750,9 +749,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/resist"]
 
-margin/left = 43.0
-margin/right = 82.0
-margin/bottom = 22.0
+margin/left = 69.0
+margin/right = 134.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -765,9 +764,9 @@ max_lines_visible = -1
 
 [node name="speed" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/top = 78.0
-margin/right = 70.0
-margin/bottom = 100.0
+margin/top = 81.0
+margin/right = 120.0
+margin/bottom = 104.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -777,8 +776,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/speed"]
 
-margin/right = 34.0
-margin/bottom = 22.0
+margin/right = 58.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -792,9 +791,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/speed"]
 
-margin/left = 38.0
-margin/right = 70.0
-margin/bottom = 22.0
+margin/left = 62.0
+margin/right = 120.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -807,10 +806,10 @@ max_lines_visible = -1
 
 [node name="critical" type="HBoxContainer" parent="status_window/panel/box/2/box/derived/box"]
 
-margin/left = 74.0
-margin/top = 78.0
-margin/right = 156.0
-margin/bottom = 100.0
+margin/left = 124.0
+margin/top = 81.0
+margin/right = 258.0
+margin/bottom = 104.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -820,8 +819,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/derived/box/critical"]
 
-margin/right = 43.0
-margin/bottom = 22.0
+margin/right = 65.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -835,9 +834,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/derived/box/critical"]
 
-margin/left = 47.0
-margin/right = 82.0
-margin/bottom = 22.0
+margin/left = 69.0
+margin/right = 134.0
+margin/bottom = 23.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -850,9 +849,9 @@ max_lines_visible = -1
 
 [node name="hpmp" type="PanelContainer" parent="status_window/panel/box/2/box"]
 
-margin/top = 116.0
-margin/right = 164.0
-margin/bottom = 173.0
+margin/top = 122.0
+margin/right = 267.0
+margin/bottom = 182.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -862,8 +861,8 @@ size_flags/vertical = 3
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 160.0
-margin/bottom = 53.0
+margin/right = 263.0
+margin/bottom = 56.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -872,8 +871,8 @@ alignment = 0
 
 [node name="HP" type="HBoxContainer" parent="status_window/panel/box/2/box/hpmp/box"]
 
-margin/right = 156.0
-margin/bottom = 20.0
+margin/right = 259.0
+margin/bottom = 22.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -883,8 +882,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/hpmp/box/HP"]
 
-margin/right = 76.0
-margin/bottom = 20.0
+margin/right = 127.0
+margin/bottom = 22.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -898,9 +897,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/hpmp/box/HP"]
 
-margin/left = 80.0
-margin/right = 156.0
-margin/bottom = 20.0
+margin/left = 131.0
+margin/right = 259.0
+margin/bottom = 22.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -913,9 +912,9 @@ max_lines_visible = -1
 
 [node name="MP" type="HBoxContainer" parent="status_window/panel/box/2/box/hpmp/box"]
 
-margin/top = 24.0
-margin/right = 156.0
-margin/bottom = 45.0
+margin/top = 26.0
+margin/right = 259.0
+margin/bottom = 48.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -925,8 +924,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="status_window/panel/box/2/box/hpmp/box/MP"]
 
-margin/right = 76.0
-margin/bottom = 21.0
+margin/right = 127.0
+margin/bottom = 22.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -940,9 +939,9 @@ max_lines_visible = -1
 
 [node name="value" type="Label" parent="status_window/panel/box/2/box/hpmp/box/MP"]
 
-margin/left = 80.0
-margin/right = 156.0
-margin/bottom = 21.0
+margin/left = 131.0
+margin/right = 259.0
+margin/bottom = 22.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -955,9 +954,9 @@ max_lines_visible = -1
 
 [node name="3" type="PanelContainer" parent="status_window/panel/box"]
 
-margin/left = 352.0
-margin/right = 612.0
-margin/bottom = 185.0
+margin/left = 466.0
+margin/right = 742.0
+margin/bottom = 194.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -968,18 +967,19 @@ size_flags/stretch_ratio = 3.0
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 256.0
-margin/bottom = 181.0
+margin/right = 272.0
+margin/bottom = 190.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
+custom_constants/separation = 16
 alignment = 0
 
 [node name="labels" type="VBoxContainer" parent="status_window/panel/box/3/box"]
 
-margin/right = 124.0
-margin/bottom = 173.0
+margin/right = 126.0
+margin/bottom = 182.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -989,8 +989,8 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="weapon" type="Label" parent="status_window/panel/box/3/box/labels"]
 
-margin/right = 124.0
-margin/bottom = 40.0
+margin/right = 126.0
+margin/bottom = 42.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1004,9 +1004,9 @@ max_lines_visible = -1
 
 [node name="armor" type="Label" parent="status_window/panel/box/3/box/labels"]
 
-margin/top = 44.0
-margin/right = 124.0
-margin/bottom = 84.0
+margin/top = 46.0
+margin/right = 126.0
+margin/bottom = 88.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1020,9 +1020,9 @@ max_lines_visible = -1
 
 [node name="guard" type="Label" parent="status_window/panel/box/3/box/labels"]
 
-margin/top = 88.0
-margin/right = 124.0
-margin/bottom = 128.0
+margin/top = 92.0
+margin/right = 126.0
+margin/bottom = 134.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1036,9 +1036,9 @@ max_lines_visible = -1
 
 [node name="misc" type="Label" parent="status_window/panel/box/3/box/labels"]
 
-margin/top = 132.0
-margin/right = 124.0
-margin/bottom = 173.0
+margin/top = 138.0
+margin/right = 126.0
+margin/bottom = 182.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1052,9 +1052,9 @@ max_lines_visible = -1
 
 [node name="values" type="VBoxContainer" parent="status_window/panel/box/3/box"]
 
-margin/left = 128.0
-margin/right = 252.0
-margin/bottom = 173.0
+margin/left = 142.0
+margin/right = 268.0
+margin/bottom = 182.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -1063,8 +1063,8 @@ alignment = 0
 
 [node name="weapon" type="Label" parent="status_window/panel/box/3/box/values"]
 
-margin/right = 124.0
-margin/bottom = 40.0
+margin/right = 126.0
+margin/bottom = 42.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1077,9 +1077,9 @@ max_lines_visible = -1
 
 [node name="armor" type="Label" parent="status_window/panel/box/3/box/values"]
 
-margin/top = 44.0
-margin/right = 124.0
-margin/bottom = 84.0
+margin/top = 46.0
+margin/right = 126.0
+margin/bottom = 88.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1092,9 +1092,9 @@ max_lines_visible = -1
 
 [node name="guard" type="Label" parent="status_window/panel/box/3/box/values"]
 
-margin/top = 88.0
-margin/right = 124.0
-margin/bottom = 128.0
+margin/top = 92.0
+margin/right = 126.0
+margin/bottom = 134.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1107,9 +1107,9 @@ max_lines_visible = -1
 
 [node name="misc" type="Label" parent="status_window/panel/box/3/box/values"]
 
-margin/top = 132.0
-margin/right = 124.0
-margin/bottom = 173.0
+margin/top = 138.0
+margin/right = 126.0
+margin/bottom = 182.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3

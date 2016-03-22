@@ -7,6 +7,7 @@ onready var weights = get_node('stats/box/weight')
 onready var level = get_node('level/box')
 onready var hpmp = get_node('hpmp/box')
 onready var derived = get_node('derived/box')
+onready var skills = get_node('skills/box')
 
 var hero
 
@@ -24,8 +25,23 @@ func _ready():
 	hero.equip_weapon(weapon)
 	hero.equip_armor(armor)
 	hero.equip_guard(guard)
+	_set_skills()
 	_connect()
 	_draw_sheet()
+
+func _set_skills():
+	var command = skills.get_node('command')
+	var support = skills.get_node('support')
+	command.add_item("Command Skill")
+	command.set_item_disabled(0,true)
+	command.add_separator()
+	support.add_item("Support Skill")
+	support.set_item_disabled(0,true)
+	support.add_separator()
+	for skill in Chart.command_skills:
+		command.add_item(skill)
+	for skill in Chart.support_skills:
+		support.add_item(skill)
 
 func _connect():
 	get_node('save').connect("pressed",self,'save')
