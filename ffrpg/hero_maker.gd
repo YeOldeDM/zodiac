@@ -14,6 +14,9 @@ var done_support_skills = [
 	"Toughness",
 	"Mental Strength",
 ]
+#eventually these will be reversed,
+#when there are more done skills than
+#non-done.
 
 onready var info = get_node('info/box')
 onready var stats = get_node('stats/box/stats')

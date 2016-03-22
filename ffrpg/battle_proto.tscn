@@ -88,6 +88,27 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 
+[node name="box" type="GridContainer" parent="box/battle/monsters"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 251.0
+margin/bottom = 426.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+columns = 1
+
+[node name="Mob" type="PanelContainer" parent="box/battle/monsters/box"]
+
+margin/right = 247.0
+margin/bottom = 81.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+
 [node name="options" type="HBoxContainer" parent="box"]
 
 margin/top = 545.0
@@ -121,6 +142,7 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 popup/exclusive = false
 script/script = ExtResource( 3 )
+__meta__ = { "_editor_collapsed":true }
 
 [node name="panel" type="PanelContainer" parent="status_window"]
 
@@ -472,7 +494,6 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 3.0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="status_window/panel/box/2"]
 
@@ -962,6 +983,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 3.0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="HBoxContainer" parent="status_window/panel/box/3"]
 
