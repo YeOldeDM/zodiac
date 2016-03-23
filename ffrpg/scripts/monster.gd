@@ -22,6 +22,9 @@ class Monster:
 	var XP = 0
 	var GP = 0
 	
+	var is_blocking = false
+	var is_flying = false
+	
 	func _init(name="New Monster",level=1,boss=false,\
 	strength=6,magic=6,vitality=6,spirit=6,agility=6,\
 	power_die=8,magic_die=8):
@@ -138,6 +141,12 @@ class Monster:
 			total *= 2
 		return total
 	
+	func spend_speed(amt=8):
+		self.current_speed -= amt
+		if self.current_speed <= 0:
+			self.current_speed = 0
+		print(self.get_name()+" spent speed "+str(amt))
+
 	func get_attack_power():
 		return self.get_strength() * 2
 	
@@ -183,6 +192,15 @@ class Monster:
 		var damage = self._basic_damage()
 		attack.append(damage)
 		return attack
+	
+	func receive_attack(attack):
+		if attack[1] or attack[2]:
+			var damage = attack[0]
+			if is_blocking:
+				damage /= 2
+			current_HP -= damage
+			if current_HP <= 0:
+				current_HP = 0
 	
 	func _basic_attack():
 		var attack_roll = int(round(rand_range(0,99)))

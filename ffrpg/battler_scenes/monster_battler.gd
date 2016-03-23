@@ -28,23 +28,26 @@ func draw_name():
 
 func draw_HP():
 	HP_label.set_text(str(me.current_HP)+"/"+str(me.get_HP()))
-
 func draw_MP():
 	MP_label.set_text(str(me.current_MP)+"/"+str(me.get_MP()))
 
+func slide_bars():
+	slide_HP()
+	slide_MP()
+
 func slide_HP():
-	var value = HP_label.get_value()
+	var value = HP_bar.get_value()
 	if value != me.current_HP:
 		var diff = me.current_HP - value
 		var dir = sign(diff)
-		HP_label.set_value(value + (1*dir))
+		HP_bar.set_value(value + (1*dir))
 
 func slide_MP():
-	var value = MP_label.get_value()
+	var value = MP_bar.get_value()
 	if value != me.current_MP:
 		var diff = me.current_MP - value
 		var dir = sign(diff)
-		MP_label.set_value(value + (1*dir))
+		MP_bar.set_value(value + (1*dir))
 
 
 func draw_speed():
@@ -66,4 +69,10 @@ func draw_battler():
 	draw_speed()
 
 func _on_status_toggled( pressed ):
-	get_parent()._on_hero_status_toggled(pressed,self)
+	print(get_node('/root/Battle').needs_target)
+	if get_node('/root/Battle').needs_target:
+		print("targeting "+me.get_name())
+		get_node('/root/Battle').set_target(self)
+		get_node('/root/Battle').commit_action()
+	else:
+		get_parent()._on_hero_status_toggled(pressed,self)

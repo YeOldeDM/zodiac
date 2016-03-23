@@ -31,19 +31,23 @@ func draw_HP():
 func draw_MP():
 	MP_label.set_text(str(me.current_MP)+"/"+str(me.get_MP()))
 
+func slide_bars():
+	slide_HP()
+	slide_MP()
+
 func slide_HP():
-	var value = HP_label.get_value()
+	var value = HP_bar.get_value()
 	if value != me.current_HP:
 		var diff = me.current_HP - value
 		var dir = sign(diff)
-		HP_label.set_value(value + (1*dir))
+		HP_bar.set_value(value + (1*dir))
 
 func slide_MP():
-	var value = MP_label.get_value()
+	var value = MP_bar.get_value()
 	if value != me.current_MP:
 		var diff = me.current_MP - value
 		var dir = sign(diff)
-		MP_label.set_value(value + (1*dir))
+		MP_bar.set_value(value + (1*dir))
 
 func draw_speed():
 	speed_label.set_text(str(me.current_speed))

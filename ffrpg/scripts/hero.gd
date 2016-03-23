@@ -1,20 +1,6 @@
 
 extends Node
 
-class CommandSkill:
-	var ID
-	var name
-	
-	func _init(ID,name):
-		self.ID = ID
-		self.name = name
-	
-	func get_ID():
-		return self.ID
-	func get_name():
-		return self.name
-	func set_name(text):
-		self.name = text
 
 class Hero:
 	var name
@@ -48,6 +34,8 @@ class Hero:
 	var equipped_guard = null
 	var equipped_accessory = null
 	
+	var is_blocking = false
+	var is_flying = false
 #	var weakness = []
 #	var resist = []
 #	var immune = []
@@ -208,6 +196,12 @@ class Hero:
 		var armor_bonus = self.get_armor_MP()
 		return mental_strength + spr_bonus + lvl_bonus + armor_bonus
 
+	func spend_speed(amt=8):
+		self.current_speed -= amt
+		if self.current_speed <= 0:
+			self.current_speed = 0
+		print("spent speed "+str(amt))
+
 	func get_weapon_attack_power():
 		var weapon = self.get_weapon()
 		if weapon == null:
@@ -329,11 +323,19 @@ class Hero:
 		return result
 	
 	func fight(target):
-		var attack = Roll.attack(self.get_attack(),target.get_evade(),self.get_critical())
+		var attack = Roll.attack(self.get_accuracy(),target.get_evade(),self.get_critical())
 		var crit_mult = 2	#placeholder. Can be higher or set to 1 for critical-immunity
-		var damage = Roll.damage(self.get_strength_dice(),self.get_weapon().get_attack_die(),\
+		var damage = Roll.damage(self.get_strength_dice(),self.get_weapon().get_attack_die(),self.get_attack_power(),\
 								attack[2],crit_mult)
 		attack.insert(0,damage)	#stick damage in as the first value in the list
 		target.receive_attack(attack)
 
+	func receive_attack(attack):
+		if attack[1] or attack[2]:
+			var damage = attack[0]
+			if is_blocking:
+				damage /= 2
+			current_HP -= damage
+			if current_HP <= 0:
+				current_HP = 0
 	

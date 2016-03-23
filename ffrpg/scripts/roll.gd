@@ -9,6 +9,7 @@ func dice(num,sides):	#roll 'num'd'sides'
 	var total = 0
 	for i in range(num):
 		total += die(sides)
+	return total
 
 func attack(atk,def,crit_chance):
 	var critical_hit = false

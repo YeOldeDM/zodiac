@@ -1,6 +1,7 @@
 
 extends HBoxContainer
 
+onready var msg = get_node('/root/Battle/box/battle/message/msgbox')
 onready var status_window = get_node('/root/Battle/status_window')
 
 onready var hero_battler = preload('res://battler_scenes/hero_battler.res')
@@ -10,6 +11,9 @@ func _ready():
 	for i in range(3):
 		add_hero("Farty")
 
+func get_heroes():
+	return get_children()
+
 func add_hero(name):
 	var battler = hero_battler.instance()
 	add_child(battler)
@@ -17,6 +21,7 @@ func add_hero(name):
 	battler.name.connect("toggled",status_window,"_on_status_toggled",[battler])
 	battler.me = Data.load_hero(name)
 	battler.setup()
+	msg.say("Added Hero "+battler.me.get_name())
 
 func untoggle(exception=null):
 	for hero in get_children():

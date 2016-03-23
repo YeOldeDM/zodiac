@@ -42,13 +42,18 @@ onready var misc = gear.get_node('misc')
 var hero = null
 
 func _on_status_toggled(pressed,ent):
-	if pressed:
-		get_parent().get_node('box/heroes').untoggle(ent)
-		get_parent().get_node('box/battle/monsters/box/list').untoggle(ent)
-		hero = ent.me
-		popup()
+	if get_parent().needs_target:
+		get_parent().current_target = ent
+		get_parent().needs_target = false
+		get_parent().commit_action()
 	else:
-		hide()
+		if pressed:
+			get_parent().get_node('box/heroes').untoggle(ent)
+			get_parent().get_node('box/battle/monsters/box/list').untoggle(ent)
+			hero = ent.me
+			popup()
+		else:
+			hide()
 
 func _on_status_window_about_to_show():
 	name.set_text(hero.get_name())
