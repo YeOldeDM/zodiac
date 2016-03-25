@@ -60,6 +60,8 @@ func new_round():
 	build_actors()
 	for actor in actors:
 		actor.me.restore_speed()
+	finish_actors()
+	for actor in actors:
 		actor.draw_battler()
 	current_turn = 0
 	_initiative()
@@ -69,18 +71,22 @@ func new_round():
 		next_turn()
 
 func new_tick():
-	tick += 1
-	msg.say("\n[color=red]New Tick[/color] "+str(tick))
 	finish_actors()
-	_initiative()
-	current_turn = 0
-	current_actor = actors[current_turn]
-	_check_is_hero()
-	if not is_hero:
-		_monster_action()
-		next_turn()
-	show_combat_options()
-	msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
+	if actors.empty():
+		new_round()
+	else:
+		tick += 1
+		msg.say("\n[color=red]New Tick[/color] "+str(tick))
+		_initiative()
+		current_turn = 0
+	
+		current_actor = actors[current_turn]
+		_check_is_hero()
+		if not is_hero:
+			_monster_action()
+			next_turn()
+		show_combat_options()
+		msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
 
 func _check_is_hero():
 	if current_actor.me.has_method('get_xp_to_level'):
@@ -91,14 +97,17 @@ func _check_is_hero():
 		print("monster")
 
 func finish_actors():
-	#remove actor from action list
-	for i in range(actors.size()-1):
-		if actors[i].me.current_speed < 8:
-			actors.remove(i)
+	var to_drop = []
+	for actor in actors:
+		#remove actor from action list
+		if actor.me.current_speed < 8:
+			to_drop.append(actor)
+	for actor in to_drop:
+		actors.remove(actors.find(actor))
 			
 
 func next_turn():
-	if actors.empty():
+	if current_turn > actors.size()-1:
 		new_round()
 	current_turn += 1
 	print("\n turn "+str(current_turn)+"\n")
