@@ -9,11 +9,12 @@ onready var combat = get_node('box/options/actions/combat')
 
 var all_actors = []
 var actors = []
-var current_turn = 0
+
 var current_actor = null
 var current_target = null
 var current_action = null
 
+var current_turn = 0
 var combat_round = 1
 var tick = 1
 
@@ -29,10 +30,6 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-#	if not is_hero:
-#		current_actor.me.spend_speed()
-#		current_actor.draw_battler()
-#		next_turn()
 	for actor in actors:
 		actor.slide_bars()
 
@@ -66,10 +63,7 @@ func new_round():
 		actor.draw_battler()
 	current_turn = 0
 	_initiative()
-	if current_actor.me.has_method('get_xp_to_level'):
-		is_hero = true
-	else:
-		is_hero = false
+	_check_is_hero()
 	show_combat_options()
 	if not is_hero:
 		next_turn()
@@ -77,29 +71,44 @@ func new_round():
 func new_tick():
 	tick += 1
 	msg.say("\n[color=red]New Tick[/color] "+str(tick))
+	finish_actors()
 	_initiative()
+	current_turn = 0
+	current_actor = actors[current_turn]
+	_check_is_hero()
+	if not is_hero:
+		_monster_action()
+		next_turn()
+	show_combat_options()
+	msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
+
+func _check_is_hero():
+	if current_actor.me.has_method('get_xp_to_level'):
+		is_hero = true
+		print("hero")
+	else:
+		is_hero = false
+		print("monster")
+
+func finish_actors():
+	#remove actor from action list
+	for i in range(actors.size()-1):
+		if actors[i].me.current_speed < 8:
+			actors.remove(i)
+			
 
 func next_turn():
-	if current_actor.me.current_speed < 8:
-		actors.remove(current_turn)
+	if actors.empty():
+		new_round()
 	current_turn += 1
-	if current_turn > actors.size():
-		if actors.empty():
-			new_round()
-		else:
-			current_turn = 0
-			new_tick()
+	print("\n turn "+str(current_turn)+"\n")
+	if current_turn > actors.size()-1:
+		new_tick()
 	else:
-		msg.say("It is now "+current_actor.me.get_name()+"'s turn to act")
-		if current_actor.me.has_method('get_xp_to_level'):
-			is_hero = true
-			print("hero")
-		else:
-			is_hero = false
-			print("monster")
 		current_actor = actors[current_turn]
+		msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
+		_check_is_hero()
 		show_combat_options()
-		print(is_hero)
 		if not is_hero:
 			_monster_action()
 			next_turn()
@@ -113,10 +122,12 @@ func build_actors():
 	for monster in monsters.get_monsters():
 		actors.append(monster)
 		all_actors.append(monster)
+	print("WE GOT "+str(actors.size())+" ACTORS")
 
 func _monster_action():
 	current_actor.me.spend_speed()
 	msg.say("The "+current_actor.me.get_name()+" wiggles around.")
+	current_actor.draw_battler()
 
 func pre_battle():
 	for actor in actors:
@@ -124,13 +135,8 @@ func pre_battle():
 		actor.draw_battler()
 	_initiative()
 	current_actor = actors[0]
-	msg.say("It is now "+current_actor.me.get_name()+"'s turn to act")
-	if current_actor.me.has_method('get_xp_to_level'):
-		is_hero = true
-		print("hero")
-	else:
-		is_hero = false
-		print("monster")
+	msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
+	_check_is_hero()
 	if not is_hero:
 		_monster_action()
 		next_turn()

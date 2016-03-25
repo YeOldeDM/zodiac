@@ -86,7 +86,6 @@ func fight(target):
 	target.receive_attack(attack)
 
 func _on_status_toggled( pressed ):
-	print(get_node('/root/Battle').needs_target)
 	if get_node('/root/Battle').needs_target:
 		print("targeting "+me.get_name())
 		get_node('/root/Battle').set_target(self)

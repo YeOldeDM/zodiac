@@ -35,7 +35,7 @@ func damage(num,sides,atk,critical,critical_mult=2):
 func initiative(actors):
 	#sort list by Speed Stat
 	actors.sort_custom(self,"_sort_by_speed")
-
+	
 func _sort_by_speed(a,b):
 	if a.me.current_speed > b.me.current_speed:
 		return true
