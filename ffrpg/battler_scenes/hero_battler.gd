@@ -1,6 +1,8 @@
 
 extends PanelContainer
 
+onready var msg = get_node('/root/Battle/box/battle/message/msgbox')
+
 onready var box = get_node('box/box')
 onready var name = get_node('box/status')
 onready var hpmp = box.get_node('hpmp')
@@ -65,7 +67,20 @@ func draw_battler():
 	draw_MP()
 	draw_speed()
 
-
+func fight(target):
+	var attacker = me.get_name()
+	var defender = target.get_name()
+	var attack = me.fight(target)
+	var dmg = str(attack[0])
+	var txt = ""
+	if not attack[1] or attack[2]:
+		txt = attacker+" missed the "+defender
+	elif attack[3]:
+		txt = "[color=red]"+attacker+" deals a CRITICAL HIT to the "+defender+" for "+dmg+" damage!!![/color]"
+	else:
+		txt = attacker+" hits the "+defender+" for "+dmg+" damage!"
+	msg.say(txt)
+	target.receive_attack(attack)
 
 func _on_status_toggled( pressed ):
 	get_parent()._on_hero_status_toggled(pressed,self)

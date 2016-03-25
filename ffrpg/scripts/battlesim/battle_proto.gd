@@ -7,10 +7,15 @@ onready var heroes = get_node('box/heroes')
 onready var monsters = get_node('box/battle/monsters/box/list')
 onready var combat = get_node('box/options/actions/combat')
 
+var all_actors = []
 var actors = []
-var current_actor = 0
+var current_turn = 0
+var current_actor = null
 var current_target = null
 var current_action = null
+
+var combat_round = 1
+var tick = 1
 
 var needs_target = true
 
@@ -20,21 +25,22 @@ func _ready():
 	randomize()
 	build_actors()
 	pre_battle()
+
 	set_process(true)
 
 func _process(delta):
-	if not is_hero:
-		actors[current_actor].me.spend_speed()
-		actors[current_actor].draw_battler()
-		next_turn()
+#	if not is_hero:
+#		current_actor.me.spend_speed()
+#		current_actor.draw_battler()
+#		next_turn()
 	for actor in actors:
 		actor.slide_bars()
 
 func commit_action():
-	if needs_target:
+	if not needs_target:
 		if current_action == 'fight':
-			actors[current_actor].me.fight(current_target.me)
-			actors[current_actor].me.spend_speed()
+			current_actor.fight(current_target.me)
+			current_actor.me.spend_speed()
 			current_target = null
 			current_action = null
 			needs_target = false
@@ -53,13 +59,14 @@ func set_target(target):
 	needs_target = false
 
 func new_round():
+	combat_round += 1
 	build_actors()
 	for actor in actors:
 		actor.me.restore_speed()
 		actor.draw_battler()
-	current_actor = 0
+	current_turn = 0
 	_initiative()
-	if actors[current_actor].me.has_method('get_xp_to_level'):
+	if current_actor.me.has_method('get_xp_to_level'):
 		is_hero = true
 	else:
 		is_hero = false
@@ -67,37 +74,67 @@ func new_round():
 	if not is_hero:
 		next_turn()
 
+func new_tick():
+	tick += 1
+	msg.say("\n[color=red]New Tick[/color] "+str(tick))
+	_initiative()
+
 func next_turn():
-	if actors[current_actor].me.current_speed < 8:
-		actors.remove(current_actor)
-	current_actor += 1
-	if current_actor > actors.size()-1:
-		if actors.size() <=1:
+	if current_actor.me.current_speed < 8:
+		actors.remove(current_turn)
+	current_turn += 1
+	if current_turn > actors.size():
+		if actors.empty():
 			new_round()
 		else:
-			current_actor = 0
-	msg.say("It is now "+actors[current_actor].me.get_name()+"'s turn to act")
-	if actors[current_actor].me.has_method('get_xp_to_level'):
-		is_hero = true
+			current_turn = 0
+			new_tick()
 	else:
-		is_hero = false
-	show_combat_options()
-
+		msg.say("It is now "+current_actor.me.get_name()+"'s turn to act")
+		if current_actor.me.has_method('get_xp_to_level'):
+			is_hero = true
+			print("hero")
+		else:
+			is_hero = false
+			print("monster")
+		current_actor = actors[current_turn]
+		show_combat_options()
+		print(is_hero)
+		if not is_hero:
+			_monster_action()
+			next_turn()
+	
 func build_actors():
 	#create actors list
 	actors = []
 	for hero in heroes.get_heroes():
 		actors.append(hero)
+		all_actors.append(hero)
 	for monster in monsters.get_monsters():
 		actors.append(monster)
+		all_actors.append(monster)
+
+func _monster_action():
+	current_actor.me.spend_speed()
+	msg.say("The "+current_actor.me.get_name()+" wiggles around.")
 
 func pre_battle():
 	for actor in actors:
 		actor.me.current_speed = actor.me.get_speed() + int(round(rand_range(1,8)))
 		actor.draw_battler()
 	_initiative()
-	msg.say("It is now "+actors[current_actor].me.get_name()+"'s turn to act")
-
+	current_actor = actors[0]
+	msg.say("It is now "+current_actor.me.get_name()+"'s turn to act")
+	if current_actor.me.has_method('get_xp_to_level'):
+		is_hero = true
+		print("hero")
+	else:
+		is_hero = false
+		print("monster")
+	if not is_hero:
+		_monster_action()
+		next_turn()
+	show_combat_options()
 
 func show_combat_options():
 	if is_hero:
@@ -112,17 +149,15 @@ func hide_combat_options():
 
 func _initiative():
 	#sort list by Speed
-	actors.sort_custom(self,"_sort_by_speed")
+	Roll.initiative(actors)
+	msg.say("\n[color=red]Round[/color] "+str(combat_round))
+	say_initiative()
+
+func say_initiative():
 	msg.say("\n[color=red]Order of initiative[/color]")
 	for actor in actors:
-		msg.say(actor.me.get_name())
-
-func _sort_by_speed(a,b):
-	if a.me.current_speed > b.me.current_speed:
-		return true
-	else:
-		return false
-
+		msg.say(actor.me.get_name()+" ("+str(actor.me.current_speed)+")")
+	msg.newline()
 
 
 func _on_fight_pressed():

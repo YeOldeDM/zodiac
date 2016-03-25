@@ -200,7 +200,7 @@ class Hero:
 		self.current_speed -= amt
 		if self.current_speed <= 0:
 			self.current_speed = 0
-		print("spent speed "+str(amt))
+		print(self.get_name()+" spent speed "+str(amt))
 
 	func get_weapon_attack_power():
 		var weapon = self.get_weapon()
@@ -323,12 +323,14 @@ class Hero:
 		return result
 	
 	func fight(target):
+		#assembles attack information and returns it as a list
+		#[damage dealt, bool attack hits, bool attack auto-hits, bool is critical]
 		var attack = Roll.attack(self.get_accuracy(),target.get_evade(),self.get_critical())
 		var crit_mult = 2	#placeholder. Can be higher or set to 1 for critical-immunity
 		var damage = Roll.damage(self.get_strength_dice(),self.get_weapon().get_attack_die(),self.get_attack_power(),\
 								attack[2],crit_mult)
 		attack.insert(0,damage)	#stick damage in as the first value in the list
-		target.receive_attack(attack)
+		return attack
 
 	func receive_attack(attack):
 		if attack[1] or attack[2]:

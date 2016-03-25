@@ -1,6 +1,8 @@
 
 extends PanelContainer
 
+onready var msg = get_node('/root/Battle/box/battle/message/msgbox')
+
 onready var box = get_node('box')
 onready var stats = box.get_node('box')
 onready var hpmp = stats.get_node('hpmp')
@@ -68,11 +70,27 @@ func draw_battler():
 	draw_MP()
 	draw_speed()
 
+func fight(target):
+	var attacker = me.get_name()
+	var defender = target.get_name()
+	var attack = me.fight(target)
+	var dmg = str(attack[0])
+	var txt = ""
+	if attack[1] or attack[2]:
+		txt = "The "+attacker+" missed "+defender
+	elif attack[3]:
+		txt = "[color=red]The "+attacker+" deals a CRITICAL HIT to "+defender+" for "+dmg+" damage!!![/color]"
+	else:
+		txt = "The "+attacker+" hits "+defender+" for "+dmg+" damage!"
+	msg.say(txt)
+	target.receive_attack(attack)
+
 func _on_status_toggled( pressed ):
 	print(get_node('/root/Battle').needs_target)
 	if get_node('/root/Battle').needs_target:
 		print("targeting "+me.get_name())
 		get_node('/root/Battle').set_target(self)
 		get_node('/root/Battle').commit_action()
+		name.set_pressed(false)
 	else:
 		get_parent()._on_hero_status_toggled(pressed,self)

@@ -187,10 +187,14 @@ class Monster:
 		var lvl_bonus = floor(self.get_level() / 10)
 		return 10 + agi_bonus + lvl_bonus
 	
-	func fight():
-		var attack = self._basic_attack()
-		var damage = self._basic_damage()
-		attack.append(damage)
+	func fight(target):
+		#assembles attack information and returns it as a list
+		#[damage dealt, bool attack hits, bool attack auto-hits, bool is critical]
+		var attack = Roll.attack(self.get_accuracy(),target.get_evade(),self.get_critical())
+		var crit_mult = 2	#placeholder. Can be higher or set to 1 for critical-immunity
+		var damage = Roll.damage(self.get_strength_dice(),self.power_die,self.get_attack_power(),\
+								attack[2],crit_mult)
+		attack.insert(0,damage)	#stick damage in as the first value in the list
 		return attack
 	
 	func receive_attack(attack):
@@ -202,22 +206,5 @@ class Monster:
 			if current_HP <= 0:
 				current_HP = 0
 	
-	func _basic_attack():
-		var attack_roll = int(round(rand_range(0,99)))
-		var auto_hit = false
-		if attack_roll >= 90:
-			auto_hit = true
-		var critical = false
-		if attack_roll >= self.get_critical():
-			critical = true
-		var attack = attack_roll + get_accuracy()
-		return [attack,critical,auto_hit]
-	
-	func _basic_damage():
-		var roll = 0
-		for i in range(self.get_strength_dice()):
-			roll += int(round(rand_range(1,self.power_die))) * 5
-		var total_damage = roll + self.get_attack_power()
-		return total_damage
 	
 	
