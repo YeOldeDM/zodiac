@@ -1,11 +1,15 @@
 
 extends Container
 
+signal draw_round()
+
 onready var msg = get_node('/root/Battle/box/battle/message/msgbox')
 
 onready var heroes = get_node('box/heroes')
 onready var monsters = get_node('box/battle/monsters/box/list')
 onready var combat = get_node('box/options/actions/combat')
+
+onready var round_label = get_node('box/options/meta/box/round/value')
 
 var all_actors = []
 var actors = []
@@ -26,9 +30,9 @@ func _ready():
 	randomize()
 	build_actors()
 	pre_battle()
-
+	connect("draw_round",self,"_on_draw_round")
 	set_process(true)
-
+	
 func _process(delta):
 	for actor in actors:
 		actor.slide_bars()
@@ -55,8 +59,26 @@ func set_target(target):
 	current_target = target
 	needs_target = false
 
+func next_turn():
+	if current_turn > actors.size()-1:
+		new_round()
+	current_turn += 1
+	print("\n turn "+str(current_turn)+"\n")
+	if current_turn > actors.size()-1:
+		new_tick()
+	else:
+		current_actor = actors[current_turn]
+		say_actor()
+		_check_is_hero()
+		show_combat_options()
+		if not is_hero:
+			_monster_action()
+			next_turn()
+	emit_signal("draw_round")
+	
 func new_round():
 	combat_round += 1
+	tick = 1
 	build_actors()
 	for actor in actors:
 		actor.me.restore_speed()
@@ -64,11 +86,15 @@ func new_round():
 	for actor in actors:
 		actor.draw_battler()
 	current_turn = 0
+	current_actor = actors[current_turn]
+	say_actor()
 	_initiative()
 	_check_is_hero()
 	show_combat_options()
 	if not is_hero:
+		_monster_action()
 		next_turn()
+	emit_signal("draw_round")
 
 func new_tick():
 	finish_actors()
@@ -79,14 +105,15 @@ func new_tick():
 		msg.say("\n[color=red]New Tick[/color] "+str(tick))
 		_initiative()
 		current_turn = 0
-	
 		current_actor = actors[current_turn]
+		say_actor()
 		_check_is_hero()
 		if not is_hero:
 			_monster_action()
 			next_turn()
-		show_combat_options()
-		msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
+		else:
+			show_combat_options()
+	emit_signal("draw_round")
 
 func _check_is_hero():
 	if current_actor.me.has_method('get_xp_to_level'):
@@ -106,22 +133,6 @@ func finish_actors():
 		actors.remove(actors.find(actor))
 			
 
-func next_turn():
-	if current_turn > actors.size()-1:
-		new_round()
-	current_turn += 1
-	print("\n turn "+str(current_turn)+"\n")
-	if current_turn > actors.size()-1:
-		new_tick()
-	else:
-		current_actor = actors[current_turn]
-		msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
-		_check_is_hero()
-		show_combat_options()
-		if not is_hero:
-			_monster_action()
-			next_turn()
-	
 func build_actors():
 	#create actors list
 	actors = []
@@ -144,7 +155,7 @@ func pre_battle():
 		actor.draw_battler()
 	_initiative()
 	current_actor = actors[0]
-	msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
+	say_actor()
 	_check_is_hero()
 	if not is_hero:
 		_monster_action()
@@ -174,6 +185,12 @@ func say_initiative():
 		msg.say(actor.me.get_name()+" ("+str(actor.me.current_speed)+")")
 	msg.newline()
 
+func _on_draw_round():
+	var text = "Round "+str(combat_round)+"/"+str(tick)+"/"+str(current_turn)
+	round_label.set_text(text)
+
+func say_actor():
+	msg.say("\nIt is now "+current_actor.me.get_name()+"'s turn to act")
 
 func _on_fight_pressed():
 	current_action = "fight"

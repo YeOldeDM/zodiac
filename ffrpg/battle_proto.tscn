@@ -36,7 +36,7 @@ alignment = 0
 [node name="heroes" type="HBoxContainer" parent="box"]
 
 margin/right = 1024.0
-margin/bottom = 107.0
+margin/bottom = 106.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -47,21 +47,22 @@ script/script = ExtResource( 3 )
 
 [node name="battle" type="HBoxContainer" parent="box"]
 
-margin/top = 111.0
+margin/top = 110.0
 margin/right = 1024.0
-margin/bottom = 541.0
+margin/bottom = 534.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 8.0
 alignment = 0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="message" type="PanelContainer" parent="box/battle"]
 
 visibility/blend_mode = 3
 margin/right = 765.0
-margin/bottom = 430.0
+margin/bottom = 424.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -73,7 +74,7 @@ size_flags/stretch_ratio = 3.0
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 761.0
-margin/bottom = 426.0
+margin/bottom = 420.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -87,7 +88,7 @@ script/script = ExtResource( 4 )
 
 margin/left = 769.0
 margin/right = 1024.0
-margin/bottom = 430.0
+margin/bottom = 424.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -98,7 +99,7 @@ size_flags/vertical = 3
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 251.0
-margin/bottom = 426.0
+margin/bottom = 420.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -119,7 +120,7 @@ script/script = ExtResource( 5 )
 
 [node name="options" type="HBoxContainer" parent="box"]
 
-margin/top = 545.0
+margin/top = 538.0
 margin/right = 1024.0
 margin/bottom = 600.0
 focus/ignore_mouse = false
@@ -131,7 +132,7 @@ alignment = 0
 [node name="actions" type="PanelContainer" parent="box/options"]
 
 margin/right = 850.0
-margin/bottom = 55.0
+margin/bottom = 62.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -143,7 +144,7 @@ size_flags/stretch_ratio = 5.0
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 846.0
-margin/bottom = 51.0
+margin/bottom = 58.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -154,7 +155,7 @@ alignment = 0
 [node name="fight" type="Button" parent="box/options/actions/combat"]
 
 margin/right = 198.0
-margin/bottom = 43.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -168,7 +169,7 @@ flat = false
 
 margin/left = 214.0
 margin/right = 412.0
-margin/bottom = 43.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -182,7 +183,7 @@ flat = false
 
 margin/left = 428.0
 margin/right = 626.0
-margin/bottom = 43.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -196,7 +197,7 @@ flat = false
 
 margin/left = 642.0
 margin/right = 842.0
-margin/bottom = 43.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -210,25 +211,25 @@ flat = false
 
 margin/left = 854.0
 margin/right = 1024.0
-margin/bottom = 55.0
+margin/bottom = 62.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="box/options/meta"]
+[node name="box" type="VBoxContainer" parent="box/options/meta"]
 
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 166.0
-margin/bottom = 51.0
+margin/bottom = 58.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 alignment = 0
 
-[node name="menu" type="Button" parent="box/options/meta/VBoxContainer"]
+[node name="menu" type="Button" parent="box/options/meta/box"]
 
 margin/right = 162.0
 margin/bottom = 20.0
@@ -239,6 +240,31 @@ size_flags/vertical = 2
 toggle_mode = false
 text = "Menu"
 flat = false
+
+[node name="round" type="PanelContainer" parent="box/options/meta/box"]
+
+visibility/blend_mode = 3
+margin/top = 24.0
+margin/right = 162.0
+margin/bottom = 50.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="value" type="Label" parent="box/options/meta/box/round"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 158.0
+margin/bottom = 22.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Round 1/1/0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="status_window" type="Popup" parent="."]
 
