@@ -292,9 +292,12 @@ class Hero:
 		return 2 + agi_bonus
 	
 	func get_speed():
+		var base = 10
+		if self.support_skill == "Quickness":
+			base += 2
 		var agi_bonus = floor(self.get_agility() / 15)
 		var lvl_bonus = floor(self.get_level() / 10)
-		return 10 + agi_bonus + lvl_bonus
+		return base + agi_bonus + lvl_bonus
 	
 	func get_max_tech_levels():
 		var mag_bonus = floor(self.get_magic() / 2)

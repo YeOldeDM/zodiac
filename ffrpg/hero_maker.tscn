@@ -957,9 +957,9 @@ max_lines_visible = -1
 
 [node name="save" type="Button" parent="."]
 
-margin/left = 140.0
+margin/left = 280.0
 margin/top = 240.0
-margin/right = 199.0
+margin/right = 339.0
 margin/bottom = 259.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -1001,7 +1001,6 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = false
-text = "Command Skill"
 flat = false
 align = 0
 selected = -1
@@ -1017,12 +1016,62 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = false
-text = "Support Skill"
 flat = false
 align = 0
 selected = -1
 items = [  ]
 
+[node name="load" type="PanelContainer" parent="."]
+
+margin/left = 140.0
+margin/top = 270.0
+margin/right = 340.0
+margin/bottom = 305.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="box" type="HBoxContainer" parent="load"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 196.0
+margin/bottom = 31.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="load_name" type="LineEdit" parent="load/box"]
+
+margin/right = 143.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="load" type="Button" parent="load/box"]
+
+margin/left = 147.0
+margin/right = 192.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "LOAD"
+flat = false
+
 [connection signal="pressed" from="save" to="." method="_on_save_hero_pressed"]
+
+[connection signal="pressed" from="load/box/load" to="." method="_on_load_pressed"]
 
 

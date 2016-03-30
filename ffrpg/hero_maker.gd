@@ -13,6 +13,7 @@ var done_support_skills = [
 	"Magic Up",
 	"Toughness",
 	"Mental Strength",
+	"Quickness",
 ]
 #eventually these will be reversed,
 #when there are more done skills than
@@ -91,6 +92,7 @@ func restore(name):
 	if temp_hero:
 		hero = temp_hero
 		_draw_sheet()
+		_draw_skills()
 	else:
 		print(name+" returned null result. That's no good!")
 	
@@ -98,6 +100,15 @@ func _draw_sheet():
 	_draw_name()
 	_draw_stats()
 	_draw_weights()
+
+func _draw_skills():
+	var support = hero.support_skill
+	var support_node = skills.get_node('support')
+	for i in range(support_node.get_item_count()-1):
+		if support_node.get_item_text(i) == support:
+			support_node.select(i)
+			return
+	support_node.select(0)
 
 
 func _draw_name(name=null):
@@ -215,3 +226,13 @@ func _on_support_skill_selected(id):
 	
 func _on_save_hero_pressed():
 	save()
+
+
+func _on_load_pressed():
+	var load_name = get_node('load/box/load_name').get_text()
+	var path = 'res://data/heroes/'+load_name+'.zd'
+	var file = File.new()
+	if file.file_exists(path):
+		restore(load_name)
+	else:
+		print("\nTHIS FILE EXISTS NOT!! TRY AGAIN.")
