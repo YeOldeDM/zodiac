@@ -12,6 +12,8 @@ class Monster:
 	var base_spirit
 	var base_agility
 	
+	var max_HP
+	var max_MP
 	var current_HP
 	var current_MP
 	var current_speed=0
@@ -40,6 +42,8 @@ class Monster:
 		self.power_die = power_die
 		self.magic_die = magic_die
 		
+		self.max_HP = self.calculate_HP()
+		self.max_MP = self.calculate_MP()
 		self.XP = self.calculate_XP()
 		self.GP = self.calculate_GP()
 
@@ -125,8 +129,10 @@ class Monster:
 			return self.get_level()*75
 		else:
 			return self.get_level()*15
-		
+	
 	func get_HP():
+		return self.max_HP
+	func calculate_HP():
 		var vit_bonus = self.get_vitality() * 20
 		var lvl_bonus = self.get_level() * 10
 		var total = 30 + vit_bonus + lvl_bonus
@@ -135,6 +141,8 @@ class Monster:
 		return total
 	
 	func get_MP():
+		return self.max_MP
+	func calculate_MP():
 		var base = self.get_spirit() + self.get_level()
 		var total = int(base/2)
 		if self.is_boss():

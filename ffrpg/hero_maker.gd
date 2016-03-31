@@ -236,3 +236,4 @@ func _on_load_pressed():
 		restore(load_name)
 	else:
 		print("\nTHIS FILE EXISTS NOT!! TRY AGAIN.")
+	file.close()

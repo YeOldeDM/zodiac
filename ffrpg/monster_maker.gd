@@ -6,23 +6,19 @@ onready var stats = get_node('stats/box/stats')
 onready var level = get_node('level/box')
 onready var hpmp = get_node('hpmp/box')
 onready var derived = get_node('derived/box')
+onready var file = get_node('file/box')
 
 var monster
 
 var monster_class = preload('res://scripts/monster.gd')
 
 func _ready():
-	get_node('save').connect('pressed',self,'_save')
+	file.get_node('save').connect('pressed',self,'_save')
 	for stat in ['strength','magic','vitality','spirit','agility']:
 		stats.get_node(stat+'/SpinBox').connect("value_changed",self,"_on_stat_value_changed",[stat])
 	
 	monster = monster_class.Monster.new()
-	_draw_stats()
-	_draw_vitals()
-	_draw_name()
-	_draw_level()
-	_draw_boss()
-	_draw_stats_left()
+	_draw_sheet()
 
 func _draw_name():
 	info.get_node('name_edit').set_text(monster.get_name())
@@ -32,6 +28,14 @@ func _draw_level():
 
 func _draw_boss():
 	level.get_node('boss').set_pressed(monster.is_boss())
+
+func _draw_sheet():
+	_draw_stats()
+	_draw_vitals()
+	_draw_name()
+	_draw_level()
+	_draw_boss()
+	_draw_stats_left()
 
 func _draw_vitals():
 	_draw_HP()
@@ -81,10 +85,11 @@ func _draw_agility():
 	_draw_derived('speed')
 
 func _draw_HP():
-	hpmp.get_node('hp/value').set_text(str(monster.get_HP()))
+	hpmp.get_node('hp/value').set_value(monster.max_HP)
+	print(hpmp.get_node('hp/value').get_value())
 
 func _draw_MP():
-	hpmp.get_node('mp/value').set_text(str(monster.get_MP()))
+	hpmp.get_node('mp/value').set_value(monster.get_MP())
 
 func _draw_XP():
 	hpmp.get_node('xp/value').set_value(monster.get_XP())
@@ -100,8 +105,16 @@ func _draw_derived(stat):
 	label.set_text(text)
 	
 
-func _save():
+func save():
 	Data.save_monster(monster)
+
+func restore(name):
+	var temp_actor = Data.load_monster(name)
+	if temp_actor:
+		monster = temp_actor
+		_draw_sheet()
+	else:
+		print(name+" returned null result. That's no good!")
 
 func _on_name_edit_text_entered( text ):
 	monster.set_name(text)
@@ -141,3 +154,28 @@ func _on_XP_calc_pressed():
 func _on_GP_calc_pressed():
 	monster.GP = monster.calculate_GP()
 	_draw_GP()
+
+
+func _on_save_pressed():
+	save()
+
+
+func _on_load_button_pressed():
+	var name_node = file.get_node('load/box/load_name')
+	var load_name = name_node.get_text()
+	var path = 'res://data/monsters/'+load_name+'.zd'
+	var file = File.new()
+	if file.file_exists(path):
+		restore(load_name)
+	file.close()
+
+
+func _on_HP_calc_pressed():
+	monster.max_HP = monster.calculate_HP()
+	print(monster.max_HP)
+	_draw_HP()
+
+
+func _on_MP_calc_pressed():
+	monster.max_MP = monster.calculate_MP()
+	_draw_MP()
