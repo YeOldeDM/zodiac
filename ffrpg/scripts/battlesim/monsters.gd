@@ -6,13 +6,20 @@ onready var status_window = get_node('/root/Battle/status_window')
 
 onready var monster_battler = preload('res://battler_scenes/monster_battler.res')
 
-func _ready():
-	for i in range(3):
-		add_monster("Green Blob")
+var monster_list = [
+	"Green Blob",
+	]
 
+func _ready():
+	for guy in monster_list:
+		add_monster(guy)
+
+#get a list of current monsters
 func get_monsters():
 	return get_children()
 
+#add a monster battler
+#load .zd file by name
 func add_monster(name):
 	var battler = monster_battler.instance()
 	add_child(battler)
@@ -21,6 +28,8 @@ func add_monster(name):
 	battler.setup()
 	msg.say("Added Monster "+battler.me.get_name())
 
+#un-press all monster status buttons,
+#with an optional exception
 func untoggle(exception=null):
 	for mob in get_children():
 		if mob != exception:

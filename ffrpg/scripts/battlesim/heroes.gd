@@ -6,14 +6,25 @@ onready var status_window = get_node('/root/Battle/status_window')
 
 onready var hero_battler = preload('res://battler_scenes/hero_battler.res')
 
+#temporary list of heroes to load up
+var hero_list = [
+	'Fess',
+	'Pale',
+	'Barry',
+	'Dexter'
+	]
 
+#initialize hero battlers from hero list
 func _ready():
-	for i in range(3):
-		add_hero("Farty")
+	for guy in hero_list:
+		add_hero(guy)
 
+#get a list of heroes
 func get_heroes():
 	return get_children()
 
+#add a hero battler
+#load .zd file by name
 func add_hero(name):
 	var battler = hero_battler.instance()
 	add_child(battler)
@@ -23,11 +34,14 @@ func add_hero(name):
 	battler.setup()
 	msg.say("Added Hero "+battler.me.get_name())
 
+#un-press all hero status buttons,
+#with an optional exception
 func untoggle(exception=null):
 	for hero in get_children():
 		if hero != exception:
 			hero.get_node('box/status').set_pressed(false)
 
+#Hero status toggls superfunction
 func _on_hero_status_toggled(pressed,hero):
 	if pressed:
 		untoggle(hero)
