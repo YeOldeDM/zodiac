@@ -955,20 +955,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="save" type="Button" parent="."]
-
-margin/left = 280.0
-margin/top = 240.0
-margin/right = 339.0
-margin/bottom = 259.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-toggle_mode = false
-text = "SAVE"
-flat = false
-
 [node name="skills" type="PanelContainer" parent="."]
 
 margin/left = 300.0
@@ -1021,7 +1007,7 @@ align = 0
 selected = -1
 items = [  ]
 
-[node name="load" type="PanelContainer" parent="."]
+[node name="file" type="PanelContainer" parent="."]
 
 margin/left = 140.0
 margin/top = 270.0
@@ -1031,8 +1017,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
 
-[node name="box" type="HBoxContainer" parent="load"]
+[node name="box" type="HBoxContainer" parent="file"]
 
 margin/left = 4.0
 margin/top = 8.0
@@ -1044,34 +1031,50 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 alignment = 0
 
-[node name="load_name" type="LineEdit" parent="load/box"]
+[node name="save" type="Button" parent="file/box"]
 
-margin/right = 143.0
+margin/right = 94.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
-text = ""
-max_length = 0
-editable = true
-secret = false
+toggle_mode = false
+text = "SAVE"
+flat = false
 
-[node name="load" type="Button" parent="load/box"]
+[node name="load" type="Button" parent="file/box"]
 
-margin/left = 147.0
+margin/left = 98.0
 margin/right = 192.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 2
+size_flags/horizontal = 3
 size_flags/vertical = 2
 toggle_mode = false
 text = "LOAD"
 flat = false
 
-[connection signal="pressed" from="save" to="." method="_on_save_hero_pressed"]
+[node name="filebox" type="FileDialog" parent="."]
 
-[connection signal="pressed" from="load/box/load" to="." method="_on_load_pressed"]
+visibility/visible = false
+margin/left = 370.0
+margin/top = 170.0
+margin/right = 880.0
+margin/bottom = 580.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "Save a File"
+dialog/hide_on_ok = false
+
+[connection signal="pressed" from="file/box/save" to="." method="_on_save_hero_pressed"]
+
+[connection signal="pressed" from="file/box/load" to="." method="_on_load_pressed"]
+
+[connection signal="file_selected" from="filebox" to="." method="_on_filebox_file_selected"]
 
 

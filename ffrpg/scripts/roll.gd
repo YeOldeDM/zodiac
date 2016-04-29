@@ -33,7 +33,7 @@ func damage(num,sides,atk,critical,critical_mult=2):
 	return total
 
 func initiative(actors):
-	#sort list by Speed Stat
+	#sort list <actors> by their current Speed
 	actors.sort_custom(self,"_sort_by_speed")
 	
 func _sort_by_speed(a,b):

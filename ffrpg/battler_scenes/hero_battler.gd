@@ -1,6 +1,9 @@
 
 extends PanelContainer
 
+const ACTIVE_COLOR = Color(0.31,0.91,0.26)
+const INACTIVE_COLOR = Color(1.0,1.0,1.0)
+
 onready var msg = get_node('/root/Battle/box/battle/message/msgbox')
 
 onready var box = get_node('box/box')
@@ -66,6 +69,14 @@ func draw_battler():
 	draw_HP()
 	draw_MP()
 	draw_speed()
+
+func activate_battler():
+	name.set('custom_colors/font_color',ACTIVE_COLOR)
+
+func deactivate_battler():
+	name.set('custom_colors/font_color',INACTIVE_COLOR)
+
+
 
 func fight(target):
 	var attacker = me.get_name()

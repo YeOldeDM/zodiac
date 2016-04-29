@@ -1,6 +1,9 @@
 
 extends PanelContainer
 
+const ACTIVE_COLOR = Color(0.31,0.91,0.26)
+const INACTIVE_COLOR = Color(1.0,1.0,1.0)
+
 onready var msg = get_node('/root/Battle/box/battle/message/msgbox')
 
 onready var box = get_node('box')
@@ -14,7 +17,8 @@ onready var HP_bar = hpmp.get_node('HP/box/bar')
 onready var MP_label = hpmp.get_node('MP/box/value')
 onready var MP_bar = hpmp.get_node('MP/box/bar')
 onready var speed = speedbox.get_node('box/value')
-
+onready var action_timer = get_node('action_timer')
+var action_time = 2		#seconds an action takes
 var me
 
 
@@ -70,6 +74,16 @@ func draw_battler():
 	draw_MP()
 	draw_speed()
 
+func activate_battler():
+	name.set('custom_colors/font_color',ACTIVE_COLOR)
+
+func deactivate_battler():
+	name.set('custom_colors/font_color',INACTIVE_COLOR)
+
+func begin_attack():
+	action_timer.set_wait_time(action_time)
+	action_timer.start()
+
 func fight(target):
 	var attacker = me.get_name()
 	var defender = target.get_name()
@@ -85,6 +99,9 @@ func fight(target):
 	msg.say(txt)
 	target.receive_attack(attack)
 
+func monster_pre_action():
+	action_timer.start()
+	
 func _on_status_toggled( pressed ):
 	if get_node('/root/Battle').needs_target:
 		print("targeting "+me.get_name())
@@ -93,3 +110,8 @@ func _on_status_toggled( pressed ):
 		name.set_pressed(false)
 	else:
 		get_parent()._on_hero_status_toggled(pressed,self)
+
+
+func _on_Timer_timeout():
+	get_node('/root/Battle').monster_post_action()
+	action_timer.stop()

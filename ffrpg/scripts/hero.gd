@@ -221,6 +221,11 @@ class Hero:
 	func restore_speed():
 		self.current_speed += self.get_speed()
 	
+	func set_initial_speed():
+		var S = get_speed()
+		var R = int(round(rand_range(1,8)))
+		self.current_speed = S+R
+
 	#get current HP %
 	func get_HP_percent():
 		return (self.current_HP*1.0)/(self.get_HP()*1.0)

@@ -26,6 +26,7 @@ onready var level = get_node('level/box')
 onready var hpmp = get_node('hpmp/box')
 onready var derived = get_node('derived/box')
 onready var skills = get_node('skills/box')
+onready var filebox = get_node('filebox')
 
 var hero
 
@@ -46,6 +47,11 @@ func _ready():
 	_set_skills()
 	_connect()
 	_draw_sheet()
+
+	filebox.set_mode(0)
+	filebox.set_current_dir('res://data/heroes')
+
+
 
 func _set_skills():
 	var command = skills.get_node('command')
@@ -71,7 +77,7 @@ func _set_skills():
 
 
 func _connect():
-	get_node('save').connect("pressed",self,'save')
+	get_node('file/box/save').connect("pressed",self,'save')
 	#connect name edit
 	info.get_node('name_edit').connect("text_entered",self,'_on_name_edit_text_entered')
 	#connect level
@@ -229,11 +235,12 @@ func _on_save_hero_pressed():
 
 
 func _on_load_pressed():
-	var load_name = get_node('load/box/load_name').get_text()
-	var path = 'res://data/heroes/'+load_name+'.zd'
-	var file = File.new()
-	if file.file_exists(path):
-		restore(load_name)
-	else:
-		print("\nTHIS FILE EXISTS NOT!! TRY AGAIN.")
-	file.close()
+	filebox.set_mode(0)
+	filebox.set_current_dir('res://data/heroes')
+	filebox.show()
+
+
+func _on_filebox_file_selected( path ):
+	hero = Data.load_hero(path)
+	_draw_sheet()
+	_draw_skills()

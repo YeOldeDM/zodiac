@@ -39,11 +39,10 @@ func save_hero(hero):
 	print("Successfully saved to:  ",path)
 	save.close()
 
-func load_hero(name):
+func load_hero(path):
 	#set up
 	var data = {}
 	var file = File.new()
-	var path = 'res://data/heroes/'+name+'.zd'
 	#try path and parse data
 	if file.file_exists(path):
 		prints("Found Hero file",path)
@@ -51,7 +50,7 @@ func load_hero(name):
 		while !file.eof_reached():
 			data.parse_json(file.get_line())
 	else:
-		print("\nINVALID CHARACTER NAME  "+name+"\n")
+		#print("\nINVALID CHARACTER NAME  "+name+"\n")
 		file.close()
 		return null
 	file.close()

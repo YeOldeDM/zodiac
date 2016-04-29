@@ -63,7 +63,12 @@ class Monster:
 	
 	func restore_speed():
 		self.current_speed += self.get_speed()
-
+	
+	func set_initial_speed():
+		var S = get_speed()
+		var R = int(round(rand_range(1,8)))
+		self.current_speed = S+R
+	
 	func get_name():
 		return self.name
 	

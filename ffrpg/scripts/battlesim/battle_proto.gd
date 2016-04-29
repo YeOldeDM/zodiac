@@ -11,6 +11,7 @@ onready var combat = get_node('box/options/actions/combat')
 
 onready var round_label = get_node('box/options/meta/box/round/value')
 
+
 var all_actors = []
 var actors = []
 
@@ -67,7 +68,9 @@ func next_turn():
 	if current_turn > actors.size()-1:
 		new_tick()
 	else:
+		current_actor.deactivate_battler()
 		current_actor = actors[current_turn]
+		current_actor.activate_battler()
 		say_actor()
 		_check_is_hero()
 		show_combat_options()
@@ -145,6 +148,9 @@ func build_actors():
 	print("WE GOT "+str(actors.size())+" ACTORS")
 
 func _monster_action():
+	current_actor.begin_attack()
+
+func monster_post_action():
 	current_actor.me.spend_speed()
 	msg.say("The "+current_actor.me.get_name()+" wiggles around.")
 	current_actor.draw_battler()
@@ -155,6 +161,7 @@ func pre_battle():
 		actor.draw_battler()
 	_initiative()
 	current_actor = actors[0]
+	current_actor.activate_battler()
 	say_actor()
 	_check_is_hero()
 	if not is_hero:
@@ -200,3 +207,5 @@ func _on_fight_pressed():
 func _on_block_pressed():
 	current_action = "block"
 	commit_action()
+
+

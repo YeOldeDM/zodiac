@@ -56,7 +56,6 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 8.0
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="message" type="PanelContainer" parent="box/battle"]
 
@@ -138,6 +137,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 5.0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="combat" type="HBoxContainer" parent="box/options/actions"]
 
@@ -216,6 +216,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="box/options/meta"]
 
