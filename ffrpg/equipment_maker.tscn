@@ -1,0 +1,1131 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://weapon_maker.gd" type="Script" id=1]
+
+[node name="Equipment" type="Node2D"]
+
+[node name="TabContainer" type="TabContainer" parent="."]
+
+margin/left = 10.0
+margin/top = 10.0
+margin/right = 760.0
+margin/bottom = 510.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+tab_align = 1
+tabs_visible = true
+
+[node name="Weapons" type="Tabs" parent="TabContainer"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 706.0
+margin/bottom = 449.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+script/script = ExtResource( 1 )
+
+[node name="Info" type="PanelContainer" parent="TabContainer/Weapons"]
+
+margin/left = 6.0
+margin/top = 9.0
+margin/right = 296.0
+margin/bottom = 49.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="HBoxContainer" parent="TabContainer/Weapons/Info"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 286.0
+margin/bottom = 36.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/Info/box"]
+
+margin/top = 7.0
+margin/right = 57.0
+margin/bottom = 20.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Set Name"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name" type="LineEdit" parent="TabContainer/Weapons/Info/box"]
+
+margin/left = 61.0
+margin/right = 282.0
+margin/bottom = 28.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="File" type="PanelContainer" parent="TabContainer/Weapons"]
+
+margin/left = 306.0
+margin/top = 9.0
+margin/right = 602.0
+margin/bottom = 49.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="HBoxContainer" parent="TabContainer/Weapons/File"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 292.0
+margin/bottom = 36.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="save" type="Button" parent="TabContainer/Weapons/File/box"]
+
+margin/right = 142.0
+margin/bottom = 28.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+toggle_mode = false
+text = "Save Set"
+flat = false
+
+[node name="load" type="Button" parent="TabContainer/Weapons/File/box"]
+
+margin/left = 146.0
+margin/right = 288.0
+margin/bottom = 28.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+toggle_mode = false
+text = "Load Set"
+flat = false
+
+[node name="Power" type="PanelContainer" parent="TabContainer/Weapons"]
+
+margin/left = 6.0
+margin/top = 59.0
+margin/right = 296.0
+margin/bottom = 129.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="VBoxContainer" parent="TabContainer/Weapons/Power"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 286.0
+margin/bottom = 66.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/Power/box"]
+
+margin/right = 282.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Weapon Type"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="box" type="HBoxContainer" parent="TabContainer/Weapons/Power/box"]
+
+margin/top = 17.0
+margin/right = 282.0
+margin/bottom = 58.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="power" type="VBoxContainer" parent="TabContainer/Weapons/Power/box/box"]
+
+margin/right = 36.0
+margin/bottom = 41.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/Power/box/box/power"]
+
+margin/right = 36.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Power"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="TabContainer/Weapons/Power/box/box/power"]
+
+margin/top = 17.0
+margin/right = 36.0
+margin/bottom = 30.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "3"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="slider" type="HSlider" parent="TabContainer/Weapons/Power/box/box"]
+
+margin/left = 40.0
+margin/top = 12.0
+margin/right = 243.0
+margin/bottom = 28.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+range/min = -2.0
+range/max = 2.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = true
+range/rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="magic" type="VBoxContainer" parent="TabContainer/Weapons/Power/box/box"]
+
+margin/left = 247.0
+margin/right = 282.0
+margin/bottom = 41.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/Power/box/box/magic"]
+
+margin/right = 35.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Magic"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="value" type="Label" parent="TabContainer/Weapons/Power/box/box/magic"]
+
+margin/top = 17.0
+margin/right = 35.0
+margin/bottom = 30.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "3"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Stats" type="PanelContainer" parent="TabContainer/Weapons"]
+
+margin/left = 6.0
+margin/top = 139.0
+margin/right = 736.0
+margin/bottom = 434.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Weapons/Stats"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 726.0
+margin/bottom = 291.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+columns = 5
+
+[node name="num" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/right = 14.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "#"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/right = 338.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Name"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ap" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/right = 365.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+AP"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/right = 403.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+MAP"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/right = 722.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "special"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n1" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 22.0
+margin/right = 14.0
+margin/bottom = 35.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name1" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 17.0
+margin/right = 338.0
+margin/bottom = 40.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap1" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 22.0
+margin/right = 365.0
+margin/bottom = 35.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map1" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 22.0
+margin/right = 403.0
+margin/bottom = 35.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special1" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 22.0
+margin/right = 722.0
+margin/bottom = 35.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n2" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 49.0
+margin/right = 14.0
+margin/bottom = 62.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "2"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name2" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 44.0
+margin/right = 338.0
+margin/bottom = 67.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="map2" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 49.0
+margin/right = 365.0
+margin/bottom = 62.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ap2" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 49.0
+margin/right = 403.0
+margin/bottom = 62.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special2" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 49.0
+margin/right = 722.0
+margin/bottom = 62.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n3" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 76.0
+margin/right = 14.0
+margin/bottom = 89.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "3"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name3" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 71.0
+margin/right = 338.0
+margin/bottom = 94.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap3" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 76.0
+margin/right = 365.0
+margin/bottom = 89.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map3" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 76.0
+margin/right = 403.0
+margin/bottom = 89.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special3" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 76.0
+margin/right = 722.0
+margin/bottom = 89.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n4" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 103.0
+margin/right = 14.0
+margin/bottom = 116.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "4"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name4" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 98.0
+margin/right = 338.0
+margin/bottom = 121.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap4" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 103.0
+margin/right = 365.0
+margin/bottom = 116.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map4" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 103.0
+margin/right = 403.0
+margin/bottom = 116.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special4" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 103.0
+margin/right = 722.0
+margin/bottom = 116.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n5" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 130.0
+margin/right = 14.0
+margin/bottom = 143.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "5"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name5" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 125.0
+margin/right = 338.0
+margin/bottom = 148.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap5" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 130.0
+margin/right = 365.0
+margin/bottom = 143.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map5" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 130.0
+margin/right = 403.0
+margin/bottom = 143.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special5" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 130.0
+margin/right = 722.0
+margin/bottom = 143.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n6" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 157.0
+margin/right = 14.0
+margin/bottom = 170.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "6"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name6" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 152.0
+margin/right = 338.0
+margin/bottom = 175.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap6" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 157.0
+margin/right = 365.0
+margin/bottom = 170.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map6" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 157.0
+margin/right = 403.0
+margin/bottom = 170.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special6" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 157.0
+margin/right = 722.0
+margin/bottom = 170.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n7" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 184.0
+margin/right = 14.0
+margin/bottom = 197.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "7"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name7" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 179.0
+margin/right = 338.0
+margin/bottom = 202.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap7" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 184.0
+margin/right = 365.0
+margin/bottom = 197.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map7" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 184.0
+margin/right = 403.0
+margin/bottom = 197.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special7" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 184.0
+margin/right = 722.0
+margin/bottom = 197.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n8" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 211.0
+margin/right = 14.0
+margin/bottom = 224.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "8"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name8" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 206.0
+margin/right = 338.0
+margin/bottom = 229.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap8" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 211.0
+margin/right = 365.0
+margin/bottom = 224.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map8" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 211.0
+margin/right = 403.0
+margin/bottom = 224.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special8" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 211.0
+margin/right = 722.0
+margin/bottom = 224.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n9" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 238.0
+margin/right = 14.0
+margin/bottom = 251.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "9"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name9" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 233.0
+margin/right = 338.0
+margin/bottom = 256.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap9" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 238.0
+margin/right = 365.0
+margin/bottom = 251.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map9" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 238.0
+margin/right = 403.0
+margin/bottom = 251.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special9" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 238.0
+margin/right = 722.0
+margin/bottom = 251.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="n10" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/top = 265.0
+margin/right = 14.0
+margin/bottom = 278.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "10"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name10" type="LineEdit" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 18.0
+margin/top = 260.0
+margin/right = 338.0
+margin/bottom = 283.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="ap10" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 342.0
+margin/top = 265.0
+margin/right = 365.0
+margin/bottom = 278.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="map10" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 369.0
+margin/top = 265.0
+margin/right = 403.0
+margin/bottom = 278.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "+0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="special10" type="Label" parent="TabContainer/Weapons/Stats/GridContainer"]
+
+margin/left = 407.0
+margin/top = 265.0
+margin/right = 722.0
+margin/bottom = 278.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Armor" type="Tabs" parent="TabContainer"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="Guards" type="Tabs" parent="TabContainer"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+
