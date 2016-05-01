@@ -216,7 +216,6 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="box/options/meta"]
 

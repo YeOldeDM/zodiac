@@ -1,7 +1,6 @@
 
 extends Node
 
-
 class Hero:
 	var name
 

@@ -23,6 +23,13 @@ var weapon_attack_chart = [
 # attack die type (1dx) based on point value
 var weapon_attack_dice = [6,8,8,8,10]
 
+#bonuses conveyed to stats from weapon abilities, [base,inc/lvl]
+var weapon_ability_stat_bonus = {
+	'magic':	[3,2],
+	'agility':	[3,2],
+	'vitality':	[2,1],
+	'spirit':	[2,1]
+	}
 # armor HP/MP bonus by [type][lvl][HP/MP]
 var armor_chart = [
 	[
