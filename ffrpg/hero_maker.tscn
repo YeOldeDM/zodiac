@@ -67,9 +67,9 @@ secret = false
 anchor/top = 3
 anchor/bottom = 3
 margin/left = 10.0
-margin/top = -70.0
-margin/right = 294.0
-margin/bottom = -230.0
+margin/top = -130.0
+margin/right = 250.0
+margin/bottom = -300.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -80,8 +80,8 @@ __meta__ = { "_editor_collapsed":true }
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 280.0
-margin/bottom = 156.0
+margin/right = 236.0
+margin/bottom = 166.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -91,7 +91,7 @@ alignment = 0
 [node name="stats" type="VBoxContainer" parent="stats/box"]
 
 margin/right = 116.0
-margin/bottom = 148.0
+margin/bottom = 158.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -337,8 +337,8 @@ suffix = ""
 [node name="weight" type="VBoxContainer" parent="stats/box"]
 
 margin/left = 120.0
-margin/right = 276.0
-margin/bottom = 148.0
+margin/right = 232.0
+margin/bottom = 158.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -348,7 +348,7 @@ __meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="stats/box/weight"]
 
-margin/right = 156.0
+margin/right = 112.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -361,7 +361,7 @@ max_lines_visible = -1
 [node name="strength" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 17.0
-margin/right = 156.0
+margin/right = 112.0
 margin/bottom = 40.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -381,7 +381,7 @@ suffix = ""
 [node name="magic" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 44.0
-margin/right = 156.0
+margin/right = 112.0
 margin/bottom = 67.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -401,7 +401,7 @@ suffix = ""
 [node name="vitality" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 71.0
-margin/right = 156.0
+margin/right = 112.0
 margin/bottom = 94.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -421,7 +421,7 @@ suffix = ""
 [node name="spirit" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 98.0
-margin/right = 156.0
+margin/right = 112.0
 margin/bottom = 121.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -441,7 +441,7 @@ suffix = ""
 [node name="agility" type="SpinBox" parent="stats/box/weight"]
 
 margin/top = 125.0
-margin/right = 156.0
+margin/right = 112.0
 margin/bottom = 148.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -460,10 +460,10 @@ suffix = ""
 
 [node name="level" type="PanelContainer" parent="."]
 
-margin/left = 180.0
-margin/top = 10.0
-margin/right = 340.0
-margin/bottom = 62.0
+margin/left = 10.0
+margin/top = 70.0
+margin/right = 170.0
+margin/bottom = 122.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -516,10 +516,10 @@ suffix = ""
 
 [node name="hpmp" type="PanelContainer" parent="."]
 
-margin/left = 10.0
-margin/top = 240.0
-margin/right = 130.0
-margin/bottom = 310.0
+margin/left = 260.0
+margin/top = 220.0
+margin/right = 380.0
+margin/bottom = 290.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -617,10 +617,10 @@ max_lines_visible = -1
 
 [node name="derived" type="PanelContainer" parent="."]
 
-margin/left = 10.0
-margin/top = 320.0
-margin/right = 250.0
-margin/bottom = 400.0
+margin/left = 260.0
+margin/top = 130.0
+margin/right = 500.0
+margin/bottom = 210.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -957,10 +957,10 @@ max_lines_visible = -1
 
 [node name="skills" type="PanelContainer" parent="."]
 
-margin/left = 300.0
-margin/top = 70.0
-margin/right = 480.0
-margin/bottom = 133.0
+margin/left = 180.0
+margin/top = 60.0
+margin/right = 360.0
+margin/bottom = 123.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1009,10 +1009,10 @@ items = [  ]
 
 [node name="file" type="PanelContainer" parent="."]
 
-margin/left = 140.0
-margin/top = 270.0
-margin/right = 340.0
-margin/bottom = 305.0
+margin/left = 180.0
+margin/top = 10.0
+margin/right = 360.0
+margin/bottom = 50.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1023,8 +1023,8 @@ __meta__ = { "_editor_collapsed":true }
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 196.0
-margin/bottom = 31.0
+margin/right = 176.0
+margin/bottom = 36.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -1033,8 +1033,8 @@ alignment = 0
 
 [node name="save" type="Button" parent="file/box"]
 
-margin/right = 94.0
-margin/bottom = 23.0
+margin/right = 84.0
+margin/bottom = 28.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1045,9 +1045,9 @@ flat = false
 
 [node name="load" type="Button" parent="file/box"]
 
-margin/left = 98.0
-margin/right = 192.0
-margin/bottom = 23.0
+margin/left = 88.0
+margin/right = 172.0
+margin/bottom = 28.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1067,7 +1067,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-popup/exclusive = false
+popup/exclusive = true
 window/title = "Save a File"
 dialog/hide_on_ok = false
 

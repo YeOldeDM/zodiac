@@ -57,7 +57,7 @@ func _ready():
 	for i in range(1,11):
 		var name = stats.get_node('name'+str(i))
 		name.set_text("!!==- UNNAMED WEAPON LV "+str(i)+" -==!!")
-		var node = stats.get_node('special'+str(i)).get_node('add')
+		var node = stats.get_node('special'+str(i))
 		node.connect('pressed',self,'_on_special_button_pressed',[i])
 	#special_maker.show()
 

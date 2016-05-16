@@ -1,25 +1,30 @@
 
 extends Node
 
+func _invalid_file(path):
+	OS.alert("\nINVALID FILE: "+path, "Bad File Error")
+
+func _saved_file(path):
+	OS.alert("Saved data to:  "+path, "File Saved Successfully!")
+	
 func save_monster(monster):
 	var data = monster.get_package()
 	var save = File.new()
-	var path = 'res://data/monsters/'+monster.get_name()+'.zd'
+	var path = 'res://data/monsters/'+monster.get_name()+'.monster'
 	save.open(path,File.WRITE)
 	save.store_line(data.to_json())
-	print("Successfully saved Monster:  "+monster.get_name())
+	_saved_file(path)
 	save.close()
 
-func load_monster(name):
+func load_monster(path):
 	var data = {}
 	var file = File.new()
-	var path = 'res://data/monsters/'+name+'.zd'
 	if file.file_exists(path):
 		file.open(path,File.READ)
 		while !file.eof_reached():
 			data.parse_json(file.get_line())
 	else:
-		print("\nINVALID MONSTER NAME "+name+"\n")
+		_invalid_file(path)
 		file.close()
 		return null
 	file.close()
@@ -31,12 +36,12 @@ func save_hero(hero):
 	var data = hero.get_package()
 	#init save file
 	var save = File.new()
-	var path = 'res://data/heroes/'+hero.get_name()+'.zd'
+	var path = 'res://data/heroes/'+hero.get_name()+'.hero'
 	save.open(path,File.WRITE)
 	#save data
 	save.store_line(data.to_json())
 	#close file
-	print("Successfully saved to:  ",path)
+	_saved_file(path)
 	save.close()
 
 func load_hero(path):
@@ -50,7 +55,7 @@ func load_hero(path):
 		while !file.eof_reached():
 			data.parse_json(file.get_line())
 	else:
-		#print("\nINVALID CHARACTER NAME  "+name+"\n")
+		_invalid_file(path)
 		file.close()
 		return null
 	file.close()

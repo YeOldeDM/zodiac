@@ -64,7 +64,7 @@ var charge_power_cost = [
 	]
 
 # tech point cost by [lvl]
-var tech_point_cost = [8,15,30,60,125,250]
+var tech_point_cost = [0,8,15,30,60,125,250]
 
 var power_attack = [
 	[1,1],

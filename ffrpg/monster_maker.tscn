@@ -62,297 +62,24 @@ max_length = 0
 editable = true
 secret = false
 
-[node name="stats" type="PanelContainer" parent="."]
-
-anchor/top = 3
-anchor/bottom = 3
-margin/left = 10.0
-margin/top = -70.0
-margin/right = 170.0
-margin/bottom = -230.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-__meta__ = { "_editor_collapsed":true }
-
-[node name="box" type="HBoxContainer" parent="stats"]
-
-margin/left = 4.0
-margin/top = 8.0
-margin/right = 156.0
-margin/bottom = 156.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-
-[node name="stats" type="VBoxContainer" parent="stats/box"]
-
-margin/right = 116.0
-margin/bottom = 148.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-__meta__ = { "_editor_collapsed":true }
-
-[node name="Label" type="Label" parent="stats/box/stats"]
-
-margin/right = 116.0
-margin/bottom = 13.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-text = "STATS"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="strength" type="HBoxContainer" parent="stats/box/stats"]
-
-margin/top = 17.0
-margin/right = 116.0
-margin/bottom = 40.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-__meta__ = { "_editor_collapsed":true }
-
-[node name="Label" type="Label" parent="stats/box/stats/strength"]
-
-margin/top = 5.0
-margin/right = 50.0
-margin/bottom = 18.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-text = "Strength"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SpinBox" type="SpinBox" parent="stats/box/stats/strength"]
-
-margin/left = 54.0
-margin/right = 116.0
-margin/bottom = 23.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-range/min = 3.0
-range/max = 255.0
-range/step = 1.0
-range/page = 0.0
-range/value = 3.0
-range/exp_edit = false
-range/rounded = false
-editable = true
-prefix = ""
-suffix = ""
-
-[node name="magic" type="HBoxContainer" parent="stats/box/stats"]
-
-margin/top = 44.0
-margin/right = 116.0
-margin/bottom = 67.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-__meta__ = { "_editor_collapsed":true }
-
-[node name="Label" type="Label" parent="stats/box/stats/magic"]
-
-margin/top = 5.0
-margin/right = 50.0
-margin/bottom = 18.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-text = "Magic"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SpinBox" type="SpinBox" parent="stats/box/stats/magic"]
-
-margin/left = 54.0
-margin/right = 116.0
-margin/bottom = 23.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-range/min = 3.0
-range/max = 255.0
-range/step = 1.0
-range/page = 0.0
-range/value = 3.0
-range/exp_edit = false
-range/rounded = false
-editable = true
-prefix = ""
-suffix = ""
-
-[node name="vitality" type="HBoxContainer" parent="stats/box/stats"]
-
-margin/top = 71.0
-margin/right = 116.0
-margin/bottom = 94.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-__meta__ = { "_editor_collapsed":true }
-
-[node name="Label" type="Label" parent="stats/box/stats/vitality"]
-
-margin/top = 5.0
-margin/right = 50.0
-margin/bottom = 18.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-text = "Vitality"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SpinBox" type="SpinBox" parent="stats/box/stats/vitality"]
-
-margin/left = 54.0
-margin/right = 116.0
-margin/bottom = 23.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-range/min = 3.0
-range/max = 255.0
-range/step = 1.0
-range/page = 0.0
-range/value = 3.0
-range/exp_edit = false
-range/rounded = false
-editable = true
-prefix = ""
-suffix = ""
-
-[node name="spirit" type="HBoxContainer" parent="stats/box/stats"]
-
-margin/top = 98.0
-margin/right = 116.0
-margin/bottom = 121.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-__meta__ = { "_editor_collapsed":true }
-
-[node name="Label" type="Label" parent="stats/box/stats/spirit"]
-
-margin/top = 5.0
-margin/right = 50.0
-margin/bottom = 18.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-text = "Spirit"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SpinBox" type="SpinBox" parent="stats/box/stats/spirit"]
-
-margin/left = 54.0
-margin/right = 116.0
-margin/bottom = 23.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-range/min = 3.0
-range/max = 255.0
-range/step = 1.0
-range/page = 0.0
-range/value = 3.0
-range/exp_edit = false
-range/rounded = false
-editable = true
-prefix = ""
-suffix = ""
-
-[node name="agility" type="HBoxContainer" parent="stats/box/stats"]
-
-margin/top = 125.0
-margin/right = 116.0
-margin/bottom = 148.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-__meta__ = { "_editor_collapsed":true }
-
-[node name="Label" type="Label" parent="stats/box/stats/agility"]
-
-margin/top = 5.0
-margin/right = 50.0
-margin/bottom = 18.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-text = "Agility"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SpinBox" type="SpinBox" parent="stats/box/stats/agility"]
-
-margin/left = 54.0
-margin/right = 116.0
-margin/bottom = 23.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-range/min = 3.0
-range/max = 255.0
-range/step = 1.0
-range/page = 0.0
-range/value = 3.0
-range/exp_edit = false
-range/rounded = false
-editable = true
-prefix = ""
-suffix = ""
-
 [node name="level" type="PanelContainer" parent="."]
 
-margin/left = 180.0
-margin/top = 10.0
-margin/right = 340.0
-margin/bottom = 62.0
+margin/left = 10.0
+margin/top = 70.0
+margin/right = 170.0
+margin/bottom = 150.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="level"]
 
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 156.0
-margin/bottom = 74.0
+margin/bottom = 76.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -407,12 +134,294 @@ text = "Boss"
 flat = false
 align = 0
 
+[node name="stats" type="PanelContainer" parent="."]
+
+anchor/top = 3
+anchor/bottom = 3
+margin/left = 10.0
+margin/top = -160.0
+margin/right = 170.0
+margin/bottom = -370.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="HBoxContainer" parent="stats"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 156.0
+margin/bottom = 206.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="stats" type="VBoxContainer" parent="stats/box"]
+
+margin/right = 152.0
+margin/bottom = 198.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats"]
+
+margin/right = 152.0
+margin/bottom = 29.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+text = "STATS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="strength" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 33.0
+margin/right = 152.0
+margin/bottom = 62.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats/strength"]
+
+margin/right = 74.0
+margin/bottom = 29.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+text = "Strength"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/strength"]
+
+margin/left = 78.0
+margin/right = 152.0
+margin/bottom = 29.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="magic" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 66.0
+margin/right = 152.0
+margin/bottom = 95.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats/magic"]
+
+margin/right = 74.0
+margin/bottom = 29.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+text = "Magic"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/magic"]
+
+margin/left = 78.0
+margin/right = 152.0
+margin/bottom = 29.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="vitality" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 99.0
+margin/right = 152.0
+margin/bottom = 128.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats/vitality"]
+
+margin/right = 74.0
+margin/bottom = 29.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+text = "Vitality"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/vitality"]
+
+margin/left = 78.0
+margin/right = 152.0
+margin/bottom = 29.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="spirit" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 132.0
+margin/right = 152.0
+margin/bottom = 161.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats/spirit"]
+
+margin/right = 74.0
+margin/bottom = 29.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+text = "Spirit"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/spirit"]
+
+margin/left = 78.0
+margin/right = 152.0
+margin/bottom = 29.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="agility" type="HBoxContainer" parent="stats/box/stats"]
+
+margin/top = 165.0
+margin/right = 152.0
+margin/bottom = 198.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="stats/box/stats/agility"]
+
+margin/right = 74.0
+margin/bottom = 33.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+text = "Agility"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox" type="SpinBox" parent="stats/box/stats/agility"]
+
+margin/left = 78.0
+margin/right = 152.0
+margin/bottom = 33.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 3.0
+range/max = 255.0
+range/step = 1.0
+range/page = 0.0
+range/value = 3.0
+range/exp_edit = false
+range/rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
 [node name="hpmp" type="PanelContainer" parent="."]
 
-margin/left = 10.0
+margin/left = 180.0
 margin/top = 240.0
-margin/right = 250.0
-margin/bottom = 343.0
+margin/right = 420.0
+margin/bottom = 370.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -424,7 +433,7 @@ __meta__ = { "_editor_collapsed":true }
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 236.0
-margin/bottom = 119.0
+margin/bottom = 126.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -434,7 +443,7 @@ alignment = 0
 [node name="hp" type="HBoxContainer" parent="hpmp/box"]
 
 margin/right = 232.0
-margin/bottom = 23.0
+margin/bottom = 24.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -459,7 +468,7 @@ max_lines_visible = -1
 
 margin/left = 31.0
 margin/right = 141.0
-margin/bottom = 23.0
+margin/bottom = 24.0
 hint/tooltip = "The monster\'s maximum HP"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -481,7 +490,7 @@ suffix = ""
 
 margin/left = 145.0
 margin/right = 231.0
-margin/bottom = 23.0
+margin/bottom = 24.0
 hint/tooltip = "Calculate the standard value for this stat"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -493,9 +502,9 @@ flat = false
 
 [node name="mp" type="HBoxContainer" parent="hpmp/box"]
 
-margin/top = 27.0
+margin/top = 28.0
 margin/right = 232.0
-margin/bottom = 50.0
+margin/bottom = 52.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -520,7 +529,7 @@ max_lines_visible = -1
 
 margin/left = 31.0
 margin/right = 139.0
-margin/bottom = 23.0
+margin/bottom = 24.0
 hint/tooltip = "The monsters maximum MP"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -542,7 +551,7 @@ suffix = ""
 
 margin/left = 143.0
 margin/right = 231.0
-margin/bottom = 23.0
+margin/bottom = 24.0
 hint/tooltip = "Calculate the standard value for this stat"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -554,9 +563,9 @@ flat = false
 
 [node name="HSeparator" type="HSeparator" parent="hpmp/box"]
 
-margin/top = 54.0
+margin/top = 56.0
 margin/right = 232.0
-margin/bottom = 57.0
+margin/bottom = 59.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -564,9 +573,9 @@ size_flags/vertical = 2
 
 [node name="xp" type="HBoxContainer" parent="hpmp/box"]
 
-margin/top = 61.0
+margin/top = 63.0
 margin/right = 232.0
-margin/bottom = 84.0
+margin/bottom = 87.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -591,7 +600,7 @@ max_lines_visible = -1
 
 margin/left = 31.0
 margin/right = 142.0
-margin/bottom = 23.0
+margin/bottom = 24.0
 hint/tooltip = "XP awarded by the monster when it is defeated"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -613,7 +622,7 @@ suffix = ""
 
 margin/left = 146.0
 margin/right = 231.0
-margin/bottom = 23.0
+margin/bottom = 24.0
 hint/tooltip = "Calculate the standard value for this stat"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -625,9 +634,9 @@ flat = false
 
 [node name="gp" type="HBoxContainer" parent="hpmp/box"]
 
-margin/top = 88.0
+margin/top = 91.0
 margin/right = 232.0
-margin/bottom = 111.0
+margin/bottom = 118.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -636,9 +645,9 @@ alignment = 0
 
 [node name="Label" type="Label" parent="hpmp/box/gp"]
 
-margin/top = 5.0
+margin/top = 7.0
 margin/right = 27.0
-margin/bottom = 18.0
+margin/bottom = 20.0
 hint/tooltip = "The amount of GP (money) that is dropped by the monster when it is defeated"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -652,7 +661,7 @@ max_lines_visible = -1
 
 margin/left = 31.0
 margin/right = 141.0
-margin/bottom = 23.0
+margin/bottom = 27.0
 hint/tooltip = "The amount of GP (money) that is dropped by the monster when it is defeated"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -674,7 +683,7 @@ suffix = ""
 
 margin/left = 145.0
 margin/right = 231.0
-margin/bottom = 23.0
+margin/bottom = 27.0
 hint/tooltip = "Calculate the standard value for this stat"
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -686,14 +695,15 @@ flat = false
 
 [node name="derived" type="PanelContainer" parent="."]
 
-margin/left = 10.0
-margin/top = 370.0
-margin/right = 250.0
-margin/bottom = 470.0
+margin/left = 180.0
+margin/top = 130.0
+margin/right = 420.0
+margin/bottom = 230.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="GridContainer" parent="derived"]
 
@@ -717,6 +727,7 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="derived/box/attack_power"]
 
@@ -1039,6 +1050,7 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="derived/box/tech"]
 
@@ -1070,10 +1082,10 @@ max_lines_visible = -1
 
 [node name="file" type="PanelContainer" parent="."]
 
-margin/left = 10.0
-margin/top = 480.0
-margin/right = 250.0
-margin/bottom = 560.0
+margin/left = 180.0
+margin/top = 10.0
+margin/right = 420.0
+margin/bottom = 120.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1085,72 +1097,116 @@ __meta__ = { "_editor_collapsed":true }
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 236.0
-margin/bottom = 76.0
+margin/bottom = 106.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
 
-[node name="save" type="Button" parent="file/box"]
+[node name="Label" type="Label" parent="file/box"]
 
 margin/right = 232.0
-margin/bottom = 19.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "FILE"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="save" type="Button" parent="file/box"]
+
+margin/top = 17.0
+margin/right = 232.0
+margin/bottom = 55.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
+size_flags/horizontal = 3
+size_flags/vertical = 3
 toggle_mode = false
 text = "SAVE"
 flat = false
 
-[node name="load" type="PanelContainer" parent="file/box"]
+[node name="load" type="Button" parent="file/box"]
 
-margin/top = 23.0
+margin/top = 59.0
 margin/right = 232.0
-margin/bottom = 58.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="box" type="HBoxContainer" parent="file/box/load"]
-
-margin/left = 4.0
-margin/top = 8.0
-margin/right = 228.0
-margin/bottom = 31.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-alignment = 0
-
-[node name="load_name" type="LineEdit" parent="file/box/load/box"]
-
-margin/right = 175.0
-margin/bottom = 23.0
+margin/bottom = 98.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
-size_flags/vertical = 2
-text = ""
-max_length = 0
-editable = true
-secret = false
+size_flags/vertical = 3
+toggle_mode = false
+text = "LOAD"
+flat = false
 
-[node name="load_button" type="Button" parent="file/box/load/box"]
+[node name="filebox" type="FileDialog" parent="."]
 
-margin/left = 179.0
-margin/right = 224.0
-margin/bottom = 23.0
+visibility/visible = false
+margin/left = 356.0
+margin/top = 36.0
+margin/right = 717.0
+margin/bottom = 580.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-toggle_mode = false
-text = "LOAD"
-flat = false
+popup/exclusive = true
+window/title = "Load Monster..."
+dialog/hide_on_ok = false
+
+[node name="notes" type="PanelContainer" parent="."]
+
+margin/left = 10.0
+margin/top = 380.0
+margin/right = 420.0
+margin/bottom = 560.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="box" type="VBoxContainer" parent="notes"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 406.0
+margin/bottom = 176.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="Label" type="Label" parent="notes/box"]
+
+margin/right = 402.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = "NOTES"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextEdit" type="TextEdit" parent="notes/box"]
+
+margin/top = 17.0
+margin/right = 402.0
+margin/bottom = 168.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+caret/caret_blink = true
+caret/caret_blink_speed = 0.65
 
 [connection signal="text_entered" from="info/box/name_edit" to="." method="_on_name_edit_text_entered"]
 
@@ -1172,6 +1228,8 @@ flat = false
 
 [connection signal="pressed" from="file/box/save" to="." method="_on_save_pressed"]
 
-[connection signal="pressed" from="file/box/load/box/load_button" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="file/box/load" to="." method="_on_load_pressed"]
+
+[connection signal="file_selected" from="filebox" to="." method="_on_filebox_file_selected"]
 
 

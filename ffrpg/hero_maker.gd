@@ -48,8 +48,9 @@ func _ready():
 	_connect()
 	_draw_sheet()
 
-	filebox.set_mode(0)
-	filebox.set_current_dir('res://data/heroes')
+	filebox.add_filter("*.hero ; ZODIAC Hero data")
+#	filebox.set_mode(0)
+#	filebox.set_current_dir('res://data/heroes')
 
 
 
@@ -237,7 +238,7 @@ func _on_save_hero_pressed():
 func _on_load_pressed():
 	filebox.set_mode(0)
 	filebox.set_current_dir('res://data/heroes')
-	filebox.show()
+	filebox.popup()
 
 
 func _on_filebox_file_selected( path ):

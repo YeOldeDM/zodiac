@@ -309,12 +309,13 @@ size_flags/vertical = 2
 margin/left = 4.0
 margin/top = 8.0
 margin/right = 726.0
-margin/bottom = 314.0
+margin/bottom = 291.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 columns = 5
+__meta__ = { "_editor_collapsed":true }
 
 [node name="num" type="Label" parent="TabContainer/Weapons/Stats/grid"]
 
@@ -444,7 +445,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="special1" type="GridContainer" parent="TabContainer/Weapons/Stats/grid"]
+[node name="special1" type="Button" parent="TabContainer/Weapons/Stats/grid"]
 
 margin/left = 388.0
 margin/top = 17.0
@@ -454,18 +455,8 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
-columns = 6
-
-[node name="add" type="Button" parent="TabContainer/Weapons/Stats/grid/special1"]
-
-margin/right = 38.0
-margin/bottom = 19.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
 toggle_mode = false
-text = "ADD"
+text = "Add Special"
 flat = false
 
 [node name="n2" type="Label" parent="TabContainer/Weapons/Stats/grid"]
@@ -1202,11 +1193,10 @@ max_lines_visible = -1
 
 [node name="special_maker" type="AcceptDialog" parent="TabContainer/Weapons"]
 
-visibility/visible = false
-margin/left = 156.0
-margin/top = 59.0
-margin/right = 562.0
-margin/bottom = 378.0
+margin/left = 176.0
+margin/top = 39.0
+margin/right = 582.0
+margin/bottom = 358.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1215,14 +1205,13 @@ popup/exclusive = false
 window/title = "Weapon Special"
 dialog/hide_on_ok = true
 script/script = ExtResource( 2 )
-__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="TabContainer/Weapons/special_maker"]
 
 margin/left = 10.0
 margin/top = 10.0
 margin/right = 390.0
-margin/bottom = 310.0
+margin/bottom = 280.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -1236,7 +1225,7 @@ margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-text = "ASSIGN WEAPON ABILITY"
+text = "ASSIGN WEAPON ABILITY(S)"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1257,6 +1246,73 @@ flat = false
 align = 0
 selected = 0
 items = [ "Choose a Special..", null, true, -1, null, "Dedicated..", null, false, 0, null, "Drain Weapon", null, false, 1, null, "Elemental..", null, false, 2, null, "Keen Edge", null, false, 3, null, "Spell Effect..", null, true, 4, null, "Stat Bonus..", null, false, 5, null, "Status Effect..", null, false, 6, null ]
+
+[node name="parameters" type="TabContainer" parent="TabContainer/Weapons/special_maker/box"]
+
+margin/top = 40.0
+margin/right = 380.0
+margin/bottom = 270.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+tab_align = 1
+tabs_visible = false
+
+[node name="0" type="Tabs" parent="TabContainer/Weapons/special_maker/box/parameters"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 10.0
+margin/bottom = 10.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+__meta__ = { "_editor_collapsed":true }
+
+[node name="box" type="VBoxContainer" parent="TabContainer/Weapons/special_maker/box/parameters/0"]
+
+margin/left = 6.0
+margin/top = 2.0
+margin/right = 366.0
+margin/bottom = 212.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="description" type="RichTextLabel" parent="TabContainer/Weapons/special_maker/box/parameters/0/box"]
+
+margin/right = 360.0
+margin/bottom = 187.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+bbcode/enabled = true
+bbcode/bbcode = "The weapon is designed to kill a certain type of monster - dragons, demons, etc. Damage is doubled against that type of creature."
+visible_characters = -1
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Weapons/special_maker/box/parameters/0/box"]
+
+margin/top = 191.0
+margin/right = 360.0
+margin/bottom = 210.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Item 0"
+flat = false
+align = 0
+selected = 0
+items = [ "REPLACE W MONSTER TYPE LIST", null, false, -1, null ]
 
 [node name="Armor" type="Tabs" parent="TabContainer"]
 

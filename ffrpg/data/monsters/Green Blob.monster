@@ -1,0 +1,1 @@
+{"monster":{"current_speed":0, "base_magic":4, "is_blocking":false, "is_flying":false, "max_HP":120, "base_agility":5, "base_spirit":8, "@path":"res://scripts/monster.gd", "power_die":8, "boss":false, "current_MP":null, "GP":15, "@subpath":"Monster", "base_vitality":4, "XP":35, "level":1, "base_strength":9, "name":"Green Blob", "max_MP":4, "current_HP":null, "magic_die":8}}

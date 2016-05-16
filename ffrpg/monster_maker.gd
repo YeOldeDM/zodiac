@@ -7,12 +7,14 @@ onready var level = get_node('level/box')
 onready var hpmp = get_node('hpmp/box')
 onready var derived = get_node('derived/box')
 onready var file = get_node('file/box')
+onready var filebox = get_node('filebox')	#total diff than file/box :P
 
 var monster
 
 var monster_class = preload('res://scripts/monster.gd')
 
 func _ready():
+	filebox.add_filter("*.monster ; ZODIAC Monster data")
 	file.get_node('save').connect('pressed',self,'_save')
 	for stat in ['strength','magic','vitality','spirit','agility']:
 		stats.get_node(stat+'/SpinBox').connect("value_changed",self,"_on_stat_value_changed",[stat])
@@ -179,3 +181,13 @@ func _on_HP_calc_pressed():
 func _on_MP_calc_pressed():
 	monster.max_MP = monster.calculate_MP()
 	_draw_MP()
+
+
+func _on_load_pressed():
+	filebox.set_mode(0)
+	filebox.set_current_dir('res://data/monsters')
+	filebox.popup()
+
+func _on_filebox_file_selected( path ):
+	monster = Data.load_monster(path)
+	_draw_sheet()

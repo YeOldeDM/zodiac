@@ -1,6 +1,8 @@
 
 extends AcceptDialog
 
+onready var owner = get_parent()
+
 var specials = {
 	0:	[ 'dedicated', 2, 'beast' ],
 	1:	[ 'drainweapon', 3 ],
@@ -11,6 +13,8 @@ var specials = {
 	6:	[ 'statuseffect', [2,3], StatusEffect.BLIND],
 	}
 
+var working_specials = []
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -20,5 +24,4 @@ func _ready():
 
 
 func _on_effect_choice_item_selected( ID ):
-	var own = get_owner()
-	own.specials[own.current_lvl].append(specials[ID])
+	printt(ID, specials[ID-1])

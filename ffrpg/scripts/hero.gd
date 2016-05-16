@@ -388,6 +388,7 @@ class Hero:
 		attack.insert(0,damage)	#stick damage in as the first value in the list
 		return attack
 
+
 	#process an incoming attack
 	#take damage if needed and check for death
 	func receive_attack(attack):

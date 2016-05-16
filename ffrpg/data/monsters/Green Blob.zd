@@ -1,1 +1,0 @@
-{"monster":{"base_magic":11, "base_agility":6, "base_spirit":19, "@path":"res://scripts/monster.gd", "power_die":8, "current_MP":null, "boss":false, "@subpath":"Monster", "base_vitality":15, "level":10, "base_strength":12, "name":"Green Blob", "current_HP":null, "magic_die":8}}

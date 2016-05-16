@@ -1,0 +1,1 @@
+{"monster":{"current_speed":0, "base_magic":6, "is_blocking":false, "is_flying":false, "max_HP":160, "base_agility":6, "base_spirit":6, "@path":"res://scripts/monster.gd", "power_die":8, "boss":false, "current_MP":null, "GP":15, "@subpath":"Monster", "base_vitality":6, "XP":35, "level":1, "base_strength":6, "name":"New Monster", "max_MP":3, "current_HP":null, "magic_die":8}}
