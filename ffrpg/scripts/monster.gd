@@ -6,6 +6,8 @@ class Monster:
 	var level
 	var boss
 	
+	var notes = ""
+	
 	var base_strength
 	var base_magic
 	var base_vitality
@@ -27,12 +29,13 @@ class Monster:
 	var is_blocking = false
 	var is_flying = false
 	
-	func _init(name="New Monster",level=1,boss=false,\
+	func _init(name="New Monster",level=1,boss=false,notes="",\
 	strength=6,magic=6,vitality=6,spirit=6,agility=6,\
 	power_die=8,magic_die=8):
 		self.name = name
 		self.level = level
 		self.boss = boss
+		self.notes = notes
 		self.base_strength = strength
 		self.base_magic = magic
 		self.base_vitality = vitality
@@ -85,7 +88,12 @@ class Monster:
 		return self.boss
 	func set_boss(value):
 		self.boss = value
-	
+
+	func set_notes(text):
+		self.notes = text
+	func get_notes():
+		return self.notes
+
 	func get_total_stats():
 		return 25 + (self.get_level()*5)
 	

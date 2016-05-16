@@ -1,1 +1,0 @@
-{"monster":{"base_magic":36, "base_agility":67, "base_spirit":16, "@path":"res://scripts/monster.gd", "power_die":8, "current_MP":null, "boss":false, "@subpath":"Monster", "base_vitality":24, "level":5, "base_strength":99, "name":"Bliomp", "magic_die":8, "current_HP":null}}

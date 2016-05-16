@@ -6,6 +6,7 @@ onready var stats = get_node('stats/box/stats')
 onready var level = get_node('level/box')
 onready var hpmp = get_node('hpmp/box')
 onready var derived = get_node('derived/box')
+onready var notes = get_node('notes/box/text')
 onready var file = get_node('file/box')
 onready var filebox = get_node('filebox')	#total diff than file/box :P
 
@@ -22,6 +23,37 @@ func _ready():
 	monster = monster_class.Monster.new()
 	_draw_sheet()
 
+#####################
+#	Draw Functions	#
+#####################
+
+#draw the whole sheet
+func _draw_sheet():		
+	_draw_stats()
+	_draw_vitals()
+	_draw_name()
+	_draw_level()
+	_draw_boss()
+	_draw_notes()
+	_draw_stats_left()
+
+#Draw the whole Vitals block
+func _draw_vitals():
+	_draw_HP()
+	_draw_MP()
+	_draw_XP()
+	_draw_GP()
+
+#Draw the whole stat block
+func _draw_stats():
+	_draw_strength()
+	_draw_magic()
+	_draw_vitality()
+	_draw_spirit()
+	_draw_agility()
+
+
+#Misc labels/values
 func _draw_name():
 	info.get_node('name_edit').set_text(monster.get_name())
 
@@ -31,26 +63,6 @@ func _draw_level():
 func _draw_boss():
 	level.get_node('boss').set_pressed(monster.is_boss())
 
-func _draw_sheet():
-	_draw_stats()
-	_draw_vitals()
-	_draw_name()
-	_draw_level()
-	_draw_boss()
-	_draw_stats_left()
-
-func _draw_vitals():
-	_draw_HP()
-	_draw_MP()
-	_draw_XP()
-	_draw_GP()
-
-func _draw_stats():
-	_draw_strength()
-	_draw_magic()
-	_draw_vitality()
-	_draw_spirit()
-	_draw_agility()
 
 func _draw_stats_left():
 	var total = monster.get_strength() + monster.get_magic() +\
@@ -59,6 +71,11 @@ func _draw_stats_left():
 	var value = monster.get_total_stats() - total
 	stats.get_node('Label').set_text("STATS ("+str(value)+")")
 
+func _draw_notes():
+	print(monster.get_notes())
+	notes.set_text(monster.get_notes())
+
+#Draw Stats
 func _draw_strength():
 	stats.get_node('strength/SpinBox').set_value(monster.get_strength())
 	_draw_derived('attack_power')
@@ -86,9 +103,10 @@ func _draw_agility():
 	_draw_derived('critical')
 	_draw_derived('speed')
 
+#Draw Vitals
 func _draw_HP():
 	hpmp.get_node('hp/value').set_value(monster.max_HP)
-	print(hpmp.get_node('hp/value').get_value())
+	#print(hpmp.get_node('hp/value').get_value())
 
 func _draw_MP():
 	hpmp.get_node('mp/value').set_value(monster.get_MP())
@@ -99,13 +117,21 @@ func _draw_XP():
 func _draw_GP():
 	hpmp.get_node('gp/value').set_value(monster.get_GP())
 
+
+#draw Derived Stat stat
 func _draw_derived(stat):
 	var label = derived.get_node(str(stat,'/value'))
 	var text = str(monster.call(str('get_',stat)))
 	if stat == 'critical':
 		text += "%"
 	label.set_text(text)
-	
+
+
+
+
+#################
+#	Save/Load	#
+#################
 
 func save():
 	Data.save_monster(monster)
@@ -118,16 +144,22 @@ func restore(name):
 	else:
 		print(name+" returned null result. That's no good!")
 
-func _on_name_edit_text_entered( text ):
-	monster.set_name(text)
-	printt("Monster name set:",text)
 
+
+
+#####################
+#	Child Signals	#
+#####################
+
+func _on_name_edit_text_changed( text ):
+	monster.set_name(text)
 
 
 func _on_stat_value_changed(value,stat):
 	monster.call("set_"+stat,value)
 	call("_draw_"+stat)
 	_draw_stats_left()
+
 
 func _on_level_value_changed( value ):
 	monster.set_level(value)
@@ -191,3 +223,10 @@ func _on_load_pressed():
 func _on_filebox_file_selected( path ):
 	monster = Data.load_monster(path)
 	_draw_sheet()
+
+
+func _on_text_text_changed():
+	monster.set_notes(notes.get_text())
+
+
+
