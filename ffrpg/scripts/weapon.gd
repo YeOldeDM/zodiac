@@ -10,13 +10,17 @@ class Weapon:
 	var magic_points
 
 	var abilities
+	
+	var description
 
-	func _init(name="sword",level=1,attack=5,magic=1,abilities=[]):
+	func _init(name="sword",level=1,attack=5,magic=1,abilities=[],\
+				description="Premium Peice o' Crap Sword."):
 		self.name = name
 		self.level = level
 		self.attack_points = attack
 		self.magic_points = magic
 		self.abilities = abilities
+		self.description = description
 	
 	func get_attack_power():
 		return Chart.weapon_attack_chart[self.level-1][self.attack_points-1]

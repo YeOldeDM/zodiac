@@ -1,6 +1,15 @@
 
 extends Node
 
+const FIRE = 0
+const ICE = 1
+const LIGHTNING = 2
+const EARTH = 3
+const WATER = 4
+const WIND = 5
+const HOLY = 6
+const DARKNESS = 7
+
 const BERZERK = 0
 const BLIND = 1
 const CHARM = 2

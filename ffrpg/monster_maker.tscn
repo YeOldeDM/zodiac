@@ -21,6 +21,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="info"]
 
@@ -1168,6 +1169,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="notes"]
 
@@ -1206,6 +1208,197 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 caret/caret_blink = true
 caret/caret_blink_speed = 0.65
+
+[node name="skill_selector" type="PanelContainer" parent="."]
+
+margin/left = 430.0
+margin/top = 10.0
+margin/right = 750.0
+margin/bottom = 300.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="box" type="VBoxContainer" parent="skill_selector"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 316.0
+margin/bottom = 290.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Label" type="Label" parent="skill_selector/box"]
+
+margin/right = 312.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+text = "Select Skills"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="tabs" type="TabContainer" parent="skill_selector/box"]
+
+margin/top = 17.0
+margin/right = 312.0
+margin/bottom = 272.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+tab_align = 1
+tabs_visible = true
+
+[node name="X" type="Tabs" parent="skill_selector/box/tabs"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 268.0
+margin/bottom = 227.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="box" type="HBoxContainer" parent="skill_selector/box/tabs/X"]
+
+margin/left = 2.0
+margin/top = 4.0
+margin/right = 302.0
+margin/bottom = 224.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="ItemList" type="ItemList" parent="skill_selector/box/tabs/X/box"]
+
+margin/right = 148.0
+margin/bottom = 220.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="skill_selector/box/tabs/X/box"]
+
+margin/left = 152.0
+margin/right = 300.0
+margin/bottom = 220.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="0" type="Tabs" parent="skill_selector/box/tabs"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="1" type="Tabs" parent="skill_selector/box/tabs"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="2" type="Tabs" parent="skill_selector/box/tabs"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="3" type="Tabs" parent="skill_selector/box/tabs"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="4" type="Tabs" parent="skill_selector/box/tabs"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="5" type="Tabs" parent="skill_selector/box/tabs"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="6" type="Tabs" parent="skill_selector/box/tabs"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 4.0
+margin/bottom = 4.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
 
 [connection signal="text_changed" from="info/box/name_edit" to="." method="_on_name_edit_text_changed"]
 

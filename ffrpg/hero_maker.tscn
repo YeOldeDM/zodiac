@@ -64,12 +64,10 @@ secret = false
 
 [node name="stats" type="PanelContainer" parent="."]
 
-anchor/top = 3
-anchor/bottom = 3
 margin/left = 10.0
-margin/top = -130.0
+margin/top = 130.0
 margin/right = 250.0
-margin/bottom = -300.0
+margin/bottom = 300.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2

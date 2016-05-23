@@ -33,10 +33,11 @@ func load_monster(path):
 
 func save_hero(hero):
 	#grab data
+	var file_name = hero.get_name().replace(" ","_")
 	var data = hero.get_package()
 	#init save file
 	var save = File.new()
-	var path = 'res://data/heroes/'+hero.get_name()+'.hero'
+	var path = 'res://data/heroes/'+file_name+'.hero'
 	save.open(path,File.WRITE)
 	#save data
 	save.store_line(data.to_json())
