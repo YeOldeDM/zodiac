@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://core/battle/battle.gd" type="Script" id=1]
+
+[node name="Battle" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+script/script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+
+margin/right = 1024.0
+margin/bottom = 148.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+__meta__ = { "_editor_collapsed":true }
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 1020.0
+margin/bottom = 144.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+
+margin/right = 336.0
+margin/bottom = 136.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="PanelContainer1" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+
+margin/left = 340.0
+margin/right = 676.0
+margin/bottom = 136.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+
+margin/left = 680.0
+margin/right = 1016.0
+margin/bottom = 136.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="PanelContainer1" type="PanelContainer" parent="VBoxContainer"]
+
+margin/top = 152.0
+margin/right = 1024.0
+margin/bottom = 448.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+size_flags/stretch_ratio = 2.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+
+margin/top = 452.0
+margin/right = 1024.0
+margin/bottom = 600.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+

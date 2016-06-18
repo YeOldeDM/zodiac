@@ -30,7 +30,7 @@ func add_hero(name):
 	add_child(battler)
 	
 	battler.name.connect("toggled",status_window,"_on_status_toggled",[battler])
-	var path = 'res://data/heroes/'+name+'.zd'
+	var path = 'res://data/heroes/'+name+'.hero'
 	battler.me = Data.load_hero(path)
 	battler.setup()
 	msg.say("Added Hero "+battler.me.get_name())

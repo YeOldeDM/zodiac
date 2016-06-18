@@ -29,10 +29,12 @@ var is_hero = false	#is the current actor a hero?
 
 func _ready():
 	randomize()
+		
 	build_actors()
 	pre_battle()
 	connect("draw_round",self,"_on_draw_round")
 	set_process(true)
+	
 	
 func _process(delta):
 	for actor in actors:

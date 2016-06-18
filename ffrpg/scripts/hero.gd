@@ -41,11 +41,7 @@ class Hero:
 	#3=immune: take no damage
 	#4=absorb: heal half damage
 	#5=absorb+: heal all damage
-	var elements = {
-		'fire':1,
-		'ice':1,
-		'lightning':1
-			}
+	var elements = [1,1,1,1,1,1,1,1]
 	
 	#HERO INIT
 	#All arguments here should have defaults, even if it's 'null'!
@@ -373,7 +369,7 @@ class Hero:
 	
 	func get_max_tech_levels():
 		var mag_bonus = floor(self.get_magic() / 2)
-	
+		return 5 + mag_bonus
 
 	
 

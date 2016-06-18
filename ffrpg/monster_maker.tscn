@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://monster_maker.gd" type="Script" id=1]
+[ext_resource path="res://scripts/monster_skill_selector.gd" type="Script" id=2]
 
 [node name="Monster" type="Container"]
 
@@ -136,12 +137,10 @@ align = 0
 
 [node name="stats" type="PanelContainer" parent="."]
 
-anchor/top = 3
-anchor/bottom = 3
 margin/left = 10.0
-margin/top = -160.0
+margin/top = 160.0
 margin/right = 170.0
-margin/bottom = -370.0
+margin/bottom = 370.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1161,10 +1160,10 @@ dialog/hide_on_ok = false
 
 [node name="notes" type="PanelContainer" parent="."]
 
-margin/left = 10.0
-margin/top = 380.0
-margin/right = 420.0
-margin/bottom = 560.0
+margin/left = 430.0
+margin/top = 310.0
+margin/right = 750.0
+margin/bottom = 440.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1175,8 +1174,8 @@ __meta__ = { "_editor_collapsed":true }
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 406.0
-margin/bottom = 176.0
+margin/right = 316.0
+margin/bottom = 126.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -1185,7 +1184,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="notes/box"]
 
-margin/right = 402.0
+margin/right = 312.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -1200,8 +1199,8 @@ max_lines_visible = -1
 [node name="text" type="TextEdit" parent="notes/box"]
 
 margin/top = 17.0
-margin/right = 402.0
-margin/bottom = 168.0
+margin/right = 312.0
+margin/bottom = 118.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -1213,7 +1212,7 @@ caret/caret_blink_speed = 0.65
 
 margin/left = 430.0
 margin/top = 10.0
-margin/right = 750.0
+margin/right = 850.0
 margin/bottom = 300.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -1224,8 +1223,8 @@ size_flags/vertical = 2
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 316.0
-margin/bottom = 290.0
+margin/right = 416.0
+margin/bottom = 286.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -1234,7 +1233,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="skill_selector/box"]
 
-margin/right = 312.0
+margin/right = 412.0
 margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -1246,159 +1245,38 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="tabs" type="TabContainer" parent="skill_selector/box"]
+[node name="box" type="HSplitContainer" parent="skill_selector/box"]
 
 margin/top = 17.0
-margin/right = 312.0
-margin/bottom = 272.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-tab_align = 1
-tabs_visible = true
-
-[node name="X" type="Tabs" parent="skill_selector/box/tabs"]
-
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 268.0
-margin/bottom = 227.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="box" type="HBoxContainer" parent="skill_selector/box/tabs/X"]
-
-margin/left = 2.0
-margin/top = 4.0
-margin/right = 302.0
-margin/bottom = 224.0
+margin/right = 412.0
+margin/bottom = 278.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
-alignment = 0
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+script/script = ExtResource( 2 )
 
-[node name="ItemList" type="ItemList" parent="skill_selector/box/tabs/X/box"]
+[node name="Tree" type="Tree" parent="skill_selector/box/box"]
 
-margin/right = 148.0
-margin/bottom = 220.0
+margin/right = 200.0
+margin/bottom = 261.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="skill_selector/box/tabs/X/box"]
+[node name="PanelContainer" type="Control" parent="skill_selector/box/box"]
 
-margin/left = 152.0
-margin/right = 300.0
-margin/bottom = 220.0
+margin/left = 212.0
+margin/right = 412.0
+margin/bottom = 261.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-
-[node name="0" type="Tabs" parent="skill_selector/box/tabs"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 4.0
-margin/bottom = 4.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="1" type="Tabs" parent="skill_selector/box/tabs"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 4.0
-margin/bottom = 4.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="2" type="Tabs" parent="skill_selector/box/tabs"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 4.0
-margin/bottom = 4.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="3" type="Tabs" parent="skill_selector/box/tabs"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 4.0
-margin/bottom = 4.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="4" type="Tabs" parent="skill_selector/box/tabs"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 4.0
-margin/bottom = 4.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="5" type="Tabs" parent="skill_selector/box/tabs"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 4.0
-margin/bottom = 4.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="6" type="Tabs" parent="skill_selector/box/tabs"]
-
-visibility/visible = false
-anchor/right = 1
-anchor/bottom = 1
-margin/left = 4.0
-margin/top = 31.0
-margin/right = 4.0
-margin/bottom = 4.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
 
 [connection signal="text_changed" from="info/box/name_edit" to="." method="_on_name_edit_text_changed"]
 

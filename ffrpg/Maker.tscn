@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scripts/hero_tab.gd" type="Script" id=1]
 [ext_resource path="res://hero_maker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/monster_tab.gd" type="Script" id=3]
+[ext_resource path="res://monster_maker.tscn" type="PackedScene" id=4]
 
 [node name="Maker" type="Control"]
 
@@ -16,6 +18,7 @@ size_flags/vertical = 2
 
 anchor/right = 1
 anchor/bottom = 1
+margin/bottom = 40.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -25,6 +28,7 @@ tabs_visible = true
 
 [node name="Heroes" type="Tabs" parent="TabContainer"]
 
+visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 margin/left = 4.0
@@ -47,10 +51,11 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
 script/script = ExtResource( 1 )
+__meta__ = { "_editor_collapsed":true }
 
 [node name="Info" type="PanelContainer" parent="TabContainer/Heroes/box"]
 
-margin/right = 1016.0
+margin/right = 1272.0
 margin/bottom = 12.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -60,28 +65,29 @@ size_flags/vertical = 2
 [node name="box" type="HBoxContainer" parent="TabContainer/Heroes/box"]
 
 margin/top = 16.0
-margin/right = 1016.0
-margin/bottom = 565.0
+margin/right = 1272.0
+margin/bottom = 989.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="Files" type="VBoxContainer" parent="TabContainer/Heroes/box/box"]
 
-margin/right = 253.0
-margin/bottom = 549.0
+margin/right = 139.0
+margin/bottom = 973.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
-size_flags/horizontal = 3
+size_flags/horizontal = 2
 size_flags/vertical = 2
 alignment = 0
 
 [node name="Tree" type="Tree" parent="TabContainer/Heroes/box/box/Files"]
 
-margin/right = 253.0
-margin/bottom = 499.0
+margin/right = 139.0
+margin/bottom = 923.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -89,9 +95,9 @@ size_flags/vertical = 3
 
 [node name="Refresh" type="Button" parent="TabContainer/Heroes/box/box/Files"]
 
-margin/top = 503.0
-margin/right = 253.0
-margin/bottom = 522.0
+margin/top = 927.0
+margin/right = 139.0
+margin/bottom = 946.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -102,9 +108,9 @@ flat = false
 
 [node name="Path" type="HBoxContainer" parent="TabContainer/Heroes/box/box/Files"]
 
-margin/top = 526.0
-margin/right = 253.0
-margin/bottom = 549.0
+margin/top = 950.0
+margin/right = 139.0
+margin/bottom = 973.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -127,7 +133,7 @@ max_lines_visible = -1
 [node name="PathLine" type="LineEdit" parent="TabContainer/Heroes/box/box/Files/Path"]
 
 margin/left = 34.0
-margin/right = 194.0
+margin/right = 80.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -140,8 +146,8 @@ secret = false
 
 [node name="Browse" type="Button" parent="TabContainer/Heroes/box/box/Files/Path"]
 
-margin/left = 198.0
-margin/right = 253.0
+margin/left = 84.0
+margin/right = 139.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -153,9 +159,9 @@ flat = false
 
 [node name="Info" type="PanelContainer" parent="TabContainer/Heroes/box/box"]
 
-margin/left = 257.0
-margin/right = 1016.0
-margin/bottom = 549.0
+margin/left = 143.0
+margin/right = 1272.0
+margin/bottom = 973.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -166,8 +172,8 @@ size_flags/stretch_ratio = 3.0
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 755.0
-margin/bottom = 545.0
+margin/right = 1125.0
+margin/bottom = 969.0
 
 [node name="Monsters" type="Tabs" parent="TabContainer"]
 
@@ -182,6 +188,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
+__meta__ = { "_editor_collapsed":true }
 
 [node name="box" type="VBoxContainer" parent="TabContainer/Monsters"]
 
@@ -192,52 +199,55 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-script/script = ExtResource( 1 )
+script/script = ExtResource( 3 )
 
 [node name="Info" type="PanelContainer" parent="TabContainer/Monsters/box"]
 
-margin/right = 1016.0
+margin/right = 1272.0
 margin/bottom = 12.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 
-[node name="box" type="HBoxContainer" parent="TabContainer/Monsters/box"]
+[node name="box" type="HSplitContainer" parent="TabContainer/Monsters/box"]
 
 margin/top = 16.0
-margin/right = 1016.0
-margin/bottom = 565.0
+margin/right = 1272.0
+margin/bottom = 989.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+
+[node name="Files" type="VBoxContainer" parent="TabContainer/Monsters/box/box"]
+
+margin/right = 699.0
+margin/bottom = 973.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-
-[node name="Files" type="VBoxContainer" parent="TabContainer/Monsters/box/box"]
-
-margin/right = 253.0
-margin/bottom = 549.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 3
-size_flags/vertical = 2
-alignment = 0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="Tree" type="Tree" parent="TabContainer/Monsters/box/box/Files"]
 
-margin/right = 253.0
-margin/bottom = 499.0
+margin/right = 699.0
+margin/bottom = 923.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 3
+size_flags/horizontal = 2
 size_flags/vertical = 3
 
 [node name="Refresh" type="Button" parent="TabContainer/Monsters/box/box/Files"]
 
-margin/top = 503.0
-margin/right = 253.0
-margin/bottom = 522.0
+margin/top = 927.0
+margin/right = 699.0
+margin/bottom = 946.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -248,9 +258,9 @@ flat = false
 
 [node name="Path" type="HBoxContainer" parent="TabContainer/Monsters/box/box/Files"]
 
-margin/top = 526.0
-margin/right = 253.0
-margin/bottom = 549.0
+margin/top = 950.0
+margin/right = 699.0
+margin/bottom = 973.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -273,7 +283,7 @@ max_lines_visible = -1
 [node name="PathLine" type="LineEdit" parent="TabContainer/Monsters/box/box/Files/Path"]
 
 margin/left = 34.0
-margin/right = 194.0
+margin/right = 640.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -286,8 +296,8 @@ secret = false
 
 [node name="Browse" type="Button" parent="TabContainer/Monsters/box/box/Files/Path"]
 
-margin/left = 198.0
-margin/right = 253.0
+margin/left = 644.0
+margin/right = 699.0
 margin/bottom = 23.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -297,26 +307,109 @@ toggle_mode = false
 text = "Browse"
 flat = false
 
-[node name="Info" type="PanelContainer" parent="TabContainer/Monsters/box/box"]
+[node name="Info" type="Control" parent="TabContainer/Monsters/box/box"]
 
-margin/left = 257.0
-margin/right = 1016.0
-margin/bottom = 549.0
+margin/left = 711.0
+margin/right = 1272.0
+margin/bottom = 973.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-size_flags/stretch_ratio = 3.0
 
-[node name="Hero" parent="TabContainer/Monsters/box/box/Info" instance=ExtResource( 2 )]
+[node name="Monster" parent="TabContainer/Monsters/box/box/Info" instance=ExtResource( 4 )]
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 755.0
-margin/bottom = 545.0
+margin/right = 1125.0
+margin/bottom = 969.0
+
+[node name="text" parent="box/notes/Monster/Info/box/box/Monsters/TabContainer"]
+
+caret/caret_blink_speed = 0.65
+
+[node name="Techs" type="Tabs" parent="TabContainer"]
+
+margin/left = 4.0
+margin/top = 31.0
+margin/right = 1276.0
+margin/bottom = 980.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="box" type="VBoxContainer" parent="TabContainer/Techs"]
+
+margin/right = 1276.0
+margin/bottom = 945.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="box" type="HSplitContainer" parent="TabContainer/Techs/box"]
+
+margin/right = 1276.0
+margin/bottom = 945.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+
+[node name="File" type="VBoxContainer" parent="TabContainer/Techs/box/box"]
+
+margin/right = 57.0
+margin/bottom = 945.0
+rect/min_size = Vector2( 50, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Tree" type="Tree" parent="TabContainer/Techs/box/box/File"]
+
+margin/right = 57.0
+margin/bottom = 922.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+
+[node name="Button" type="Button" parent="TabContainer/Techs/box/box/File"]
+
+margin/top = 926.0
+margin/right = 57.0
+margin/bottom = 945.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Refresh"
+flat = false
+
+[node name="Tool" type="Control" parent="TabContainer/Techs/box/box"]
+
+margin/left = 69.0
+margin/right = 1276.0
+margin/bottom = 945.0
+rect/min_size = Vector2( 200, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
 
 [connection signal="cell_selected" from="TabContainer/Heroes/box/box/Files/Tree" to="TabContainer/Heroes/box" method="_on_Tree_cell_selected"]
 
 [connection signal="pressed" from="TabContainer/Heroes/box/box/Files/Refresh" to="TabContainer/Heroes/box" method="_on_Refresh_pressed"]
 
+[connection signal="cell_selected" from="TabContainer/Monsters/box/box/Files/Tree" to="TabContainer/Monsters/box" method="_on_Tree_cell_selected"]
 
+
+[editable path="TabContainer/Monsters/box/box/Info/Monster"]

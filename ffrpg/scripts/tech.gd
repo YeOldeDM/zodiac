@@ -14,6 +14,7 @@ class MonsterPower:
 		self.level = level
 		self.params = params
 
+
 #Lvl X Monster Powers
 func ExceptionalStats(owner,L=1):
 	return MonsterPower(owner,"Exeptional Stats("+str(L)+")",L,\
@@ -125,3 +126,7 @@ class Tech:
 		self.level = level
 		if TP_cost == null:
 			self.TP_cost = Chart.tech_point_cost[level]
+		else:	self.TP_cost = TP_cost
+		if cast_cost == null:
+			self.cast_cost = Chart.tech_MP_cost[level]
+		elif cast_method == 1:
