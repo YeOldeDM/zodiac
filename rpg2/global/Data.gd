@@ -72,5 +72,5 @@ func load_hero( filename ):
 						command,support,elements,status)
 		return hero
 	else:
-		print("ERROR loading path ",path)
+		OS.alert("ERROR loading path "+path)
 	

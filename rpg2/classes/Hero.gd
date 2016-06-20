@@ -117,10 +117,11 @@ class Hero:
 		self.restore_MP()
 	
 	func restore_HP():
-		self.HP = self.get_max_HP()
+		self.set('HP', self.get_max_HP())
 	
 	func restore_MP():
-		self.HP = self.get_max_MP()
+		self.set('MP', self.get_max_MP())
+	
 	
 	# Manage Status Effects
 	func has_status( status ):
