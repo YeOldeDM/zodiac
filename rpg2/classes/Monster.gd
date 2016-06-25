@@ -50,30 +50,53 @@ class Monster:
 		self.HP = self.get_max_HP()
 		self.MP = self.get_max_MP()
 	
+		# HP setter/getter
+	func _set_HP( value ):
+		HP = clamp(value,0,self.get_max_HP())
+		if HP <= 0:
+			self.add_status_effect(RPG.STATUS_DEATH)
+	
+	func _get_HP():
+		return HP
+
+	# MP setter/getter
+	func _set_MP( value ):
+		MP = clamp(value,0,self.get_max_MP())
+	
+	func _get_MP():
+		return MP
+
+
+	# Stat getter
 	func get_stat( stat ):
 		if stat in self.stats:
 			return self.stats[stat]
-
+	
+	# Get monster standard XP value
 	func get_XP_value():
 		var mult = 35
 		if self.is_boss: mult = 150
 		return self.level * mult
 	
+	# Get monster standard GP value
 	func get_GP_value():
 		var mult = 15
 		if self.is_boss: mult = 75
 		return self.level * mult
 	
+	# Get monster standard max HP value
 	func get_max_HP():
 		var vit = self.get_stat('vitality')*20
 		var lvl = self.level*10
 		return 30+vit+lvl
 	
+	# Get monster standard max MP value
 	func get_max_MP():
 		var spr = self.get_stat('spirit')
 		var lvl = self.level
 		return int((spr+lvl)/2)
 	
+	# Get Derived stats..
 	func get_attack_power():
 		return self.get_stat('strength')*2
 	

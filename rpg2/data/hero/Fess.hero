@@ -29,3 +29,7 @@ HP=0
 MP=0
 XP=0
 level=1
+
+[SKILLS]
+command="Jump"
+support="Attack Up"

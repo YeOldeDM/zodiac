@@ -10,8 +10,6 @@ var inventory
 var money
 
 
-
-
 # elements
 const ELEMENT_FIRE = 0
 const ELEMENT_ICE = 1
@@ -62,5 +60,6 @@ const TECH_CHARGE = 1
 const TECH_SACRIFICE = 2
 const TECH_SACRIFICE_B = 3
 
-
+# Battle Actions
+const BATTLE_FIGHT = 0
 

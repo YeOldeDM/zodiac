@@ -5,8 +5,10 @@
 
 [node name="Battler" type="Control"]
 
-margin/right = 270.0
-margin/bottom = 140.0
+margin/left = 12.0
+margin/top = 12.0
+margin/right = 282.0
+margin/bottom = 152.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -216,7 +218,6 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="stats" type="HBoxContainer" parent="SheetPopup/sheet"]
 
@@ -227,7 +228,6 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="labels" type="VBoxContainer" parent="SheetPopup/sheet/stats"]
 
@@ -238,7 +238,6 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="STR" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
@@ -319,6 +318,48 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="HSeparator" type="HSeparator" parent="SheetPopup/sheet/stats/labels"]
+
+margin/top = 85.0
+margin/right = 57.0
+margin/bottom = 88.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="HP" type="Label" parent="SheetPopup/sheet/stats/labels"]
+
+margin/top = 92.0
+margin/right = 57.0
+margin/bottom = 105.0
+hint/tooltip = "Hit Points"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "HP"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MP" type="Label" parent="SheetPopup/sheet/stats/labels"]
+
+margin/top = 109.0
+margin/right = 57.0
+margin/bottom = 122.0
+hint/tooltip = "Magic Points"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "MP"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="scores" type="VBoxContainer" parent="SheetPopup/sheet/stats"]
 
 margin/left = 61.0
@@ -329,9 +370,8 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
-[node name="STR" type="Label" parent="SheetPopup/sheet/stats/scores"]
+[node name="strength" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
 margin/right = 57.0
 margin/bottom = 13.0
@@ -345,7 +385,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="MAG" type="Label" parent="SheetPopup/sheet/stats/scores"]
+[node name="magic" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
 margin/top = 17.0
 margin/right = 57.0
@@ -360,7 +400,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="VIT" type="Label" parent="SheetPopup/sheet/stats/scores"]
+[node name="vitality" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
 margin/top = 34.0
 margin/right = 57.0
@@ -375,7 +415,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SPR" type="Label" parent="SheetPopup/sheet/stats/scores"]
+[node name="spirit" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
 margin/top = 51.0
 margin/right = 57.0
@@ -390,11 +430,51 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="AGI" type="Label" parent="SheetPopup/sheet/stats/scores"]
+[node name="agility" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
 margin/top = 68.0
 margin/right = 57.0
 margin/bottom = 81.0
+hint/tooltip = "Agility"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "9,999"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HSeparator" type="HSeparator" parent="SheetPopup/sheet/stats/scores"]
+
+margin/top = 85.0
+margin/right = 57.0
+margin/bottom = 88.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="HP" type="Label" parent="SheetPopup/sheet/stats/scores"]
+
+margin/top = 92.0
+margin/right = 57.0
+margin/bottom = 105.0
+hint/tooltip = "Agility"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "9,999"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MP" type="Label" parent="SheetPopup/sheet/stats/scores"]
+
+margin/top = 109.0
+margin/right = 57.0
+margin/bottom = 122.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -415,7 +495,6 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="labels" type="VBoxContainer" parent="SheetPopup/sheet/derived"]
 
@@ -426,9 +505,8 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
-[node name="ATK" type="Label" parent="SheetPopup/sheet/derived/labels"]
+[node name="AP" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
 margin/right = 57.0
 margin/bottom = 13.0
@@ -436,14 +514,14 @@ hint/tooltip = "Strength"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-text = "ATK"
+text = "AP"
 align = 2
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="DEF" type="Label" parent="SheetPopup/sheet/derived/labels"]
+[node name="MAP" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
 margin/top = 17.0
 margin/right = 57.0
@@ -452,7 +530,7 @@ hint/tooltip = "Magic"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-text = "DEF"
+text = "MAP"
 align = 2
 valign = 1
 percent_visible = 1.0
@@ -565,13 +643,12 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
-[node name="ATK" type="Label" parent="SheetPopup/sheet/derived/scores"]
+[node name="AP" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
 margin/right = 57.0
 margin/bottom = 13.0
-hint/tooltip = "Strength"
+hint/tooltip = "Attack Power"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -581,12 +658,12 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="DEF" type="Label" parent="SheetPopup/sheet/derived/scores"]
+[node name="MAP" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
 margin/top = 17.0
 margin/right = 57.0
 margin/bottom = 30.0
-hint/tooltip = "Magic"
+hint/tooltip = "Magic Attack Power"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2

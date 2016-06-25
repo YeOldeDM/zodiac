@@ -6,6 +6,10 @@
 
 anchor/right = 1
 anchor/bottom = 1
+margin/left = 16.0
+margin/top = 16.0
+margin/right = 16.0
+margin/bottom = 8.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -22,76 +26,83 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="Heroes" type="PanelContainer" parent="VBoxContainer"]
 
-margin/right = 1024.0
-margin/bottom = 148.0
+margin/right = 992.0
+margin/bottom = 156.0
+rect/min_size = Vector2( 0, 156 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
-size_flags/vertical = 3
-__meta__ = { "_editor_collapsed":true }
+size_flags/vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+[node name="box" type="HBoxContainer" parent="VBoxContainer/Heroes"]
 
 margin/left = 4.0
 margin/top = 8.0
-margin/right = 1020.0
-margin/bottom = 144.0
+margin/right = 988.0
+margin/bottom = 152.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 alignment = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Main" type="PanelContainer" parent="VBoxContainer"]
 
-margin/right = 336.0
-margin/bottom = 136.0
+margin/top = 160.0
+margin/right = 992.0
+margin/bottom = 416.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 
-[node name="PanelContainer1" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="box" type="HBoxContainer" parent="VBoxContainer/Main"]
 
-margin/left = 340.0
-margin/right = 676.0
-margin/bottom = 136.0
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 988.0
+margin/bottom = 252.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+alignment = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Main/box"]
+
+margin/right = 984.0
+margin/bottom = 244.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Monsters" type="PanelContainer" parent="VBoxContainer"]
 
-margin/left = 680.0
-margin/right = 1016.0
-margin/bottom = 136.0
+margin/top = 420.0
+margin/right = 992.0
+margin/bottom = 576.0
+rect/min_size = Vector2( 0, 156 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
-size_flags/vertical = 3
+size_flags/vertical = 2
 
-[node name="PanelContainer1" type="PanelContainer" parent="VBoxContainer"]
+[node name="box" type="HBoxContainer" parent="VBoxContainer/Monsters"]
 
-margin/top = 152.0
-margin/right = 1024.0
-margin/bottom = 448.0
+margin/left = 4.0
+margin/top = 8.0
+margin/right = 988.0
+margin/bottom = 152.0
 focus/ignore_mouse = false
-focus/stop_mouse = true
+focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
-size_flags/stretch_ratio = 2.0
-
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
-
-margin/top = 452.0
-margin/right = 1024.0
-margin/bottom = 600.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
+alignment = 0
 
 

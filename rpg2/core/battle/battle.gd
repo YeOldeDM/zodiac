@@ -1,7 +1,27 @@
 
 extends Control
 
+class BattleAction:
+	var owner	# actor performing the action
+	var targets	# array of targets of this action
+	
+	var action	# const from RPG.BATTLEACTION_*
+	
 
+	var to_hit		# % chance the action is effective
+	var damage		# effect value (damage/healing, etc)
+	var status		# array of status effects inflicted on target(s)
+	
+	var elements	# array of elemental effects of this action, const from RPG.ELEMENT_*
+	
+	var speed_cost	# SP cost for this action
+	
+	func _init(owner):
+		self.owner = owner
+		# All other params are set after init..
+
+	func execute():
+		pass
 
 # Custom Signals
 signal draw_round()
@@ -14,7 +34,7 @@ signal defeat()
 
 
 # Current turn/tick/round
-var battle_round = 1
+var battle_round = 0
 var battle_tick = 1
 var battle_turn = 0
 
@@ -23,6 +43,9 @@ var fighters = []
 
 # Combatants not dead or out of Speed
 var active_fighters = []
+
+# Current tick's active combatants in order of Spd
+var ordered_fighters = []
 
 var _data = {}	#holder for current combat action data
 
@@ -50,8 +73,7 @@ func _on_next_turn():
 	battle_turn += 1
 	if battle_turn > active_fighters.size():
 		emit_signal("next_tick")
-	_data = {}
-	_data['attacker'] = fighters[battle_turn]
+	_data = BattleAction.new(fighters[battle_turn])
 	emit_signal('draw_round')
 
 func _on_next_tick():

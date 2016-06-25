@@ -65,7 +65,7 @@ class Hero:
 		self.status_effects = []
 		
 		self.full_restore()
-		
+
 	# HP setter/getter
 	func _set_HP( value ):
 		HP = clamp(value,0,self.get_max_HP())
@@ -82,13 +82,10 @@ class Hero:
 	func _get_MP():
 		return MP
 
-
 	#get stat bonus from level (+2 every 5)
 	func _get_stat_bonus_from_lvl():
 		var mod = int(self.level/5) * 2
 		return(mod)
-
-
 
 	# calculate maximum HP
 	func get_max_HP():
@@ -196,7 +193,7 @@ class Hero:
 	func get_attack_power():
 		var str_bonus = self.get_stat('strength')
 		var weapon_bonus = 0
-		if self.equipped_weapon:
+		if self.weapon:
 			weapon_bonus = self.get_AP_from_weapon()
 		var total = str_bonus + weapon_bonus
 		if self.support_skill == "Attack Up":
@@ -206,7 +203,7 @@ class Hero:
 	func get_magic_attack_power():
 		var mag_bonus = self.get_stat('magic')
 		var weapon_bonus = 0
-		if self.equipped_weapon:
+		if self.weapon:
 			weapon_bonus = self.get_MAP_from_weapon()
 		var total = mag_bonus + weapon_bonus
 		if self.support_skill == "Magic Up":
