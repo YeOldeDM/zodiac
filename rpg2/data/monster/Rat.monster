@@ -5,23 +5,17 @@ status_effects=[  ]
 
 [INFO]
 
-name="Fess"
+name="Rat"
+boss=false
 
 [STATS]
 
 agility=10
-magic=4
-spirit=5
-strength=12
-vitality=9
+magic=3
+spirit=9
+strength=5
+vitality=3
 
-[STAT_WEIGHTS]
-
-agility=5
-magic=2
-spirit=2
-strength=10
-vitality=10
 
 [VITALS]
 
@@ -29,3 +23,8 @@ HP=0
 MP=0
 XP=0
 level=1
+pdie=6
+mdie=6
+
+[SKILLS]
+

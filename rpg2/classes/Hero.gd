@@ -4,6 +4,7 @@ extends Node
 class Hero:
 	
 	var name
+	var job
 	var level = 1
 	var XP = 0
 	
@@ -42,16 +43,17 @@ class Hero:
 
 
 	# Initialization #
-	func _init( name, level=1, XP=0,\
+	func _init( name, job="Hero", level=1, XP=0,\
 			HP=0,MP=0,\
 			stats={'strength': 8, 'magic': 8, 'vitality': 8,\
 					'spirit': 8, 'agility': 8},\
 			stat_weights={'strength': 8, 'magic': 8, 'vitality': 8,\
 					'spirit': 8, 'agility': 8},\
-			command_skill=null, support_skill=null,\
+			command_skill=4, support_skill=0,\
 			elements=[1,1,1,1,1,1,1,1],\
 			status = []):
 		self.name = name
+		self.job = job
 		self.level = level
 		self.XP = XP
 		self.HP = HP
@@ -69,9 +71,9 @@ class Hero:
 	# HP setter/getter
 	func _set_HP( value ):
 		HP = clamp(value,0,self.get_max_HP())
-		if HP <= 0:
-			self.add_status_effect(RPG.STATUS_DEATH)
 	
+
+			
 	func _get_HP():
 		return HP
 
@@ -84,14 +86,22 @@ class Hero:
 
 	#get stat bonus from level (+2 every 5)
 	func _get_stat_bonus_from_lvl():
-		var mod = int(self.level/5) * 2
-		return(mod)
+		var mod = int(self.level/5)
+		return(mod*2)
+	
+	# Process actor death and return status
+	func check_for_death():
+		if HP <= 0:
+			self.add_status_effect(RPG.STATUS_DEATH)
+			return true
+		return false
+
 
 	# calculate maximum HP
 	func get_max_HP():
 		var base = 75
 		var vitmult = 5
-		if self.support_skill == "Toughness":
+		if self.support_skill == RPG.SUPPORT_SKILL_TOUGHNESS:
 			base += 35; vitmult += 1
 		var vit = self.get_stat('vitality') * vitmult
 		var lvl = self.level * 4
@@ -101,7 +111,7 @@ class Hero:
 	# calculate maximum MP
 	func get_max_MP():
 		var mental = 0
-		if self.support_skill == "Mental Strength":
+		if self.support_skill == RPG.SUPPORT_SKILL_MENTALSTRENGTH:
 			mental = 5 + floor(self.get_stat('spirit') / 5)
 		var spr = self.get_stat('spirit')
 		var lvl = self.level * 2
@@ -119,21 +129,38 @@ class Hero:
 	func restore_MP():
 		self.set('MP', self.get_max_MP())
 	
+	func refresh_speed(init=false):
+		# Add Spd stat to current speed
+		self.current_speed += self.get_speed()
+		if init:	current_speed += Roll.die(1,8)
+	
+	
+	func is_flying():
+		if self.support_skill == RPG.SUPPORT_SKILL_FLIGHT:
+			return true
+		return false
 	
 	# Manage Status Effects
-	func has_status( status ):
+	func has_status_effect( status ):
 		if status in self.status_effects:
 			return true
 		return false
 	
 	func add_status_effect( status ):
-		if not self.has_status(status):
+		if not self.has_status_effect(status):
 			self.status_effects.append(status)
 	
 	func remove_status_effect( status ):
 		if self.has_status(status):
 			var id = self.status_effects.find(status)
 			self.status_effects.remove(id)
+
+	# clear all status effects
+	func clear_status_effects():
+		self.status_effects.clear()
+
+
+
 
 
 	# Base stat setter/getter
@@ -186,17 +213,44 @@ class Hero:
 		if self.guard:
 			return guard.get_EVA()
 		return 0
+	
+	# Common damage functions
+	func _unarmed_damage():
+		var half_strength = self.get_stat('strength')/2
+		var dice = floor(half_strength/100)+1
+		var dmg = Roll.damage(dice,4)
+		return dmg + half_strength
+	
+	func get_weapon_damage(die_mod=0, AP_mult=1.0):
+		if self.weapon == null:
+			return _unarmed_damage()
+		else:
+			var dice = self.get_strength_dice()
+			var sides = self.weapon.get_physical_die_class()+(die_mod*2)
+			var AP = self.get_attack_power()*AP_mult
+			return Roll.damage(dice, sides)+AP
+	
+	func get_weapon_range():
+		# Return True if current weapon is melee range
+		return true
 
 	#
 	#	GET CALCULATED DERIVED SCORES
 	#
+	
+	func get_derived_score( stat ):
+		var st = 'get_'+stat
+		if self.has_method(st):
+			return self.call(st)
+		
+	
 	func get_attack_power():
 		var str_bonus = self.get_stat('strength')
 		var weapon_bonus = 0
 		if self.weapon:
 			weapon_bonus = self.get_AP_from_weapon()
 		var total = str_bonus + weapon_bonus
-		if self.support_skill == "Attack Up":
+		if self.support_skill == RPG.SUPPORT_SKILL_ATTACKUP:
 			total += 5 + floor( self.get_stat('strength') / 5 )
 		return total
 	
@@ -206,7 +260,7 @@ class Hero:
 		if self.weapon:
 			weapon_bonus = self.get_MAP_from_weapon()
 		var total = mag_bonus + weapon_bonus
-		if self.support_skill == "Magic Up":
+		if self.support_skill == RPG.SUPPORT_SKILL_MAGICUP:
 			total += 5 + floor( self.get_stat('magic') / 5 )
 		return total
 	
@@ -242,7 +296,7 @@ class Hero:
 	
 	func get_speed():
 		var base = 10
-		if self.support_skill == "Quickness":
+		if self.support_skill == RPG.SUPPORT_SKILL_QUICKNESS:
 			base += 2
 		var agi_bonus = floor( self.get_stat('agility') / 15 )
 		var lvl_bonus = floor( self.level / 10 )
@@ -251,3 +305,8 @@ class Hero:
 	func get_max_tech_levels():
 		var mag_bonus = floor( self.get_stat('magic') / 2 )
 		return 5 + mag_bonus
+	
+	func take_damage(damage, element):
+		var new_HP = self.HP - damage
+		self.set('HP', new_HP)
+		check_for_death()

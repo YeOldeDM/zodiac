@@ -1,22 +1,24 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://core/battle/battle.gd" type="Script" id=1]
+[ext_resource path="res://classic_stylebox.sbx" type="StyleBox" id=2]
+[ext_resource path="res://core/battle/action_dialog.gd" type="Script" id=3]
 
 [node name="Battle" type="Control"]
 
 anchor/right = 1
 anchor/bottom = 1
-margin/left = 16.0
-margin/top = 16.0
-margin/right = 16.0
-margin/bottom = 8.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 16.0
+margin/top = 16.0
+margin/right = 16.0
+margin/bottom = 8.0
 script/script = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="frame" type="VBoxContainer" parent="."]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -24,85 +26,381 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+custom_constants/separation = 4
 alignment = 0
 
-[node name="Heroes" type="PanelContainer" parent="VBoxContainer"]
+[node name="Monsters" type="PanelContainer" parent="frame"]
 
-margin/right = 992.0
-margin/bottom = 156.0
 rect/min_size = Vector2( 0, 156 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 992.0
+margin/bottom = 156.0
+custom_styles/panel = ExtResource( 2 )
 
-[node name="box" type="HBoxContainer" parent="VBoxContainer/Heroes"]
+[node name="box" type="HBoxContainer" parent="frame/Monsters"]
 
-margin/left = 4.0
-margin/top = 8.0
-margin/right = 988.0
-margin/bottom = 152.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 4.0
+margin/top = 4.0
+margin/right = 988.0
+margin/bottom = 152.0
 alignment = 0
 
-[node name="Main" type="PanelContainer" parent="VBoxContainer"]
+[node name="Main" type="PanelContainer" parent="frame"]
 
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 0.0
 margin/top = 160.0
 margin/right = 992.0
 margin/bottom = 416.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
+custom_styles/panel = ExtResource( 2 )
 
-[node name="box" type="HBoxContainer" parent="VBoxContainer/Main"]
+[node name="box" type="HBoxContainer" parent="frame/Main"]
 
-margin/left = 4.0
-margin/top = 8.0
-margin/right = 988.0
-margin/bottom = 252.0
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 4.0
+margin/top = 4.0
+margin/right = 988.0
+margin/bottom = 252.0
 alignment = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Main/box"]
+[node name="RichTextLabel" type="RichTextLabel" parent="frame/Main/box"]
 
-margin/right = 984.0
-margin/bottom = 244.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
+size_flags/stretch_ratio = 3.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 735.0
+margin/bottom = 248.0
 bbcode/enabled = false
 bbcode/bbcode = ""
 visible_characters = -1
 
-[node name="Monsters" type="PanelContainer" parent="VBoxContainer"]
+[node name="RoundData" type="HBoxContainer" parent="frame/Main/box"]
 
-margin/top = 420.0
-margin/right = 992.0
-margin/bottom = 576.0
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 739.0
+margin/top = 0.0
+margin/right = 984.0
+margin/bottom = 248.0
+alignment = 1
+
+[node name="Labels" type="VBoxContainer" parent="frame/Main/box/RoundData"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 120.0
+margin/bottom = 248.0
+alignment = 1
+
+[node name="Round" type="Label" parent="frame/Main/box/RoundData/Labels"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 81.0
+margin/right = 120.0
+margin/bottom = 95.0
+text = "Round#"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tick" type="Label" parent="frame/Main/box/RoundData/Labels"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 99.0
+margin/right = 120.0
+margin/bottom = 113.0
+text = "Tick#"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Turn" type="Label" parent="frame/Main/box/RoundData/Labels"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 117.0
+margin/right = 120.0
+margin/bottom = 131.0
+text = "Turn#"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="frame/Main/box/RoundData/Labels"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 135.0
+margin/right = 120.0
+margin/bottom = 149.0
+text = "Current Fighter:"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Phase" type="Label" parent="frame/Main/box/RoundData/Labels"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 153.0
+margin/right = 120.0
+margin/bottom = 167.0
+text = "Doing:"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Values" type="VBoxContainer" parent="frame/Main/box/RoundData"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 124.0
+margin/top = 0.0
+margin/right = 245.0
+margin/bottom = 248.0
+alignment = 1
+
+[node name="Round" type="Label" parent="frame/Main/box/RoundData/Values"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 81.0
+margin/right = 121.0
+margin/bottom = 95.0
+text = "0000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tick" type="Label" parent="frame/Main/box/RoundData/Values"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 99.0
+margin/right = 121.0
+margin/bottom = 113.0
+text = "0000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Turn" type="Label" parent="frame/Main/box/RoundData/Values"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 117.0
+margin/right = 121.0
+margin/bottom = 131.0
+text = "0000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="frame/Main/box/RoundData/Values"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 135.0
+margin/right = 121.0
+margin/bottom = 149.0
+text = "Not Sure"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Phase" type="Label" parent="frame/Main/box/RoundData/Values"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 153.0
+margin/right = 121.0
+margin/bottom = 167.0
+text = "nadda"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Heroes" type="PanelContainer" parent="frame"]
+
 rect/min_size = Vector2( 0, 156 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 420.0
+margin/right = 992.0
+margin/bottom = 576.0
+custom_styles/panel = ExtResource( 2 )
 
-[node name="box" type="HBoxContainer" parent="VBoxContainer/Monsters"]
+[node name="box" type="HBoxContainer" parent="frame/Heroes"]
 
-margin/left = 4.0
-margin/top = 8.0
-margin/right = 988.0
-margin/bottom = 152.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
-alignment = 0
+margin/left = 4.0
+margin/top = 4.0
+margin/right = 988.0
+margin/bottom = 152.0
+alignment = 1
+
+[node name="ActionDialog" type="PopupPanel" parent="."]
+
+visibility/visible = false
+visibility/self_opacity = 0.8
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 400.0
+margin/top = 128.0
+margin/right = 624.0
+margin/bottom = 448.0
+custom_styles/panel = ExtResource( 2 )
+popup/exclusive = true
+script/script = ExtResource( 3 )
+
+[node name="box" type="VBoxContainer" parent="ActionDialog"]
+
+editor/display_folded = true
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+alignment = 1
+
+[node name="Title" type="Label" parent="ActionDialog/box"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 143.0
+margin/right = 224.0
+margin/bottom = 156.0
+text = "TITLE"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Name" type="Label" parent="ActionDialog/box"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 160.0
+margin/right = 224.0
+margin/bottom = 173.0
+text = "NAME"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Actions" type="VBoxContainer" parent="ActionDialog/box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 177.0
+margin/right = 224.0
+margin/bottom = 177.0
+alignment = 1
+
+[node name="Go" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="about_to_show" from="ActionDialog" to="ActionDialog" method="_on_ActionDialog_about_to_show"]
+
+[connection signal="timeout" from="Go" to="." method="_on_Go_timeout"]
 
 

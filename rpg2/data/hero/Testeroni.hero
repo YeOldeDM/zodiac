@@ -5,15 +5,21 @@ status_effects=[  ]
 
 [INFO]
 
-name="ME"
+job="Hero"
+name="Testeroni"
+
+[SKILLS]
+
+command=4
+support=12
 
 [STATS]
 
-agility=8
-magic=8
-spirit=8
-strength=8
-vitality=8
+agility=9.0
+magic=6.0
+spirit=6.0
+strength=10.0
+vitality=9.0
 
 [STAT_WEIGHTS]
 
@@ -25,7 +31,7 @@ vitality=8
 
 [VITALS]
 
-HP=10
-MP=0
+HP=119
+MP=10
 XP=0
 level=1

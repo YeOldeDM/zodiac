@@ -1,81 +1,103 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://core/battler/battler.gd" type="Script" id=1]
-[ext_resource path="res://core/battler/charsheet.gd" type="Script" id=2]
+[ext_resource path="res://classic_stylebox.sbx" type="StyleBox" id=2]
+[ext_resource path="res://red_stylebox.sbx" type="StyleBox" id=3]
+[ext_resource path="res://darkred_stylebox.sbx" type="StyleBox" id=4]
+[ext_resource path="res://blue_stylebox.sbx" type="StyleBox" id=5]
+[ext_resource path="res://darkblue_stylebox.sbx" type="StyleBox" id=6]
+[ext_resource path="res://core/battler/charsheet.gd" type="Script" id=7]
 
 [node name="Battler" type="Control"]
 
+rect/min_size = Vector2( 270, 140 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
 margin/left = 12.0
 margin/top = 12.0
 margin/right = 282.0
 margin/bottom = 152.0
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
 script/script = ExtResource( 1 )
 
 [node name="box" type="VBoxContainer" parent="."]
 
-margin/right = 270.0
-margin/bottom = 140.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 270.0
+margin/bottom = 140.0
 alignment = 0
 
 [node name="Name" type="Button" parent="box"]
 
-margin/right = 270.0
-margin/bottom = 19.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 270.0
+margin/bottom = 21.0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
 toggle_mode = false
 text = "NAME"
 flat = false
 
 [node name="HPMP" type="PanelContainer" parent="box"]
 
-margin/top = 23.0
-margin/right = 270.0
-margin/bottom = 71.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 25.0
+margin/right = 270.0
+margin/bottom = 63.0
+custom_styles/panel = ExtResource( 2 )
 
 [node name="box" type="HBoxContainer" parent="box/HPMP"]
 
-margin/left = 4.0
-margin/top = 8.0
-margin/right = 266.0
-margin/bottom = 44.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 4.0
+margin/top = 4.0
+margin/right = 266.0
+margin/bottom = 34.0
 alignment = 0
 
 [node name="labels" type="VBoxContainer" parent="box/HPMP/box"]
 
-margin/right = 69.0
-margin/bottom = 36.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 69.0
+margin/bottom = 30.0
 alignment = 0
 
 [node name="HP" type="Label" parent="box/HPMP/box/labels"]
 
-margin/right = 69.0
-margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 69.0
+margin/bottom = 13.0
 text = "HP 999/999"
 percent_visible = 1.0
 lines_skipped = 0
@@ -83,12 +105,14 @@ max_lines_visible = -1
 
 [node name="MP" type="Label" parent="box/HPMP/box/labels"]
 
-margin/top = 17.0
-margin/right = 69.0
-margin/bottom = 30.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 17.0
+margin/right = 69.0
+margin/bottom = 30.0
 text = "MP 999/999"
 percent_visible = 1.0
 lines_skipped = 0
@@ -96,24 +120,31 @@ max_lines_visible = -1
 
 [node name="bars" type="VBoxContainer" parent="box/HPMP/box"]
 
-margin/left = 73.0
-margin/right = 262.0
-margin/bottom = 36.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 2
 size_flags/stretch_ratio = 3.0
+margin/left = 73.0
+margin/top = 0.0
+margin/right = 211.0
+margin/bottom = 30.0
 alignment = 0
 
 [node name="HP" type="ProgressBar" parent="box/HPMP/box/bars"]
 
-margin/right = 189.0
-margin/bottom = 16.0
+rect/min_size = Vector2( 0, 12 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
+size_flags/vertical = 2
 size_flags/stretch_ratio = 3.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 138.0
+margin/bottom = 12.0
+custom_styles/fg = ExtResource( 3 )
+custom_styles/bg = ExtResource( 4 )
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -125,13 +156,18 @@ percent/visible = false
 
 [node name="MP" type="ProgressBar" parent="box/HPMP/box/bars"]
 
-margin/top = 20.0
-margin/right = 189.0
-margin/bottom = 36.0
+rect/min_size = Vector2( 0, 12 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
+size_flags/vertical = 2
 size_flags/stretch_ratio = 3.0
+margin/left = 0.0
+margin/top = 16.0
+margin/right = 138.0
+margin/bottom = 28.0
+custom_styles/fg = ExtResource( 5 )
+custom_styles/bg = ExtResource( 6 )
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -141,49 +177,85 @@ range/exp_edit = false
 range/rounded = false
 percent/visible = false
 
+[node name="Spd" type="CenterContainer" parent="box/HPMP/box"]
+
+hint/tooltip = "Speed Points"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 215.0
+margin/top = 0.0
+margin/right = 262.0
+margin/bottom = 30.0
+use_top_left = false
+
+[node name="Value" type="Label" parent="box/HPMP/box/Spd"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 13.0
+margin/top = 8.0
+margin/right = 34.0
+margin/bottom = 21.0
+text = "999"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="Status" type="PanelContainer" parent="box"]
 
-margin/top = 75.0
-margin/right = 270.0
-margin/bottom = 140.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 2.0
+margin/left = 0.0
+margin/top = 67.0
+margin/right = 270.0
+margin/bottom = 140.0
+custom_styles/panel = ExtResource( 2 )
 
 [node name="SheetPopup" type="WindowDialog" parent="."]
 
 visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
 margin/left = 290.0
 margin/top = 180.0
 margin/right = 570.0
 margin/bottom = 360.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-popup/exclusive = true
+custom_styles/panel = ExtResource( 2 )
+popup/exclusive = false
 window/title = "Stats For ________"
-script/script = ExtResource( 2 )
+script/script = ExtResource( 7 )
 
 [node name="info" type="VBoxContainer" parent="SheetPopup"]
 
-margin/right = 280.0
-margin/bottom = 40.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 280.0
+margin/bottom = 40.0
 alignment = 0
 
 [node name="Level" type="Label" parent="SheetPopup/info"]
 
-margin/right = 280.0
-margin/bottom = 13.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 280.0
+margin/bottom = 13.0
 text = "Lvl. 99"
 align = 1
 valign = 1
@@ -193,12 +265,14 @@ max_lines_visible = -1
 
 [node name="XP" type="Label" parent="SheetPopup/info"]
 
-margin/top = 17.0
-margin/right = 280.0
-margin/bottom = 30.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 17.0
+margin/right = 280.0
+margin/bottom = 30.0
 text = "XP 9,999,999/9,999,999"
 align = 1
 valign = 1
@@ -210,43 +284,51 @@ max_lines_visible = -1
 
 anchor/right = 1
 anchor/bottom = 1
-margin/left = 20.0
-margin/top = 38.0
-margin/right = 20.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 20.0
+margin/top = 38.0
+margin/right = 20.0
+margin/bottom = 0.0
 alignment = 0
 
 [node name="stats" type="HBoxContainer" parent="SheetPopup/sheet"]
 
-margin/right = 118.0
-margin/bottom = 142.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 118.0
+margin/bottom = 142.0
 alignment = 0
 
 [node name="labels" type="VBoxContainer" parent="SheetPopup/sheet/stats"]
 
-margin/right = 57.0
-margin/bottom = 142.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 57.0
+margin/bottom = 142.0
 alignment = 0
 
 [node name="STR" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
-margin/right = 57.0
-margin/bottom = 13.0
 hint/tooltip = "Strength"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 57.0
+margin/bottom = 13.0
 text = "STR"
 align = 2
 valign = 1
@@ -256,13 +338,15 @@ max_lines_visible = -1
 
 [node name="MAG" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
-margin/top = 17.0
-margin/right = 57.0
-margin/bottom = 30.0
 hint/tooltip = "Magic"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 17.0
+margin/right = 57.0
+margin/bottom = 30.0
 text = "MAG"
 align = 2
 valign = 1
@@ -272,13 +356,15 @@ max_lines_visible = -1
 
 [node name="VIT" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
-margin/top = 34.0
-margin/right = 57.0
-margin/bottom = 47.0
 hint/tooltip = "Vitality"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 34.0
+margin/right = 57.0
+margin/bottom = 47.0
 text = "VIT"
 align = 2
 valign = 1
@@ -288,13 +374,15 @@ max_lines_visible = -1
 
 [node name="SPR" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
-margin/top = 51.0
-margin/right = 57.0
-margin/bottom = 64.0
 hint/tooltip = "Spirit"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 51.0
+margin/right = 57.0
+margin/bottom = 64.0
 text = "SPR"
 align = 2
 valign = 1
@@ -304,13 +392,15 @@ max_lines_visible = -1
 
 [node name="AGI" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
-margin/top = 68.0
-margin/right = 57.0
-margin/bottom = 81.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 68.0
+margin/right = 57.0
+margin/bottom = 81.0
 text = "AGI"
 align = 2
 valign = 1
@@ -320,23 +410,26 @@ max_lines_visible = -1
 
 [node name="HSeparator" type="HSeparator" parent="SheetPopup/sheet/stats/labels"]
 
-margin/top = 85.0
-margin/right = 57.0
-margin/bottom = 88.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 85.0
+margin/right = 57.0
+margin/bottom = 88.0
 
 [node name="HP" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
-margin/top = 92.0
-margin/right = 57.0
-margin/bottom = 105.0
 hint/tooltip = "Hit Points"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 92.0
+margin/right = 57.0
+margin/bottom = 105.0
 text = "HP"
 align = 2
 valign = 1
@@ -346,13 +439,15 @@ max_lines_visible = -1
 
 [node name="MP" type="Label" parent="SheetPopup/sheet/stats/labels"]
 
-margin/top = 109.0
-margin/right = 57.0
-margin/bottom = 122.0
 hint/tooltip = "Magic Points"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 109.0
+margin/right = 57.0
+margin/bottom = 122.0
 text = "MP"
 align = 2
 valign = 1
@@ -362,23 +457,27 @@ max_lines_visible = -1
 
 [node name="scores" type="VBoxContainer" parent="SheetPopup/sheet/stats"]
 
-margin/left = 61.0
-margin/right = 118.0
-margin/bottom = 142.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 61.0
+margin/top = 0.0
+margin/right = 118.0
+margin/bottom = 142.0
 alignment = 0
 
 [node name="strength" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
-margin/right = 57.0
-margin/bottom = 13.0
 hint/tooltip = "Strength"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 57.0
+margin/bottom = 13.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -387,13 +486,15 @@ max_lines_visible = -1
 
 [node name="magic" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
-margin/top = 17.0
-margin/right = 57.0
-margin/bottom = 30.0
 hint/tooltip = "Magic"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 17.0
+margin/right = 57.0
+margin/bottom = 30.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -402,13 +503,15 @@ max_lines_visible = -1
 
 [node name="vitality" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
-margin/top = 34.0
-margin/right = 57.0
-margin/bottom = 47.0
 hint/tooltip = "Vitality"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 34.0
+margin/right = 57.0
+margin/bottom = 47.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -417,13 +520,15 @@ max_lines_visible = -1
 
 [node name="spirit" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
-margin/top = 51.0
-margin/right = 57.0
-margin/bottom = 64.0
 hint/tooltip = "Spirit"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 51.0
+margin/right = 57.0
+margin/bottom = 64.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -432,13 +537,15 @@ max_lines_visible = -1
 
 [node name="agility" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
-margin/top = 68.0
-margin/right = 57.0
-margin/bottom = 81.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 68.0
+margin/right = 57.0
+margin/bottom = 81.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -447,23 +554,26 @@ max_lines_visible = -1
 
 [node name="HSeparator" type="HSeparator" parent="SheetPopup/sheet/stats/scores"]
 
-margin/top = 85.0
-margin/right = 57.0
-margin/bottom = 88.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 85.0
+margin/right = 57.0
+margin/bottom = 88.0
 
 [node name="HP" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
-margin/top = 92.0
-margin/right = 57.0
-margin/bottom = 105.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 92.0
+margin/right = 57.0
+margin/bottom = 105.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -472,13 +582,15 @@ max_lines_visible = -1
 
 [node name="MP" type="Label" parent="SheetPopup/sheet/stats/scores"]
 
-margin/top = 109.0
-margin/right = 57.0
-margin/bottom = 122.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 109.0
+margin/right = 57.0
+margin/bottom = 122.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -487,33 +599,39 @@ max_lines_visible = -1
 
 [node name="derived" type="HBoxContainer" parent="SheetPopup/sheet"]
 
-margin/left = 122.0
-margin/right = 240.0
-margin/bottom = 142.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 122.0
+margin/top = 0.0
+margin/right = 240.0
+margin/bottom = 142.0
 alignment = 0
 
 [node name="labels" type="VBoxContainer" parent="SheetPopup/sheet/derived"]
 
-margin/right = 57.0
-margin/bottom = 142.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 57.0
+margin/bottom = 142.0
 alignment = 0
 
 [node name="AP" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/right = 57.0
-margin/bottom = 13.0
 hint/tooltip = "Strength"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 57.0
+margin/bottom = 13.0
 text = "AP"
 align = 2
 valign = 1
@@ -523,13 +641,15 @@ max_lines_visible = -1
 
 [node name="MAP" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/top = 17.0
-margin/right = 57.0
-margin/bottom = 30.0
 hint/tooltip = "Magic"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 17.0
+margin/right = 57.0
+margin/bottom = 30.0
 text = "MAP"
 align = 2
 valign = 1
@@ -539,13 +659,15 @@ max_lines_visible = -1
 
 [node name="ACC" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/top = 34.0
-margin/right = 57.0
-margin/bottom = 47.0
 hint/tooltip = "Vitality"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 34.0
+margin/right = 57.0
+margin/bottom = 47.0
 text = "ACC"
 align = 2
 valign = 1
@@ -555,13 +677,15 @@ max_lines_visible = -1
 
 [node name="MACC" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/top = 51.0
-margin/right = 57.0
-margin/bottom = 64.0
 hint/tooltip = "Spirit"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 51.0
+margin/right = 57.0
+margin/bottom = 64.0
 text = "M.ACC"
 align = 2
 valign = 1
@@ -571,13 +695,15 @@ max_lines_visible = -1
 
 [node name="EVA" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/top = 68.0
-margin/right = 57.0
-margin/bottom = 81.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 68.0
+margin/right = 57.0
+margin/bottom = 81.0
 text = "EVA"
 align = 2
 valign = 1
@@ -587,13 +713,15 @@ max_lines_visible = -1
 
 [node name="RES" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/top = 85.0
-margin/right = 57.0
-margin/bottom = 98.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 85.0
+margin/right = 57.0
+margin/bottom = 98.0
 text = "RES"
 align = 2
 valign = 1
@@ -603,13 +731,15 @@ max_lines_visible = -1
 
 [node name="CRIT" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/top = 102.0
-margin/right = 57.0
-margin/bottom = 115.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 102.0
+margin/right = 57.0
+margin/bottom = 115.0
 text = "CRIT%"
 align = 2
 valign = 1
@@ -619,13 +749,15 @@ max_lines_visible = -1
 
 [node name="SPD" type="Label" parent="SheetPopup/sheet/derived/labels"]
 
-margin/top = 119.0
-margin/right = 57.0
-margin/bottom = 132.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 119.0
+margin/right = 57.0
+margin/bottom = 132.0
 text = "SPD"
 align = 2
 valign = 1
@@ -635,23 +767,27 @@ max_lines_visible = -1
 
 [node name="scores" type="VBoxContainer" parent="SheetPopup/sheet/derived"]
 
-margin/left = 61.0
-margin/right = 118.0
-margin/bottom = 142.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
+margin/left = 61.0
+margin/top = 0.0
+margin/right = 118.0
+margin/bottom = 142.0
 alignment = 0
 
 [node name="AP" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/right = 57.0
-margin/bottom = 13.0
 hint/tooltip = "Attack Power"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 57.0
+margin/bottom = 13.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -660,13 +796,15 @@ max_lines_visible = -1
 
 [node name="MAP" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/top = 17.0
-margin/right = 57.0
-margin/bottom = 30.0
 hint/tooltip = "Magic Attack Power"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 17.0
+margin/right = 57.0
+margin/bottom = 30.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -675,13 +813,15 @@ max_lines_visible = -1
 
 [node name="ACC" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/top = 34.0
-margin/right = 57.0
-margin/bottom = 47.0
 hint/tooltip = "Vitality"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 34.0
+margin/right = 57.0
+margin/bottom = 47.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -690,13 +830,15 @@ max_lines_visible = -1
 
 [node name="MACC" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/top = 51.0
-margin/right = 57.0
-margin/bottom = 64.0
 hint/tooltip = "Spirit"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 51.0
+margin/right = 57.0
+margin/bottom = 64.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -705,13 +847,15 @@ max_lines_visible = -1
 
 [node name="EVA" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/top = 68.0
-margin/right = 57.0
-margin/bottom = 81.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 68.0
+margin/right = 57.0
+margin/bottom = 81.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -720,13 +864,15 @@ max_lines_visible = -1
 
 [node name="RES" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/top = 85.0
-margin/right = 57.0
-margin/bottom = 98.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 85.0
+margin/right = 57.0
+margin/bottom = 98.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -735,13 +881,15 @@ max_lines_visible = -1
 
 [node name="CRIT" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/top = 102.0
-margin/right = 57.0
-margin/bottom = 115.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 102.0
+margin/right = 57.0
+margin/bottom = 115.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0
@@ -750,13 +898,15 @@ max_lines_visible = -1
 
 [node name="SPD" type="Label" parent="SheetPopup/sheet/derived/scores"]
 
-margin/top = 119.0
-margin/right = 57.0
-margin/bottom = 132.0
 hint/tooltip = "Agility"
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 119.0
+margin/right = 57.0
+margin/bottom = 132.0
 text = "9,999"
 valign = 1
 percent_visible = 1.0

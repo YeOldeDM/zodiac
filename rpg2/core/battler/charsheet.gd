@@ -31,7 +31,10 @@ func _draw_score(category, stat, value):
 
 
 func _on_SheetPopup_about_to_show():
-
+	if !data:
+		# Break out with an error if no data is set
+		OS.alert("No data found for this battler")
+		return
 	set_title(data.name)
 	_draw_level()
 	_draw_XP()

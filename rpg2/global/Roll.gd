@@ -28,11 +28,12 @@ func damage( dice, sides ):
 	return result
 
 
-# Returns modified attack roll,
-# flag for auto-hit & critical hit 
-func attack( accuracy, critical_chance=0 ):
+# Returns Dictionary: raw d100 roll, 
+# modified attack roll,
+# flag auto-hit, flag critical hit 
+func attack( accuracy, critical_chance ):
 	#clamp crit% to 0-100
-	var critical_chance = clamp(critical_chance,0,100)
+	critical_chance = clamp(critical_chance,0,100)
 	
 	var autohit = false
 	var critical = false
@@ -47,4 +48,7 @@ func attack( accuracy, critical_chance=0 ):
 	if adjusted_roll >= 100-critical_chance:
 		critical = true
 	
-	return [adjusted_roll,autohit,critical]
+	return {'d100':roll,
+			'roll':adjusted_roll,
+			'is_autohit':autohit,
+			'is_critical':critical}

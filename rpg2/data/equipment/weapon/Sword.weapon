@@ -1,0 +1,20 @@
+[ATTACK]
+
+AP_bonus=15
+MAP_bonus=15
+attack_die=8
+attack_level=4.0
+magic_die=8
+magic_level=2.0
+
+[INFO]
+
+cost=1
+level=1.0
+name="Sword"
+set="blades"
+
+[MISC]
+
+elements=[  ]
+specials=[  ]
